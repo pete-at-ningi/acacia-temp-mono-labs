@@ -1,10 +1,13 @@
-import Hero from '../components/Hero/Basic';
-import Services from '../components/Features/Basic';
-import TeamIntro from '../components/Features/Video';
-import QuestionsSection from '../components/Features/Checklist';
-import Testimonials from '../components/Testimonials/Basic';
-import NewsletterSignup from '../components/Blog/Newsletter/Basic';
-import Quote from '../components/Testimonials/Quote';
+// import Hero from '../components/Hero/Basic'
+// import Services from '../components/Features/Basic';
+// import TeamIntro from '../components/Features/Video';
+// import QuestionsSection from '../components/Features/Checklist';
+// import Testimonials from '../components/Testimonials/Basic';
+// import Quote from '../components/Testimonials/Quote';
+import { Hero } from 'shared-components';
+import { Features } from 'shared-components';
+import { Newsletter } from 'shared-components';
+import { Testimonials } from 'shared-components'
 
 import {
   ArrowPathIcon,
@@ -285,15 +288,19 @@ const HomePage = () => {
     authorTitle: 'Financial Planner & Founder',
   };
 
+  const newsletterConfig = {
+    privacyUrl: "/privacy"
+  }
+
   return (
     <>
-      <Hero config={heroConfig} />
-      <Services services={services} />
-      <TeamIntro config={teamSectionConfig} />
-      <NewsletterSignup />
-      <QuestionsSection config={questionsConfig} />
-      <Testimonials config={testimonialsConfig} />
-      <Quote config={QuoteConfig} />
+      <Hero.Basic config={heroConfig} />
+      <Features.Basic services={services} />
+      <Features.Video config={teamSectionConfig} />
+      <Newsletter.Simple config={newsletterConfig}/>
+      <Features.Checklist config={questionsConfig} />
+      <Testimonials.Basic config={testimonialsConfig} />
+      <Testimonials.Quote config={QuoteConfig} />
     </>
   );
 };

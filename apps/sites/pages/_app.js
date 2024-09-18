@@ -4,8 +4,8 @@ import { GlobalStyle } from '../styles/GlobalStyle';
 
 import Config from '../config';
 
-import Footer from '../components/Footer/Basic';
 import { Header } from 'shared-components';
+import { Footer} from 'shared-components';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
       <main>
         <Component {...pageProps} />
       </main>
-      <Footer config={Config} />
+      <Footer.Basic config={Config} />
     </ThemeProvider>
   );
 }

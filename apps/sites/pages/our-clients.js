@@ -20,7 +20,7 @@ const ourClientsConfig = {
   primaryCTA: {
     label: 'Speak to an adviser',
     route: '/contact',
-  },
+  }
 };
 
 const WithTestimonalConfig = {
@@ -77,7 +77,7 @@ const newsletterConfig = {
 const OurClients = () => {
   return (
     <>
-      <Hero.SplitWithImage config={ourClientsConfig} /> <Newsletter.CenterCard config={newsletterConfig}/>
+      <Hero.Basic config={ourClientsConfig} /> <Newsletter.CenterCard config={newsletterConfig}/>
       <Content.WithTestimonial config={WithTestimonalConfig} />
       <BlogFeatured.Basic config={config.blog} limit={3} />
     </>

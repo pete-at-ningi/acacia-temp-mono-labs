@@ -54,8 +54,7 @@ const Title = styled.h1`
   margin-bottom: ${(props) => props.theme.spacings.large};
   letter-spacing: 1px;
 
-  @media ${(props) => props.theme.breakpoints.tablet},
-    ${(props) => props.theme.breakpoints.mobile} {
+  @media ${(props) => props.theme.breakpoints.tablet} {
     font-size: ${(props) => props.theme.fontSizes.xlarge};
   }
 `;
@@ -93,9 +92,10 @@ const Hero = ({ config }) => {
         <CTAButton href={config.primaryCTA.route} primary>
           {config.primaryCTA.label}
         </CTAButton>
+        {config.secondaryCTA && 
         <CTAButton href={config.secondaryCTA.route}>
           {config.secondaryCTA.label}
-        </CTAButton>
+        </CTAButton>}
       </Content>
     </HeroSection>
   );

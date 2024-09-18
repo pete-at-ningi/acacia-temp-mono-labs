@@ -1,120 +1,97 @@
-// shared-config/components/Hero/Hero.js
+// shared-config/components/Hero/HeroWithOverlayAndCTA.js
 export default {
-    name: 'Hero',
+    name: 'HeroWithOverlayAndCTA',
     category: 'Hero',
-    description:
-      'This is a basic hero component typically positioned at the top of a webpage. It is designed to immediately capture the visitor’s attention upon landing on the site. The component is split into two main sections: **on the left**, it features a prominent headline (title), a subtitle (optional), and up to two call-to-action (CTA) buttons; **on the right**, it displays a background color that complements the textual content (with a default of grey). This hero component is ideal for highlighting key messages, promoting offers, or guiding users toward important actions. It ensures that critical information is front and center, encouraging user engagement from the moment they arrive on the page.',
-  
+    description: `
+      The HeroWithOverlayAndCTA component is a visually impactful hero section designed to be placed at the top of a webpage. It features a full-width and full-height section with a customizable background color or image, overlaid by a semi-transparent layer to ensure legibility of the text content. The component contains a title, a subtitle, and one or two call-to-action (CTA) buttons. It is fully responsive, adjusting the layout and font sizes based on screen size. The hero section is ideal for making strong first impressions, introducing key messages, and guiding users with clear actions. The CTAs direct users to important sections of the website, such as a product page or contact form. The overlay ensures that text remains readable regardless of the background content, making this component versatile for various industries.`,
+    
     fields: [
       {
-        name: 'title',
+        name: 'imageUrl',
         type: 'string',
-        label: 'Title',
-        required: true,
-        description:
-          'The main headline of the hero section. This should be a concise and impactful statement that communicates the core message or value proposition of your site or offer. **Ideal length**: 5 to 10 words. **Purpose**: To grab the user’s attention and convey the primary focus of the page. **Examples**:\n- "Discover Your Next Adventure"\n- "Innovating the Future of Tech"\n- "Welcome to [Your Company Name]"',
+        label: 'Background Image URL',
+        description: `
+          The URL of the background image that will cover the entire hero section. This image will be displayed behind the content, and the overlay ensures text remains legible. The image should be high-resolution and at least 1920px wide for optimal display on large screens.`,
+        required: false,
+        example: 'https://example.com/hero-background.jpg'
       },
       {
         name: 'subtitle',
         type: 'string',
         label: 'Subtitle',
+        description: `
+          A short subtitle that appears above the title. It provides additional context or a brief description. The subtitle is styled with a bordered background to make it stand out, and is usually shorter than the main title. Ideal length is between 50 to 100 characters.`,
         required: false,
-        description:
-          'An optional subheading that provides additional context or elaborates on the title. It appears directly beneath the title and can further entice users to explore your site. **Ideal length**: 10 to 20 words. **Purpose**: To offer supporting information or highlight key benefits. **Examples**:\n- "Join us in revolutionizing the way you connect with the world."\n- "Experience unparalleled service and quality with our expert team."\n- "Bringing you the latest insights in sustainable living."',
+        example: 'Join us on the journey of innovation and success.'
+      },
+      {
+        name: 'title',
+        type: 'string',
+        label: 'Title',
+        description: `
+          The main headline of the hero section. It is the most prominent text and should capture the essence of the message or product being highlighted. The title is large, bold, and designed to immediately capture the user's attention. Ideal length is between 30 to 60 characters.`,
+        required: true,
+        example: 'Empowering Your Business for Tomorrow.'
       },
       {
         name: 'primaryCTA',
         type: 'object',
-        label: 'Primary Call-to-Action',
-        required: false,
-        description:
-          'The primary call-to-action button encourages users to take a significant next step. It is styled to stand out and is typically placed to the left of the secondary CTA if both are present. **Purpose**: To drive users toward a desired action, such as signing up, purchasing, or learning more.',
+        label: 'Primary Call to Action (CTA)',
+        description: `
+          The primary call-to-action button is prominently displayed and should encourage users to take the most important action on the page. It is styled with a solid background color to stand out and includes a label and a link.`,
+        required: true,
         fields: [
           {
             name: 'label',
             type: 'string',
-            label: 'Button Label',
-            required: true,
-            description:
-              'The text displayed on the primary CTA button. Should be compelling and action-oriented, prompting users to click. **Ideal length**: 2 to 4 words. **Examples**:\n- "Get Started"\n- "Sign Up Now"\n- "Learn More"',
+            label: 'Primary CTA Label',
+            description: 'The text displayed on the primary CTA button. It should be concise and action-oriented (e.g., "Get Started").',
+            example: 'Get Started'
           },
           {
             name: 'route',
             type: 'string',
-            label: 'Button URL',
-            required: true,
-            description:
-              'The URL or route where users are directed upon clicking the primary CTA button. This should be a valid link that leads to the next step in the user journey. **Examples**:\n- "/signup"\n- "https://www.yoursite.com/pricing"\n- "/products"',
-          },
-        ],
+            label: 'Primary CTA URL',
+            description: 'The URL or route the primary CTA directs to.',
+            example: '/get-started'
+          }
+        ]
       },
       {
         name: 'secondaryCTA',
         type: 'object',
-        label: 'Secondary Call-to-Action',
+        label: 'Secondary Call to Action (CTA)',
+        description: `
+          The secondary call-to-action button offers an alternative or less urgent action, such as learning more or contacting the business. It is styled with a transparent background and a border to differentiate it from the primary CTA.`,
         required: false,
-        description:
-          'An optional secondary call-to-action button that offers an alternative or less prominent action for users to take. It is usually styled less prominently than the primary CTA. **Purpose**: To provide additional options without overwhelming the user.',
         fields: [
           {
             name: 'label',
             type: 'string',
-            label: 'Button Label',
-            required: true,
-            description:
-              'The text displayed on the secondary CTA button. Should still be action-oriented but may represent a less critical action than the primary CTA. **Ideal length**: 2 to 4 words. **Examples**:\n- "Contact Us"\n- "Read More"\n- "Join Newsletter"',
+            label: 'Secondary CTA Label',
+            description: 'The text displayed on the secondary CTA button. It should offer an alternative action (e.g., "Learn More").',
+            example: 'Learn More'
           },
           {
             name: 'route',
             type: 'string',
-            label: 'Button URL',
-            required: true,
-            description:
-              'The URL or route where users are directed upon clicking the secondary CTA button. Should complement the primary CTA by offering a different pathway. **Examples**:\n- "/contact"\n- "https://www.yoursite.com/about-us"\n- "/blog"',
-          },
-        ],
-      },
+            label: 'Secondary CTA URL',
+            description: 'The URL or route the secondary CTA directs to.',
+            example: '/learn-more'
+          }
+        ]
+      }
     ],
-  
+    
     options: [
-      {
-        name: 'alignment',
-        type: 'select',
-        label: 'Content Alignment',
-        required: false,
-        choices: ['left', 'center', 'right'],
-        default: 'left',
-        description:
-          'Controls the horizontal alignment of the textual content (title, subtitle, CTAs) within the hero section. **Options**:\n- **Left**: Aligns content to the left, which is the default and most common for readability.\n- **Center**: Centers content horizontally, suitable for a more balanced or formal presentation.\n- **Right**: Aligns content to the right, which can be used for stylistic purposes.',
-      },
       {
         name: 'overlayOpacity',
         type: 'number',
         label: 'Overlay Opacity',
-        required: false,
-        default: 0.85,
-        description:
-          'Adjusts the opacity of the gradient overlay that sits on top of the background image. **Value Range**: 0 (fully transparent) to 1 (fully opaque). **Purpose**: To enhance text readability against the background image by dimming the image. **Recommendation**: An opacity between 0.5 and 0.9 usually provides a good balance.',
-      },
-      {
-        name: 'textColor',
-        type: 'color',
-        label: 'Text Color',
-        required: false,
-        default: '#FFFFFF',
-        description:
-          'Sets the color of the text within the hero section, including the title, subtitle, and CTA labels. **Purpose**: To ensure text stands out against the background image and overlay. **Examples**:\n- "#FFFFFF" for white text\n- "#000000" for black text\n- Any valid HEX color code.',
-      },
-      {
-        name: 'buttonStyle',
-        type: 'select',
-        label: 'Button Style',
-        required: false,
-        choices: ['filled', 'outlined', 'text'],
-        default: 'filled',
-        description:
-          'Determines the visual style of the CTA buttons. **Options**:\n- **Filled**: Solid background color, typically more eye-catching.\n- **Outlined**: Transparent background with a colored border, more subtle.\n- **Text**: No background or border, resembles a hyperlink.',
-      },
-    ],
+        description: `
+          This option controls the opacity of the overlay, which sits over the background image or color. The opacity ensures that text remains legible regardless of the background content. The default is set to 0.85, but it can be adjusted for different visual effects.`,
+        default: 0.85
+      }
+    ]
   };
   

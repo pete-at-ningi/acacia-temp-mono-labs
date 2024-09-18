@@ -1,0 +1,23 @@
+{
+  "name": "sites",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start -p 3002"
+  },
+  "dependencies": {
+    "next": "^12.2.4",
+    "next-transpile-modules": "^10.0.1",
+    "mailgun-js": "^0.22.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "shared-components": "*",
+    "styled-components": "^6.1.13",
+    "react-icons": "^5.3.0",
+    "@heroicons/react": "^2.0.18",
+    "babel-plugin-styled-components": "^2.1.4",
+    "@babel/runtime": "^7.25.6"
+  }
+}

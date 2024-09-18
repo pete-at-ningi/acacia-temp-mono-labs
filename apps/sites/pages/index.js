@@ -1,4 +1,4 @@
-import Hero from '../components/Hero/SlantedImage';
+import Hero from '../components/Hero/Basic';
 import Services from '../components/Features/Basic';
 import TeamIntro from '../components/Features/Video';
 import QuestionsSection from '../components/Features/Checklist';

@@ -1,11 +1,6 @@
 import React from 'react';
 import config from '../config'
 
-// import Hero from '../components/Hero/SplitWithImage';
-// import WithTestimonal from '../components/Content/WithTestimonal';
-// import NewsletterSignup from '../components/Blog/Newsletter/Simple';
-// import BlogFeatured from '../components/Blog/Featured/Basic';
-
 import { Hero } from 'shared-components'
 import { Newsletter } from 'shared-components';
 import { Content } from 'shared-components';

@@ -20,7 +20,8 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: ${(props) => props.theme.spacings.xlarge};
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${(props) => props.theme.breakpoints.tablet},
+    ${(props) => props.theme.breakpoints.mobile} {
     grid-template-columns: 1fr;
   }
 `;

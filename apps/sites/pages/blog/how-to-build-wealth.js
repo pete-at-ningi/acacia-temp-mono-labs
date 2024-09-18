@@ -1,4 +1,4 @@
-import Content from '../../components/Content/Basic';
+import { Content } from 'shared-components'
 
 const buildWealthConfig = {
   subtitle: 'Introducing',
@@ -85,7 +85,7 @@ const buildWealthConfig = {
 const BuildWealth = () => {
   return (
     <>
-      <Content config={buildWealthConfig} />
+      <Content.Basic config={buildWealthConfig} />
     </>
   );
 };

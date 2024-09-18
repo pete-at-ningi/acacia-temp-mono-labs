@@ -1,4 +1,4 @@
-import Content from '../../components/Content/Basic';
+import { Content } from 'shared-components'
 
 const financialLiteracyConfig = {
   subtitle: 'Introducing',
@@ -85,7 +85,7 @@ const financialLiteracyConfig = {
 const FinancialLiteracyTips = () => {
   return (
     <>
-      <Content config={financialLiteracyConfig} />
+      <Content.Basic config={financialLiteracyConfig} />
     </>
   );
 };

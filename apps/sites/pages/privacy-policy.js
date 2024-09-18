@@ -1,4 +1,4 @@
-import Content from '../components/Content/Basic';
+import { Content } from 'shared-components'
 
 const privacyPolicyConfig = {
   subtitle: 'Our Commitment to Your Privacy',
@@ -88,7 +88,7 @@ const privacyPolicyConfig = {
 const PrivacyPolicy = () => {
   return (
     <>
-      <Content config={privacyPolicyConfig} />
+      <Content.Basic config={privacyPolicyConfig} />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import Content from '../../components/Content/Basic';
+import { Content } from 'shared-components'
 
 const taxEfficientStrategiesConfig = {
   subtitle: 'Introducing',
@@ -89,7 +89,7 @@ const taxEfficientStrategiesConfig = {
 const TaxEfficientStrategies = () => {
   return (
     <>
-      <Content config={taxEfficientStrategiesConfig} />
+      <Content.Basic config={taxEfficientStrategiesConfig} />
     </>
   );
 };

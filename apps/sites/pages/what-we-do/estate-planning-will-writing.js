@@ -1,4 +1,5 @@
-import Content from '../../components/Content/Basic';
+import { Content } from 'shared-components'
+
 
 const estatePlanningConfig = {
   subtitle: 'Introducing',
@@ -84,7 +85,7 @@ const estatePlanningConfig = {
 const EstatePlanning = () => {
   return (
     <>
-      <Content config={estatePlanningConfig} />
+      <Content.Basic config={estatePlanningConfig} />
     </>
   );
 };

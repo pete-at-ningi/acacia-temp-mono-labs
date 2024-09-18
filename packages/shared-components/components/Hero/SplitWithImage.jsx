@@ -13,7 +13,8 @@ const HeroSection = styled.section`
   overflow: hidden;
   border-radius: ${(props) => props.theme.borders.radius};
   background-color: ${(props) => props.theme.colors.white};
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${(props) => props.theme.breakpoints.tablet},
+    ${(props) => props.theme.breakpoints.mobile} {
     grid-template-columns: 1fr;
     height: 100vh;
   }

@@ -1,4 +1,5 @@
-import Content from '../../components/Content/Basic';
+import { Content } from 'shared-components'
+
 const holisticFinancialPlanningConfig = {
   subtitle: 'Introducing',
   title: 'Holistic Financial Planning',
@@ -82,7 +83,7 @@ const holisticFinancialPlanningConfig = {
 const OurClients = () => {
   return (
     <>
-      <Content config={holisticFinancialPlanningConfig} />
+      <Content.Basic config={holisticFinancialPlanningConfig} />
     </>
   );
 };

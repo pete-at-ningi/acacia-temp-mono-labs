@@ -1,9 +1,3 @@
-// import Hero from '../components/Hero/Basic'
-// import Services from '../components/Features/Basic';
-// import TeamIntro from '../components/Features/Video';
-// import QuestionsSection from '../components/Features/Checklist';
-// import Testimonials from '../components/Testimonials/Basic';
-// import Quote from '../components/Testimonials/Quote';
 import { Hero } from 'shared-components';
 import { Features } from 'shared-components';
 import { Newsletter } from 'shared-components';
@@ -294,7 +288,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Hero.Basic config={heroConfig} />
+      <Hero.NoImage config={heroConfig} />
       <Features.Basic services={services} />
       <Features.Video config={teamSectionConfig} />
       <Newsletter.Simple config={newsletterConfig}/>

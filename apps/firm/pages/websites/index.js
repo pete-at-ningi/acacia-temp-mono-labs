@@ -108,6 +108,10 @@ export default function WebsitesHome() {
   };
 
   const handleAddWebsite = async (websiteData) => {
+    if (activeFirm) {
+      websiteData.firm_id = activeFirm.id;
+    }
+
     await addWebsite(websiteData);
     setIsModalOpen(false);
   };

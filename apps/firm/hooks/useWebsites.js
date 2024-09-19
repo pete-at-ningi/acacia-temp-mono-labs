@@ -134,10 +134,6 @@ export function WebsiteProvider({ children }) {
 
   // Add a new website
   const addWebsite = async (websiteData) => {
-    if (activeFirm) {
-      websiteData.firm_id = activeFirm.id;
-    }
-
     const { data, error } = await supabase
       .from('websites')
       .insert([websiteData])

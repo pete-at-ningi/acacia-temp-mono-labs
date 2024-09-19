@@ -68,7 +68,6 @@ export default function FirmDetails() {
             onChange={handleInputChange}
           />
         </label>
-        {/* Add more fields as needed */}
         <button onClick={handleSave} disabled={isSaving}>
           {isSaving ? 'Saving...' : 'Save Changes'}
         </button>

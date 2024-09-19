@@ -1,11 +1,9 @@
-import React from 'react';
-import { Header } from 'shared-components';
+import PageWrapper from '../components/Layout/PageWrapper';
 
 export default function Home() {
   return (
-    <div>
-      <Header name='firm' color='yellow' />
-      <p>Welcome to the Firm App</p>
-    </div>
+    <PageWrapper title='Dashboard'>
+      <div>Firm</div>
+    </PageWrapper>
   );
 }

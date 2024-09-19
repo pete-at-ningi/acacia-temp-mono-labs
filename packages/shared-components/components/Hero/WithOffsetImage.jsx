@@ -67,6 +67,8 @@ const CTAButtons = styled(motion.div).attrs(() => ({
   }
 `;
 
+
+// Hover button
 const CTAButton = styled(motion.a).attrs(() => ({
   whileHover: {
     scale: 1.1,

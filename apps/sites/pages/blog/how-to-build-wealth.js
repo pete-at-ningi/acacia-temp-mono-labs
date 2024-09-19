@@ -85,7 +85,7 @@ const buildWealthConfig = {
 const BuildWealth = () => {
   return (
     <>
-      <Content.Basic config={buildWealthConfig} />
+      <Content.BlogBasic config={buildWealthConfig} />
     </>
   );
 };

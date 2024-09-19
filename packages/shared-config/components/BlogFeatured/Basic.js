@@ -1,7 +1,7 @@
-// shared-config/components/BlogSection/BlogSectionWithPosts.js
+// shared-config/components/BlogFeatured/Basic.js
 export default {
-    name: 'BlogSectionWithPosts',
-    category: 'Blog',
+    name: 'Basic',
+    category: 'BlogFeatured',
     description: `
       The BlogSection component is designed to display a grid of blog posts, typically used in a section of a web page. The section is styled with clean, minimal padding and background colors to ensure focus on the content. It is divided into a header area, which includes a title and a short introductory paragraph, and a grid layout that displays blog posts with accompanying images, titles, descriptions, and author information. Each post is displayed as a clickable card, with hover effects to enhance interactivity. The grid is responsive, adapting to different screen sizes, from mobile to desktop. This component can be used to showcase featured or recent posts, engaging users to explore more content. Each post contains a title, image, description, publication date, category, and author information to give the reader an overview of the post content before navigating further. It is flexible and customizable, allowing for the inclusion of any number of posts, and offers clean and organized presentation.`,
     

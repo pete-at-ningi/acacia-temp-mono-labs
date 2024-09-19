@@ -77,7 +77,7 @@ const newsletterConfig = {
 const OurClients = () => {
   return (
     <>
-      <Hero.Basic config={ourClientsConfig} /> <Newsletter.CenterCard config={newsletterConfig}/>
+      <Hero.SlantedImage config={ourClientsConfig} /> <Newsletter.CenterCard config={newsletterConfig}/>
       <Content.WithTestimonial config={WithTestimonalConfig} />
       <BlogFeatured.Basic config={config.blog} limit={3} />
     </>

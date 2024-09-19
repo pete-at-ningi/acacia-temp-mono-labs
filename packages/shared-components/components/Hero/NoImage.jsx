@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion'
 
 const HeroSection = styled.section`
   position: relative;
@@ -34,7 +35,11 @@ const Content = styled.div`
 `;
 
 // border based props????
-const Subtitle = styled.p`
+const Subtitle = styled(motion.p).attrs(() => ({
+  initial: { opacity: 0},
+  animate: { opacity: 1},
+  transition: { delay: 0.6, duration: 0.8 },
+}))`
   font-size: ${(props) => props.theme.fontSizes.medium};
   font-weight: 400;
   max-width: 850px;
@@ -46,7 +51,11 @@ const Subtitle = styled.p`
   border-radius: 20px;
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1).attrs(() => ({
+  initial: { opacity: 0, y: 70 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8 },
+}))`
   max-width: 850px;
   font-size: ${(props) =>
     props.theme.fontSizes.massive}; /* Default to xlarge for mobile */
@@ -59,7 +68,11 @@ const Title = styled.h1`
   }
 `;
 
-const CTAButton = styled.a`
+const CTAButton = styled(motion.a).attrs(() => ({
+  initial: { opacity: 0, y: 70 },
+  animate: { opacity: 1, y: 0 },
+  transition: { delay: 0.2, duration: 0.8 },
+}))`
   color: red;
   display: inline-block;
   font-size: ${(props) => props.theme.fontSizes.medium};

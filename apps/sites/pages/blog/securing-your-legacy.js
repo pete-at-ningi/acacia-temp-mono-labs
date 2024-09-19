@@ -85,7 +85,7 @@ const secureLegacyConfig = {
 const SecureLegacy = () => {
   return (
     <>
-      <Content.Basic config={secureLegacyConfig} />
+      <Content.BlogBasic config={secureLegacyConfig} />
     </>
   );
 };

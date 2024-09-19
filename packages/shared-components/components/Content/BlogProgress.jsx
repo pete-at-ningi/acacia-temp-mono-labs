@@ -117,28 +117,21 @@ const Figure = styled.figure`
 
 const ProgressBar = styled(motion.div)`
   position: fixed;
-  top: 70px; 
   left: 0;
   right: 0;
   height: 10px;
   background: ${(props) => props.theme.colors.primary};
   transform-origin: 0%;
   z-index: 1000;
-
-  @media ${(props) => props.theme.breakpoints.tablet} {
-    top: 75px;
-  }
-    @media ${(props) => props.theme.breakpoints.mobile} {
-    top: 75px;
-  }
 `;
 
 const ContentPage = ({ config }) => {
   const { scrollYProgress } = useScroll();
 
   return (
+    <div>
+    <ProgressBar style={{ scaleX: scrollYProgress }} />
     <Section>
-        <ProgressBar style={{ scaleX: scrollYProgress }} />
       <Container>
         <Subtitle>{config.subtitle}</Subtitle>
         <Title>{config.title}</Title>
@@ -199,6 +192,7 @@ const ContentPage = ({ config }) => {
         </ContentSection>
       </Container>
     </Section>
+    </div>
   );
 };
 

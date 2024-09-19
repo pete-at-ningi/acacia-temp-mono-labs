@@ -69,7 +69,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const ServiceItem = styled(motion.a)`  // Use motion for animation
+const ServiceItem = styled(motion.a)` 
   display: flex;
   flex-direction: column;
   max-width: 350px;

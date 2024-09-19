@@ -5,6 +5,8 @@ import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../styles/GlobalStyle';
 
+import { FirmProvider } from '../hooks/useFirms';
+
 const Theme = {
   colors: {
     primary: '#283149',
@@ -50,14 +52,16 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={Theme}>
       <NotificationProvider>
         <AuthProvider>
-          <GlobalStyle />
-          <Head>
-            <title>Firm</title>
-          </Head>
+          <FirmProvider>
+            <GlobalStyle />
+            <Head>
+              <title>Firm</title>
+            </Head>
 
-          <main>
-            <Component {...pageProps} />
-          </main>
+            <main>
+              <Component {...pageProps} />
+            </main>
+          </FirmProvider>
         </AuthProvider>
       </NotificationProvider>
     </ThemeProvider>

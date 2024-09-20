@@ -4,6 +4,7 @@ import { useFirms } from '../../hooks/useFirms';
 import Link from 'next/link';
 import PageWrapper from '../../components/Layout/PageWrapper';
 import styled from 'styled-components';
+import WebsiteList from '../../components/Websites/List';
 
 const Wrapper = styled.div`
   padding: 2rem;
@@ -72,6 +73,7 @@ export default function FirmDetails() {
           {isSaving ? 'Saving...' : 'Save Changes'}
         </button>
         {unsavedChanges && <p>You have unsaved changes.</p>}
+        <WebsiteList />
         <h3>Danger Zone</h3>
         <button onClick={() => handleDeleteThisFirm()}>Delete</button>
       </Wrapper>

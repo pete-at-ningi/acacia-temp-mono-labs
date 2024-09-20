@@ -1,12 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from "framer-motion";
-
 const OutsideWrapper = styled.div``;
 
-//
-const HeroSection = styled(motion.section).attrs(() => ({
-}))`
+const HeroSection = styled.section`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
   margin: 0 auto;
   display: grid;
@@ -17,15 +13,13 @@ const HeroSection = styled(motion.section).attrs(() => ({
   overflow: hidden;
   border-radius: ${(props) => props.theme.borders.radius};
   background-color: ${(props) => props.theme.colors.white};
-  @media ${(props) => props.theme.breakpoints.tablet},
-    ${(props) => props.theme.breakpoints.mobile} {
+  @media ${(props) => props.theme.breakpoints.tablet} {
     grid-template-columns: 1fr;
     height: 100vh;
   }
 `;
 
-const LeftColumn = styled(motion.div).attrs(() => ({
-}))`
+const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,32 +27,20 @@ const LeftColumn = styled(motion.div).attrs(() => ({
   padding: ${(props) => props.theme.spacings.large};
 `;
 
-const Title = styled(motion.h1).attrs(() => ({
-  initial: { opacity: 0, y: 70 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8 },
-}))`
+const Title = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.xlarge};
   font-weight: 700;
   margin-bottom: ${(props) => props.theme.spacings.large};
   color: ${(props) => props.theme.colors.dark};
 `;
 
-const Subtitle = styled(motion.p).attrs(() => ({
-  initial: { opacity: 0, y: 70 },
-  animate: { opacity: 1, y: 0 },
-  transition: { delay: 0.3, duration: 0.8 },
-}))`
+const Subtitle = styled.p`
   font-size: ${(props) => props.theme.fontSizes.medium};
   margin-bottom: ${(props) => props.theme.spacings.large};
   color: ${(props) => props.theme.colors.gray};
 `;
 
-const CTAButtons = styled(motion.div).attrs(() => ({
-  initial: { opacity: 0, y: 70 },
-  animate: { opacity: 1, y: 0 },
-  transition: { delay: 0.4, duration: 0.8 },
-}))`
+const CTAButtons = styled.div`
   display: flex;
   gap: ${(props) => props.theme.spacings.medium};
 `;
@@ -84,11 +66,7 @@ const CTAButton = styled.a`
   }
 `;
 
-const RightColumn = styled(motion.div).attrs(() => ({
-  initial: { opacity: 0, rotateY: 90 },
-  animate: { opacity: 1, rotateY: 0 },
-  transition: { delay: 0.3, duration: 0.8, ease: "easeInOut" },
-}))`
+const RightColumn = styled.div`
   background-image: linear-gradient(
       135deg,
       ${(props) => props.theme.colors.primary} 0%,

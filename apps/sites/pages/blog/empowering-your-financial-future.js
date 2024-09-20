@@ -85,7 +85,7 @@ const empowerFutureConfig = {
 const EmpowerFuture = () => {
   return (
     <>
-      <Content.BlogBasic config={empowerFutureConfig} />
+      <Content.BlogProgress config={empowerFutureConfig} />
     </>
   );
 };

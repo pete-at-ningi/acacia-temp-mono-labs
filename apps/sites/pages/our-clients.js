@@ -77,9 +77,9 @@ const newsletterConfig = {
 const OurClients = () => {
   return (
     <>
-      <Hero.SlantedImage config={ourClientsConfig} /> <Newsletter.CenterCard config={newsletterConfig}/>
-      <Content.WithTestimonial config={WithTestimonalConfig} />
-      <BlogFeatured.Basic config={config.blog} limit={3} />
+      <Hero.SlantedImageAnimated config={ourClientsConfig} /> <Newsletter.CenterCard config={newsletterConfig}/>
+      <Content.WithTestimonialAnimated config={WithTestimonalConfig} />
+      <BlogFeatured.BasicAnimated config={config.blog} limit={3} />
     </>
   );
 };

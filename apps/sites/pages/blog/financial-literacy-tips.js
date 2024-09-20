@@ -85,7 +85,7 @@ const financialLiteracyConfig = {
 const FinancialLiteracyTips = () => {
   return (
     <>
-      <Content.BlogBasic config={financialLiteracyConfig} />
+      <Content.BlogProgress config={financialLiteracyConfig} />
     </>
   );
 };

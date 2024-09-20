@@ -455,10 +455,57 @@ export default function WebsiteDetails() {
               onChange={handleInputChange}
             />
           </Label>
-          {/* Add inputs for all other header fields... */}
+          <Label>
+            Keywords:
+            <TextArea
+              name='header_keywords'
+              value={activeWebsite.header_keywords || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+          <Label>
+            og-Title:
+            <Input
+              name='header_ogtitle'
+              value={activeWebsite.header_ogtitle || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+          <Label>
+            og-Type:
+            <Input
+              name='header_ogtype'
+              value={activeWebsite.header_ogtype || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+          <Label>
+            og-Url:
+            <Input
+              name='header_ogurl'
+              value={activeWebsite.header_ogurl || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+          <Label>
+            og-Image:
+            <Input
+              name='header_ogimage'
+              value={activeWebsite.header_ogimage || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+          <Label>
+            Theme Color:
+            <Input
+              name='header_themecolor'
+              value={activeWebsite.header_themecolor || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
           <h2>Business Information</h2>
           <Label>
-            Business Name:
+            Legal Name:
             <Input
               type='text'
               name='business_name'
@@ -467,14 +514,49 @@ export default function WebsiteDetails() {
             />
           </Label>
           <Label>
-            Address:
+            Registered Address:
             <TextArea
               name='business_address'
               value={activeWebsite.business_address || ''}
               onChange={handleInputChange}
             />
           </Label>
-          {/* Add inputs for all other business fields... */}
+          <Label>
+            Phone:
+            <Input
+              type='tel'
+              name='business_phone'
+              value={activeWebsite.business_phone || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+          <Label>
+            Email:
+            <Input
+              type='email'
+              name='business_email'
+              value={activeWebsite.business_email || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+          <Label>
+            FCA Number:
+            <Input
+              type='text'
+              name='business_fca_number'
+              value={activeWebsite.business_fca_number || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+          <Label>
+            Registered Company Number:
+            <Input
+              type='text'
+              name='business_company_number'
+              value={activeWebsite.business_company_number || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
           <h2>Social Media Links</h2>
           <Label>
             LinkedIn URL:
@@ -494,8 +576,43 @@ export default function WebsiteDetails() {
               onChange={handleInputChange}
             />
           </Label>
-          {/* Add inputs for all other social media fields... */}
-          {/* Continue adding inputs for all data points from your database schema */}
+          <Label>
+            Facebook URL:
+            <Input
+              type='text'
+              name='facebook_url'
+              value={activeWebsite.facebook_url || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+          <Label>
+            Instagram URL:
+            <Input
+              type='text'
+              name='instagram_url'
+              value={activeWebsite.instagram_url || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+          <Label>
+            YouTube URL:
+            <Input
+              type='text'
+              name='youtube_url'
+              value={activeWebsite.youtube_url || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+          <Label>
+            tiktok URL:
+            <Input
+              type='text'
+              name='tiktok_url'
+              value={activeWebsite.tiktok_url || ''}
+              onChange={handleInputChange}
+            />
+          </Label>
+
           <button onClick={handleSave} disabled={isSaving}>
             {isSaving ? 'Saving...' : 'Save Changes'}
           </button>

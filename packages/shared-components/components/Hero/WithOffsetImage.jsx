@@ -98,6 +98,10 @@ const Hero = ({ config }) => {
             <CTAButton href={config.primaryCTA.route} primary>
               {config.primaryCTA.label}
             </CTAButton>
+            {config.secondaryCTA && 
+        <CTAButton href={config.secondaryCTA.route}>
+          {config.secondaryCTA.label}
+        </CTAButton>}
           </CTAButtons>
         </LeftColumn>
         <RightColumn>

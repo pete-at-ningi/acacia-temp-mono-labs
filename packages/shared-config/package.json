@@ -1,0 +1,11 @@
+{
+  "name": "shared-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.11"
+  }
+}

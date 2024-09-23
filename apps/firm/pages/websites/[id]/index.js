@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { useWebsites } from '../../hooks/useWebsites';
-import Link from 'next/link';
-import PageWrapper from '../../components/Layout/PageWrapper';
+import { useWebsites } from '../../../hooks/useWebsites';
+import PageWrapper from '../../../components/Layout/PageWrapper';
 import styled from 'styled-components';
-import { websiteConfig } from '../../components/Websites/config';
+import { websiteConfig } from '../../../components/Websites/config';
 import { FiInfo } from 'react-icons/fi';
 
 const Wrapper = styled.div`
@@ -111,11 +110,6 @@ export default function WebsiteDetails() {
   return (
     <PageWrapper title={`Website Details - ${activeWebsite.name}`}>
       <Wrapper>
-        <Link href='/websites'>
-          <a>← Back to Websites</a>
-        </Link>
-        <h3>Danger Zone</h3>
-        <button onClick={handleDeleteThisWebsite}>Delete</button>
         <h1>{activeWebsite.name}</h1>
         <button
           onClick={() => {
@@ -126,6 +120,13 @@ export default function WebsiteDetails() {
           {isSaving ? 'Saving...' : 'Save Changes'}
         </button>
         {unsavedChanges && <p>You have unsaved changes.</p>}
+        <button
+          onClick={() => {
+            router.push(`/websites/${activeWebsite.id}/editor`);
+          }}
+        >
+          Editor
+        </button>
         <Form onSubmit={handleSave}>
           {websiteConfig.map((field, index) => {
             if (field.type === 'heading') {
@@ -202,6 +203,8 @@ export default function WebsiteDetails() {
             );
           })}
         </Form>
+        <h3>Danger Zone</h3>
+        <button onClick={handleDeleteThisWebsite}>Delete</button>
       </Wrapper>
     </PageWrapper>
   );

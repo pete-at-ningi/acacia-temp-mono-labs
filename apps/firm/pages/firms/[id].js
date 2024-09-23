@@ -60,22 +60,27 @@ export default function FirmDetails() {
           <a>← Back to Firms</a>
         </Link>
         <h1>{activeFirm.name}</h1>
-        <label>
-          Firm Name:
-          <input
-            type='text'
-            name='name'
-            value={activeFirm.name}
-            onChange={handleInputChange}
-          />
-        </label>
         <button onClick={handleSave} disabled={isSaving}>
           {isSaving ? 'Saving...' : 'Save Changes'}
         </button>
         {unsavedChanges && <p>You have unsaved changes.</p>}
-        <WebsiteList />
+        <div>
+          <label>
+            Firm Name:
+            <input
+              type='text'
+              name='name'
+              value={activeFirm.name}
+              onChange={handleInputChange}
+            />
+          </label>
+        </div>
+
         <h3>Danger Zone</h3>
         <button onClick={() => handleDeleteThisFirm()}>Delete</button>
+
+        <hr />
+        <WebsiteList />
       </Wrapper>
     </PageWrapper>
   );

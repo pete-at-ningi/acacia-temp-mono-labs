@@ -289,11 +289,11 @@ const HomePage = () => {
   return (
     <>
       <Hero.SlantedImage config={heroConfig} />
-      <Features.BasicAnimated services={services} />
+      <Features.Basic services={services} />
       <Features.Video config={teamSectionConfig} />
-      <Newsletter.Simple config={newsletterConfig}/>
-      <Features.ChecklistAnimated config={questionsConfig} />
-      <Testimonials.BasicAnimated config={testimonialsConfig} />
+      <Newsletter.SimpleAnimated config={newsletterConfig}/>
+      <Features.Checklist config={questionsConfig} />
+      <Testimonials.Basic config={testimonialsConfig} />
       <Testimonials.Quote config={QuoteConfig} />
     </>
   );

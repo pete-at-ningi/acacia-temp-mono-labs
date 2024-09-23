@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import SignupWidgetEmoji from './SignupWidgetEmoji';
 
 const OutsideWrapper = styled.div`
@@ -18,7 +19,7 @@ const NewsletterSection = styled.section`
   overflow: hidden;
 `;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled(motion.div)`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
   margin: 0 auto;
   gap: ${(props) => props.theme.spacings.xlarge};
@@ -58,7 +59,12 @@ const NewsletterSignup = ({ config }) => {
   return (
     <OutsideWrapper>
       <NewsletterSection>
-        <ContentWrapper>
+        <ContentWrapper
+        initial={{x:-80, opacity: 0}}
+        whileInView={{x:0, opacity: 1}}
+        transition={{duration: 0.5, ease: 'easeInOut'}}
+        viewport={{ once: true, amount: 0.8}}
+        >
           <TextWrapper>
             <Heading>Subscribe to our newsletter.</Heading>
             <SubText>

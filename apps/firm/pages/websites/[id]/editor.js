@@ -4,8 +4,6 @@ import { useWebsites } from '../../../hooks/useWebsites';
 import PageWrapper from '../../../components/Layout/PageWrapper';
 import styled from 'styled-components';
 import { FiInfo } from 'react-icons/fi';
-import { websiteConfig } from '../../../components/Websites/config';
-import Link from 'next/link';
 
 const Wrapper = styled.div`
   padding: 2rem;
@@ -77,8 +75,6 @@ export default function WebsiteDetails() {
     websiteSections,
     addWebsitePage,
     addWebsiteSection,
-    isSaving,
-    unsavedChanges,
   } = useWebsites();
 
   const [tooltipVisible, setTooltipVisible] = useState(null);
@@ -111,16 +107,7 @@ export default function WebsiteDetails() {
   return (
     <PageWrapper title={`Website Details - ${activeWebsite.name}`}>
       <Wrapper>
-        <h1>{activeWebsite.name}</h1>
-        <button
-          onClick={() => {
-            handleSave();
-          }}
-          disabled={isSaving}
-        >
-          {isSaving ? 'Saving...' : 'Save Changes'}
-        </button>
-        {unsavedChanges && <p>You have unsaved changes.</p>}
+        <h1>{activeWebsite.name} | Edit Mode</h1>
 
         <h2>Website Pages</h2>
         {websitePages.map((page) => (

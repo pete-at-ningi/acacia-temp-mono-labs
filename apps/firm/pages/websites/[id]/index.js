@@ -8,6 +8,14 @@ import { FiInfo } from 'react-icons/fi';
 
 const Wrapper = styled.div`
   padding: 2rem;
+  h1 {
+    span {
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+  }
 `;
 
 const Form = styled.form`
@@ -67,9 +75,7 @@ export default function WebsiteDetails() {
     handleSetActiveWebsite,
     clearActiveWebsite,
     isSaving,
-    unsavedChanges,
     handleUpdateWebsite,
-    handleSaveUpdates,
     handleDeleteWebsite,
   } = useWebsites();
 
@@ -94,10 +100,6 @@ export default function WebsiteDetails() {
     handleUpdateWebsite(name, value);
   };
 
-  const handleSave = async () => {
-    await handleSaveUpdates();
-  };
-
   const handleDeleteThisWebsite = () => {
     handleDeleteWebsite(activeWebsite.id);
     router.push(`/websites`);
@@ -110,16 +112,10 @@ export default function WebsiteDetails() {
   return (
     <PageWrapper title={`Website Details - ${activeWebsite.name}`}>
       <Wrapper>
-        <h1>{activeWebsite.name}</h1>
-        <button
-          onClick={() => {
-            handleSave();
-          }}
-          disabled={isSaving}
-        >
-          {isSaving ? 'Saving...' : 'Save Changes'}
-        </button>
-        {unsavedChanges && <p>You have unsaved changes.</p>}
+        <h1>
+          {activeWebsite.name}
+          <span>{isSaving && 'Saving Changes...'}</span>
+        </h1>
         <button
           onClick={() => {
             router.push(`/websites/${activeWebsite.id}/editor`);
@@ -127,7 +123,7 @@ export default function WebsiteDetails() {
         >
           Editor
         </button>
-        <Form onSubmit={handleSave}>
+        <Form>
           {websiteConfig.map((field, index) => {
             if (field.type === 'heading') {
               return <h2 key={index}>{field.label}</h2>;

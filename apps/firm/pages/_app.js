@@ -7,6 +7,8 @@ import { GlobalStyle } from '../styles/GlobalStyle';
 
 import { FirmProvider } from '../hooks/useFirms';
 import { WebsiteProvider } from '../hooks/useWebsites';
+import { WebsitePagesProvider } from '../hooks/useWebsitePages';
+import { WebsitePageSectionsProvider } from '../hooks/useWebsitePageSections';
 
 const Theme = {
   colors: {
@@ -55,14 +57,18 @@ function MyApp({ Component, pageProps }) {
         <AuthProvider>
           <FirmProvider>
             <WebsiteProvider>
-              <GlobalStyle />
-              <Head>
-                <title>Firm</title>
-              </Head>
+              <WebsitePagesProvider>
+                <WebsitePageSectionsProvider>
+                  <GlobalStyle />
+                  <Head>
+                    <title>Firm</title>
+                  </Head>
 
-              <main>
-                <Component {...pageProps} />
-              </main>
+                  <main>
+                    <Component {...pageProps} />
+                  </main>
+                </WebsitePageSectionsProvider>
+              </WebsitePagesProvider>
             </WebsiteProvider>
           </FirmProvider>
         </AuthProvider>

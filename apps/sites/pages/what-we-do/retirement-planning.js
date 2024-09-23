@@ -89,7 +89,7 @@ const retirementPlanningConfig = {
 const RetirementPlanning = () => {
   return (
     <>
-      <Content.Basic config={retirementPlanningConfig} />
+      <Content.BlogProgress config={retirementPlanningConfig} />
     </>
   );
 };

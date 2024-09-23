@@ -85,7 +85,7 @@ const estatePlanningConfig = {
 const EstatePlanning = () => {
   return (
     <>
-      <Content.Basic config={estatePlanningConfig} />
+      <Content.BlogProgress config={estatePlanningConfig} />
     </>
   );
 };

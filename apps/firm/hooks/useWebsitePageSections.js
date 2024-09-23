@@ -1,6 +1,7 @@
 import { useState, useContext, createContext } from 'react';
 import { supabase } from '../utils/supabaseClient';
 import { useNotification } from './useNotification';
+import { useDebounce } from './useDebounce'; // You might need to implement/use a debounce hook
 
 const WebsitePageSectionsContext = createContext();
 
@@ -23,14 +24,6 @@ export function WebsitePageSectionsProvider({ children }) {
         cleanData.options[key.replace('options.', '')] = sectionData[key];
         delete cleanData[key];
       }
-      if (
-        cleanData.order === undefined ||
-        cleanData.order === null ||
-        cleanData.order === '' ||
-        isNaN(cleanData.order)
-      ) {
-        cleanData.order = 1;
-      }
     });
 
     return cleanData;
@@ -48,13 +41,16 @@ export function WebsitePageSectionsProvider({ children }) {
       console.error('Error fetching website sections:', error);
       addNotification('Error fetching page sections', error.message, 'error');
     } else {
-      setWebsiteSections(data);
+      setWebsiteSections((prev) => ({ ...prev, [pageId]: data }));
     }
   };
 
   // Add a new website section
   const addWebsiteSection = async (pageId, sectionData) => {
-    const cleanData = cleanSectionData(sectionData); // Clean up section data
+    const existingSections = websiteSections[pageId] || [];
+    const order = existingSections.length + 1;
+    const cleanData = cleanSectionData({ ...sectionData, order }); // Clean up section data
+
     const { data, error } = await supabase
       .from('website_page_sections')
       .insert([{ ...cleanData, page_id: pageId }])
@@ -76,7 +72,7 @@ export function WebsitePageSectionsProvider({ children }) {
     }
   };
 
-  // Update a website section
+  // Update a website section (with debounce)
   const updateWebsiteSection = async (sectionId, sectionData) => {
     const cleanData = cleanSectionData(sectionData); // Clean up section data
     setIsSaving(true);

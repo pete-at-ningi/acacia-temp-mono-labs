@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 const Section = styled.section`
   background-color: ${(props) => props.theme.colors.white};
   padding-bottom: ${(props) => props.theme.spacings.xlarge};

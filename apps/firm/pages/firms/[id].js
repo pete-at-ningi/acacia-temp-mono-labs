@@ -58,9 +58,6 @@ export default function FirmDetails() {
   return (
     <PageWrapper title={`Firm Details - ${activeFirm.name}`}>
       <Wrapper>
-        <Link href='/firms'>
-          <a>← Back to Firms</a>
-        </Link>
         <h1>
           {activeFirm.name}
           <span>{isSaving && 'Saving Changes...'}</span>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion'
 
 const FormWrapper = styled.form`
   width: 100%;
@@ -37,6 +38,21 @@ const Button = styled.button`
   }
 `;
 
+const SubmittedText = styled.p`
+color: white;
+font-weight: bold;
+`;
+
+const SubmittedEmoji = styled(motion.p).attrs(() => ({
+    initial: { opacity: 1, scale: 1 },
+    animate: { opacity: 0, scale: 30 },
+    transition: { duration: 1.5, ease: "easeInOut" }
+  }))`
+    display: inline-block; 
+    transform-origin: center;  
+  `;
+  
+
 const SignupWidget = ({ onSubmit }) => {
   const [submitted, setSubmitted] = useState(false);
 
@@ -53,7 +69,9 @@ const SignupWidget = ({ onSubmit }) => {
       <Button type='submit'>Subscribe</Button>
     </FormWrapper>
   ) : (
-    <p>Thanks, sign-up confirmed!</p>
+    <div>
+    <SubmittedText>Thanks, sign-up confirmed!</SubmittedText><SubmittedEmoji>🎉</SubmittedEmoji>
+    </div>
   );
 };
 

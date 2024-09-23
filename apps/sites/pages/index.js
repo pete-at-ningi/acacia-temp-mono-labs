@@ -1,7 +1,7 @@
 import { Hero } from 'shared-components';
 import { Features } from 'shared-components';
 import { Newsletter } from 'shared-components';
-import { Testimonials } from 'shared-components'
+import { Testimonials } from 'shared-components';
 
 import {
   ArrowPathIcon,
@@ -283,17 +283,17 @@ const HomePage = () => {
   };
 
   const newsletterConfig = {
-    privacyUrl: "/privacy"
-  }
+    privacyUrl: '/privacy',
+  };
 
   return (
     <>
-      <Hero.SlantedImageAnimated config={heroConfig} />
-      <Features.BasicAnimated services={services} />
+      <Hero.SlantedImage config={heroConfig} />
+      <Features.Basic services={services} />
       <Features.Video config={teamSectionConfig} />
-      <Newsletter.SimpleAnimated config={newsletterConfig}/>
-      <Features.ChecklistAnimated config={questionsConfig} />
-      <Testimonials.BasicAnimated config={testimonialsConfig} />
+      <Newsletter.Simple config={newsletterConfig} />
+      <Features.Checklist config={questionsConfig} />
+      <Testimonials.Basic config={testimonialsConfig} />
       <Testimonials.Quote config={QuoteConfig} />
     </>
   );

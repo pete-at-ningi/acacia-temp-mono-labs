@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import SignupWidget from './SignupWidget';
 
 const OutsideWrapper = styled.div`
@@ -7,11 +8,10 @@ const OutsideWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0;
-  margin-top: 30px;
   background-color: ${(props) => props.theme.colors.background};
 `;
 
-const NewsletterSection = styled.section`
+const NewsletterSection = styled(motion.section)`
   position: relative;
   background-color: ${(props) => props.theme.colors.primary};
   background: radial-gradient(
@@ -63,7 +63,12 @@ const CenterCard = ({ config }) => {
 
   return (
     <OutsideWrapper>
-      <NewsletterSection>
+      <NewsletterSection
+        initial={{ scale: 0.6, opacity: 0 }}
+        transition={{ duration: 0.8, ease: 'easeInOut' }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true, amount: 0.8 }}  
+      >
         <TextWrapper>
           <Heading>Subscribe to our newsletter.</Heading>
           <SubText>

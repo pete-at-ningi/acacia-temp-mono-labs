@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
 
 const OutsideWrapper = styled.div`
   padding: ${(props) => props.theme.spacings.xlarge}
@@ -62,7 +64,7 @@ const TestimonialList = styled.div`
   }
 `;
 
-const TestimonialCard = styled.figure`
+const TestimonialCard = styled(motion.figure)`
   background-color: ${(props) => props.theme.colors.white};
   border-radius: ${(props) => props.theme.borders.radius};
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -113,19 +115,35 @@ const Group = styled.div`
   gap: ${(props) => props.theme.spacings.large};
 `;
 
-const Testimonials = ({ config }) => {
-  const firstGroup = config.testimonials.slice(
-    0,
-    Math.ceil(config.testimonials.length / 3)
-  );
-  const secondGroup = config.testimonials.slice(
-    Math.ceil(config.testimonials.length / 3),
-    Math.ceil((config.testimonials.length / 3) * 2)
-  );
-  const thirdGroup = config.testimonials.slice(
-    Math.ceil((config.testimonials.length / 3) * 2),
-    config.testimonials.length
-  );
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Adjust timing for each row
+      },
+    },
+  };
+  
+  const cardVariants = {
+    hidden: { opacity: 0, rotateY: 90 },
+    visible: { opacity: 1, rotateY: 0, transition: { duration: 0.6 } },
+  };
+  
+  const Testimonials = ({ config }) => {
+    const firstGroup = config.testimonials.slice(
+      0,
+      Math.ceil(config.testimonials.length / 3)
+    );
+    const secondGroup = config.testimonials.slice(
+      Math.ceil(config.testimonials.length / 3),
+      Math.ceil((config.testimonials.length / 3) * 2)
+    );
+    const thirdGroup = config.testimonials.slice(
+      Math.ceil((config.testimonials.length / 3) * 2),
+      config.testimonials.length
+    );
+
 
   return (
     <OutsideWrapper>
@@ -136,9 +154,15 @@ const Testimonials = ({ config }) => {
             <Heading>{config.heading}</Heading>
           </HeadingWrapper>
           <TestimonialGrid>
-            <Group>
+            <Group
+              as={motion.div}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               {firstGroup.map((testimonial, idx) => (
-                <TestimonialCard key={idx}>
+                <TestimonialCard key={idx} variants={cardVariants}>
                   <TestimonialBody>{`“${testimonial.body}”`}</TestimonialBody>
                   <TestimonialAuthorWrapper>
                     <AuthorImage
@@ -153,9 +177,15 @@ const Testimonials = ({ config }) => {
                 </TestimonialCard>
               ))}
             </Group>
-            <Group>
+            <Group
+              as={motion.div}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               {secondGroup.map((testimonial, idx) => (
-                <TestimonialCard key={idx}>
+                <TestimonialCard key={idx} variants={cardVariants}>
                   <TestimonialBody>{`“${testimonial.body}”`}</TestimonialBody>
                   <TestimonialAuthorWrapper>
                     <AuthorImage
@@ -170,9 +200,15 @@ const Testimonials = ({ config }) => {
                 </TestimonialCard>
               ))}
             </Group>
-            <Group>
+            <Group
+              as={motion.div}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               {thirdGroup.map((testimonial, idx) => (
-                <TestimonialCard key={idx}>
+                <TestimonialCard key={idx} variants={cardVariants}>
                   <TestimonialBody>{`“${testimonial.body}”`}</TestimonialBody>
                   <TestimonialAuthorWrapper>
                     <AuthorImage
@@ -188,24 +224,6 @@ const Testimonials = ({ config }) => {
               ))}
             </Group>
           </TestimonialGrid>
-
-          <TestimonialList>
-            {config.testimonials.slice(0, 7).map((testimonial, idx) => (
-              <TestimonialCard key={idx}>
-                <TestimonialBody>{`“${testimonial.body}”`}</TestimonialBody>
-                <TestimonialAuthorWrapper>
-                  <AuthorImage
-                    src={testimonial.author.imageUrl}
-                    alt={testimonial.author.name}
-                  />
-                  <AuthorInfo>
-                    <AuthorName>{testimonial.author.name}</AuthorName>
-                    <AuthorArea>{testimonial.author.area}</AuthorArea>
-                  </AuthorInfo>
-                </TestimonialAuthorWrapper>
-              </TestimonialCard>
-            ))}
-          </TestimonialList>
         </InnerWrapper>
       </Section>
     </OutsideWrapper>

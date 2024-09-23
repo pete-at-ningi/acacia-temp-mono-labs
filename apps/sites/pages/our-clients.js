@@ -1,7 +1,7 @@
 import React from 'react';
-import config from '../config'
+import config from '../config';
 
-import { Hero } from 'shared-components'
+import { Hero } from 'shared-components';
 import { Newsletter } from 'shared-components';
 import { Content } from 'shared-components';
 import { BlogFeatured } from 'shared-components';
@@ -20,7 +20,7 @@ const ourClientsConfig = {
   primaryCTA: {
     label: 'Speak to an adviser',
     route: '/contact',
-  }
+  },
 };
 
 const WithTestimonalConfig = {
@@ -71,15 +71,16 @@ const WithTestimonalConfig = {
 };
 
 const newsletterConfig = {
-  privacyUrl: "/privacy"
-}
+  privacyUrl: '/privacy',
+};
 
 const OurClients = () => {
   return (
     <>
-      <Hero.SlantedImageAnimated config={ourClientsConfig} /> <Newsletter.CenterCard config={newsletterConfig}/>
-      <Content.WithTestimonialAnimated config={WithTestimonalConfig} />
-      <BlogFeatured.BasicAnimated config={config.blog} limit={3} />
+      <Hero.SlantedImage config={ourClientsConfig} />{' '}
+      <Newsletter.CenterCard config={newsletterConfig} />
+      <Content.WithTestimonial config={WithTestimonalConfig} />
+      <BlogFeatured.Basic config={config.blog} limit={3} />
     </>
   );
 };

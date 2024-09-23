@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 import { Bars3Icon, XMarkIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 const Header = styled.header`
@@ -18,7 +19,13 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: padding 0.3s ease;
+
+  &.scrolled {
+    padding: 1.5px; 
+  }
 `;
+
 
 const Logo = styled.a`
   display: flex;
@@ -171,7 +178,26 @@ const MobileActionMenuWrapper = styled.div`
 `;
 
 const BasicHeader = ({ config }) => {
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -179,7 +205,7 @@ const BasicHeader = ({ config }) => {
 
   return (
     <Header>
-      <Nav>
+      <Nav className={isScrolled ? 'scrolled' : ''}>
         <Logo href='/'>
           <img src='/icon.png' alt='Acacia Wealth' />
           Acacia Wealth

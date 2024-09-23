@@ -5,7 +5,7 @@ import { GlobalStyle } from '../styles/GlobalStyle';
 import Config from '../config';
 
 import { Header } from 'shared-components';
-import { Footer} from 'shared-components';
+import { Footer } from 'shared-components';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         <meta property='og:image' content={Config.header.ogImage} />
         <meta name='theme-color' content={Config.header.themeColor} />
       </Head>
-      <Header.Animated config={Config.nav} />
+      <Header.Basic config={Config.nav} />
       <main>
         <Component {...pageProps} />
       </main>

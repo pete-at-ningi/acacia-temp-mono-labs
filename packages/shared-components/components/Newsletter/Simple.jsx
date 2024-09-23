@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import SignupWidgetEmoji from './SignupWidgetEmoji';
+import { motion } from 'framer-motion';
+import SignupWidgetEmoji from './SignupWidget';
 
 const OutsideWrapper = styled.div`
   padding: 0;
@@ -18,7 +19,7 @@ const NewsletterSection = styled.section`
   overflow: hidden;
 `;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled(motion.div)`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
   margin: 0 auto;
   gap: ${(props) => props.theme.spacings.xlarge};
@@ -47,7 +48,7 @@ const PrivacyText = styled.a`
   letter-spacing: 1px;
   color: white;
   margin-top: ${(props) => props.theme.spacings.medium};
-  display: block; 
+  display: block;
 `;
 
 const NewsletterSignup = ({ config }) => {
@@ -58,19 +59,25 @@ const NewsletterSignup = ({ config }) => {
   return (
     <OutsideWrapper>
       <NewsletterSection>
-        <ContentWrapper>
+        <ContentWrapper
+          initial={{ x: -80, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          viewport={{ once: true, amount: 0.8 }}
+        >
           <TextWrapper>
             <Heading>Subscribe to our newsletter.</Heading>
             <SubText>
-              Stay updated with the latest financial planning tips and news from Acacia Wealth. We promise no spam, just valuable insights.
+              Stay updated with the latest financial planning tips and news from
+              Acacia Wealth. We promise no spam, just valuable insights.
             </SubText>
             <SignupWidgetEmoji onSubmit={handleSubmit} />
             <PrivacyText href={config.privacyUrl}>
-               We care about your data. Read our <i style={{ color: '#B026FF' }}>privacy policy.</i>
-          </PrivacyText>
+              We care about your data. Read our{' '}
+              <i style={{ color: '#B026FF' }}>privacy policy.</i>
+            </PrivacyText>
           </TextWrapper>
         </ContentWrapper>
-
       </NewsletterSection>
     </OutsideWrapper>
   );

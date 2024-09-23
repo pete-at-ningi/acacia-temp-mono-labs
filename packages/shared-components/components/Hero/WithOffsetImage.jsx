@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion'
 const OutsideWrapper = styled.div``;
 
 const HeroSection = styled.section`
@@ -13,7 +14,8 @@ const HeroSection = styled.section`
   overflow: hidden;
   border-radius: ${(props) => props.theme.borders.radius};
   background-color: ${(props) => props.theme.colors.white};
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${(props) => props.theme.breakpoints.tablet},
+    ${(props) => props.theme.breakpoints.mobile} {
     grid-template-columns: 1fr;
     height: 100vh;
   }
@@ -30,29 +32,49 @@ const LeftColumn = styled.div`
     ${(props) => props.theme.spacings.large};
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1).attrs(() => ({
+  initial: { opacity: 0, y: 70 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8 },
+}))`
   font-size: ${(props) => props.theme.fontSizes.xlarge};
   font-weight: 700;
   margin-bottom: ${(props) => props.theme.spacings.large};
   color: ${(props) => props.theme.colors.dark};
 `;
 
-const Subtitle = styled.p`
+const Subtitle = styled(motion.p).attrs(() => ({
+  initial: { opacity: 0, y: 70 },
+  animate: { opacity: 1, y: 0 },
+  transition: { delay: 0.3, duration: 0.8 },
+}))`
   font-size: ${(props) => props.theme.fontSizes.medium};
   margin-bottom: ${(props) => props.theme.spacings.large};
   color: ${(props) => props.theme.colors.gray};
 `;
 
-const CTAButtons = styled.div`
+const CTAButtons = styled(motion.div).attrs(() => ({
+  initial: { opacity: 0, y: 70 },
+  animate: { opacity: 1, y: 0 },
+  transition: { delay: 0.4, duration: 0.8 },
+}))`
   display: flex;
   gap: ${(props) => props.theme.spacings.medium};
   margin-bottom: 0;
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${(props) => props.theme.breakpoints.tablet},
+    ${(props) => props.theme.breakpoints.mobile} {
     margin-bottom: ${(props) => props.theme.spacings.xlarge};
   }
 `;
 
-const CTAButton = styled.a`
+
+// Hover button
+const CTAButton = styled(motion.a).attrs(() => ({
+  whileHover: {
+    scale: 1.1,
+    transition: { duration: 0.2 },
+  }
+}))`
   display: inline-block;
   font-size: ${(props) => props.theme.fontSizes.medium};
   padding: ${(props) => props.theme.spacings.small}
@@ -67,13 +89,13 @@ const CTAButton = styled.a`
   border: 2px solid transparent;
   margin-right: ${(props) =>
     props.primary ? props.theme.spacings.medium : '0'};
-
-  &:hover {
-    opacity: ${(props) => props.theme.hover.opacity};
-  }
 `;
 
-const RightColumn = styled.div`
+const RightColumn = styled(motion.div).attrs(() => ({
+  initial: { opacity: 0, rotateY: 90 },
+  animate: { opacity: 1, rotateY: 0 },
+  transition: { delay: 0.3, duration: 0.8, ease: "easeInOut" },
+}))`
   display: flex;
   justify-content: center;
   align-items: flex-end;

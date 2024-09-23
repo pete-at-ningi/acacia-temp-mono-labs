@@ -1,4 +1,3 @@
-// shared-config/components/SignupWidget/SimpleSignupWidget.js
 export default {
     name: 'SimpleSignupWidget',
     category: 'Newsletter',

@@ -1,4 +1,3 @@
-// shared-config/components/Testimonials/TestimonialsWithGrid.js
 export default {
     name: 'TestimonialsWithGrid',
     category: 'Testimonials',

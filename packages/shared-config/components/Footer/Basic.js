@@ -1,4 +1,3 @@
-// shared-config/components/Footer/FooterWithContactAndSocials.js
 export default {
     name: 'FooterWithContactAndSocials',
     category: 'Footer',

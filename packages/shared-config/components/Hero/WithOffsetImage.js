@@ -1,4 +1,3 @@
-// shared-config/components/Hero/HeroWithImageAndCTA.js
 export default {
     name: 'HeroWithImageAndCTA',
     category: 'Hero',

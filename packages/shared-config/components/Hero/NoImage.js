@@ -1,4 +1,3 @@
-// shared-config/components/Hero/HeroWithOverlayAndCTA.js
 export default {
     name: 'HeroWithOverlayAndCTA',
     category: 'Hero',

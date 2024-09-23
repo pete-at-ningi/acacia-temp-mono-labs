@@ -1,4 +1,3 @@
-// shared-config/components/BlogFeatured/Basic.js
 export default {
     name: 'Basic',
     category: 'BlogFeatured',

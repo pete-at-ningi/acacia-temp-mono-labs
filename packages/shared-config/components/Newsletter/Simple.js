@@ -1,4 +1,3 @@
-// shared-config/components/NewsletterSignup/NewsletterSignupWithPrivacy.js
 export default {
     name: 'NewsletterSignupWithPrivacy',
     category: 'Newsletter',

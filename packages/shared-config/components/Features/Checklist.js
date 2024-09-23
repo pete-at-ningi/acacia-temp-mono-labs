@@ -1,4 +1,3 @@
-// shared-config/components/QuestionsSection/QuestionsSection.js
 export default {
     name: 'QuestionsSection',
     category: 'FAQ',

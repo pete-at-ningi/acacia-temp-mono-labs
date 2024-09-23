@@ -1,4 +1,3 @@
-// shared-config/components/Hero/HeroWithBlogTagAndImage.js
 export default {
     name: 'HeroWithBlogTagAndImage',
     category: 'Hero',

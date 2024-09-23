@@ -79,14 +79,14 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3, // Adjust this for delay between children animations
+      staggerChildren: 0.3, 
     },
   },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }, // Control individual item animation
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }, 
 };
 
 const QuestionsSection = ({ config }) => {
@@ -103,7 +103,7 @@ const QuestionsSection = ({ config }) => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }} // Adjust for triggering in view
+            viewport={{ once: true, amount: 0.3 }}
           >
             {config.questions.map((question, index) => (
               <QuestionWrapper key={index} variants={itemVariants}>

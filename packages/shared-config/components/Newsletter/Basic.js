@@ -1,4 +1,3 @@
-// shared-config/components/NewsletterSignup/NewsletterSignupWithBadges.js
 export default {
     name: 'NewsletterSignupWithBadges',
     category: 'Newsletter',

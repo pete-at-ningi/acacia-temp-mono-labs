@@ -1,4 +1,3 @@
-// shared-config/components/Hero/Hero.js
 export default {
   name: 'Hero',
   category: 'Hero',

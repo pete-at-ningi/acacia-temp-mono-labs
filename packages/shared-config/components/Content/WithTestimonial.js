@@ -1,4 +1,3 @@
-// shared-config/components/WithTestimonial/WithTestimonial.js
 export default {
     name: 'WithTestimonial',
     category: 'Testimonial',
@@ -134,18 +133,6 @@ export default {
             example: 'https://example.com/profile.jpg'
           }
         ]
-      }
-    ],
-    
-    options: [
-      {
-        name: 'layout',
-        type: 'select',
-        label: 'Section Layout',
-        description: `
-          This option controls the layout of the section, particularly the positioning of the content and testimonial. Options include side-by-side or stacked layouts, depending on how much emphasis is needed on each element.`,
-        choices: ['side-by-side', 'stacked'],
-        default: 'side-by-side'
       }
     ]
   };

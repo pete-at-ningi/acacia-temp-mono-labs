@@ -1,4 +1,3 @@
-// shared-config/components/QuoteItem/QuoteItemWithImageAndAuthor.js
 export default {
     name: 'QuoteItemWithImageAndAuthor',
     category: 'Testimonial',

@@ -1,4 +1,3 @@
-// shared-config/components/Services/ServicesWithGrid.js
 export default {
     name: 'ServicesWithGrid',
     category: 'Services',

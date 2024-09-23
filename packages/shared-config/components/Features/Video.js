@@ -1,4 +1,3 @@
-// shared-config/components/TeamSection/TeamSectionWithBadgesAndVideo.js
 export default {
     name: 'TeamSectionWithBadgesAndVideo',
     category: 'Team',

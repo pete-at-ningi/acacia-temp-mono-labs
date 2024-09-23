@@ -1,4 +1,3 @@
-// shared-config/components/DividerLine/SimpleDividerLine.js
 export default {
     name: 'SimpleDividerLine',
     category: 'Misc',

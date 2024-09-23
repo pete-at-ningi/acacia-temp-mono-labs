@@ -1,4 +1,3 @@
-// shared-config/components/CenterCard/NewsletterSignupCard.js
 export default {
     name: 'NewsletterSignupCard',
     category: 'Newsletter',

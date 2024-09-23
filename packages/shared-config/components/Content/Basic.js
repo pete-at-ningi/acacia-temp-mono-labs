@@ -1,4 +1,3 @@
-// shared-config/components/ContentPage/ContentPageWithSections.js
 export default {
     name: 'ContentPageWithSections',
     category: 'Content',
@@ -133,18 +132,6 @@ export default {
             example: 'Our team working on the latest project.'
           }
         ]
-      }
-    ],
-    
-    options: [
-      {
-        name: 'layout',
-        type: 'select',
-        label: 'Page Layout',
-        description: `
-          This option controls the overall layout of the content page. It allows for different structural variations such as a single-column layout or a two-column layout. The layout affects the way content is organized and displayed.`,
-        choices: ['single-column', 'two-column'],
-        default: 'single-column'
       }
     ]
   };

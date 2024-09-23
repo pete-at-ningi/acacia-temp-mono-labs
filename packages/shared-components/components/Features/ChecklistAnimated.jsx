@@ -103,7 +103,7 @@ const QuestionsSection = ({ config }) => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.8 }}
           >
             {config.questions.map((question, index) => (
               <QuestionWrapper key={index} variants={itemVariants}>

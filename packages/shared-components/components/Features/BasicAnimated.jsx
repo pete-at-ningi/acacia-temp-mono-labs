@@ -124,7 +124,7 @@ const Services = ({ services }) => {
           <SectionDescription>{services.description}</SectionDescription>
           <DividerLine />
         </SectionHeader>
-        <ServicesGrid as={motion.div} variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: false }}>
+        <ServicesGrid as={motion.div} variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           {services.items.map((service) => (
             <ServiceItem key={service.name} href={service.href} variants={itemVariants}>
               <ServiceTitle>

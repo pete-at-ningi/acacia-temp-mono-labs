@@ -62,7 +62,7 @@ const NewsletterSignup = ({ config }) => {
         <ContentWrapper
         initial={{x:-80, opacity: 0}}
         whileInView={{x:0, opacity: 1}}
-        transition={{duration: 0.5, ease: 'easeInOut'}}
+        transition={{duration: 1, ease: 'easeInOut'}}
         viewport={{ once: true, amount: 0.8}}
         >
           <TextWrapper>

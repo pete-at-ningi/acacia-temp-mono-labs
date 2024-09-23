@@ -1,6 +1,8 @@
 import React from 'react';
-import Hero from '../../components/Hero/WithOffsetImage';
-import Services from '../../components/Features/Basic';
+
+
+import { Hero } from 'shared-components'
+import { Features } from 'shared-components';
 import {
   ArrowPathIcon,
   CloudArrowUpIcon,
@@ -78,8 +80,8 @@ const services = {
 const OurClients = () => {
   return (
     <>
-      <Hero config={WhatWeDoHero} />
-      <Services services={services} />
+      <Hero.WithOffsetImage config={WhatWeDoHero} />
+      <Features.Basic services={services} />
     </>
   );
 };

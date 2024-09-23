@@ -1,11 +1,11 @@
-import NewsletterSignup from '../../components/Blog/Newsletter/Basic';
-import BlogFeatured from '../../components/Blog/Featured/Basic';
+import { Newsletter } from 'shared-components';
+import { BlogFeatured } from 'shared-components';
 
 const HomePage = () => {
   return (
     <>
-      <NewsletterSignup />
-      <BlogFeatured />
+      <Newsletter.Basic />
+      <BlogFeatured.Basic />
     </>
   );
 };

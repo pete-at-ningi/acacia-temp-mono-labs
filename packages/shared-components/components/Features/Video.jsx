@@ -72,7 +72,8 @@ const BadgesWrapper = styled.div`
   flex-direction: column;
   gap: ${(props) => props.theme.spacings.medium};
   margin: ${(props) => props.theme.spacings.large} 0;
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${(props) => props.theme.breakpoints.tablet},
+    ${(props) => props.theme.breakpoints.mobile} {
     flex-direction: row;
   }
   @media ${(props) => props.theme.breakpoints.desktop} {

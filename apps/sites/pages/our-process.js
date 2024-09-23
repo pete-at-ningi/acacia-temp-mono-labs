@@ -40,7 +40,8 @@ const StepContainer = styled.div`
   gap: ${(props) => props.theme.spacings.large};
   margin-bottom: ${(props) => props.theme.spacings.large};
 
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${(props) => props.theme.breakpoints.tablet},
+    ${(props) => props.theme.breakpoints.mobile} {
     grid-template-columns: 1fr;
   }
 `;

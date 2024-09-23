@@ -1,4 +1,4 @@
-import Content from '../../components/Content/Basic';
+import { Content } from 'shared-components'
 
 const secureLegacyConfig = {
   subtitle: 'Introducing',
@@ -85,7 +85,7 @@ const secureLegacyConfig = {
 const SecureLegacy = () => {
   return (
     <>
-      <Content config={secureLegacyConfig} />
+      <Content.BlogProgress config={secureLegacyConfig} />
     </>
   );
 };

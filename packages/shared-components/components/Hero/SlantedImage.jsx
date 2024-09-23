@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from "framer-motion";
+
 const OutsideWrapper = styled.div``;
 
-//
+
 const HeroSection = styled.section`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
   margin: 0 auto;
@@ -81,7 +83,8 @@ const RightColumn = styled.div`
   background-repeat: no-repeat;
 
   @media ${(props) => props.theme.breakpoints.desktop} {
-    transform: skewX(-10deg) translateX(18%);
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: translateX(18%); 
   }
 `;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SignupWidget from './SignupWidget';
+import SignupWidgetEmoji from './SignupWidgetEmoji';
 
 const OutsideWrapper = styled.div`
   padding: 0;
@@ -21,13 +21,7 @@ const NewsletterSection = styled.section`
 const ContentWrapper = styled.div`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
   gap: ${(props) => props.theme.spacings.xlarge};
-
-  @media ${(props) => props.theme.breakpoints.desktop} {
-    grid-template-columns: repeat(2, 1fr);
-  }
   padding-bottom: ${(props) => props.theme.spacings.large};
 `;
 
@@ -70,7 +64,7 @@ const NewsletterSignup = ({ config }) => {
             <SubText>
               Stay updated with the latest financial planning tips and news from Acacia Wealth. We promise no spam, just valuable insights.
             </SubText>
-            <SignupWidget onSubmit={handleSubmit} />
+            <SignupWidgetEmoji onSubmit={handleSubmit} />
             <PrivacyText href={config.privacyUrl}>
                We care about your data. Read our <i style={{ color: '#B026FF' }}>privacy policy.</i>
           </PrivacyText>

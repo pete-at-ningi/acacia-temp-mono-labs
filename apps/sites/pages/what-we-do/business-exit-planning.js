@@ -1,4 +1,4 @@
-import Content from '../../components/Content/Basic';
+import { Content } from 'shared-components'
 
 const businessExitPlanningConfig = {
   subtitle: 'Introducing',
@@ -84,7 +84,7 @@ const businessExitPlanningConfig = {
 const BusinessExitPlanning = () => {
   return (
     <>
-      <Content config={businessExitPlanningConfig} />
+      <Content.Basic config={businessExitPlanningConfig} />
     </>
   );
 };

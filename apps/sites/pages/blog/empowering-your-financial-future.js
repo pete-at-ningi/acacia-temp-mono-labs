@@ -1,4 +1,4 @@
-import Content from '../../components/Content/Basic';
+import { Content } from 'shared-components'
 
 const empowerFutureConfig = {
   subtitle: 'Introducing',
@@ -85,7 +85,7 @@ const empowerFutureConfig = {
 const EmpowerFuture = () => {
   return (
     <>
-      <Content config={empowerFutureConfig} />
+      <Content.BlogProgress config={empowerFutureConfig} />
     </>
   );
 };

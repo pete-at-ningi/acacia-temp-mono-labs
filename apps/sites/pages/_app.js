@@ -4,8 +4,8 @@ import { GlobalStyle } from '../styles/GlobalStyle';
 
 import Config from '../config';
 
-import Footer from '../components/Footer/Basic';
 import { Header } from 'shared-components';
+import { Footer} from 'shared-components';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -21,11 +21,11 @@ function MyApp({ Component, pageProps }) {
         <meta property='og:image' content={Config.header.ogImage} />
         <meta name='theme-color' content={Config.header.themeColor} />
       </Head>
-      <Header.Basic config={Config.nav} />
+      <Header.Animated config={Config.nav} />
       <main>
         <Component {...pageProps} />
       </main>
-      <Footer config={Config} />
+      <Footer.Basic config={Config} />
     </ThemeProvider>
   );
 }

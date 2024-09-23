@@ -1,8 +1,11 @@
 import React from 'react';
-import Hero from '../components/Hero/SplitWithImage';
-import WithTestimonal from '../components/Content/WithTestimonal';
-import NewsletterSignup from '../components/Blog/Newsletter/Simple';
-import BlogFeatured from '../components/Blog/Featured/Basic';
+import config from '../config'
+
+import { Hero } from 'shared-components'
+import { Newsletter } from 'shared-components';
+import { Content } from 'shared-components';
+import { BlogFeatured } from 'shared-components';
+
 import {
   CloudArrowUpIcon,
   LockClosedIcon,
@@ -17,7 +20,7 @@ const ourClientsConfig = {
   primaryCTA: {
     label: 'Speak to an adviser',
     route: '/contact',
-  },
+  }
 };
 
 const WithTestimonalConfig = {
@@ -74,9 +77,9 @@ const newsletterConfig = {
 const OurClients = () => {
   return (
     <>
-      <Hero config={ourClientsConfig} /> <NewsletterSignup config={newsletterConfig}/>
-      <WithTestimonal config={WithTestimonalConfig} />
-      <BlogFeatured limit={3} />
+      <Hero.SlantedImageAnimated config={ourClientsConfig} /> <Newsletter.CenterCard config={newsletterConfig}/>
+      <Content.WithTestimonialAnimated config={WithTestimonalConfig} />
+      <BlogFeatured.BasicAnimated config={config.blog} limit={3} />
     </>
   );
 };

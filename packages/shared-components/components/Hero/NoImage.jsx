@@ -54,7 +54,8 @@ const Title = styled.h1`
   margin-bottom: ${(props) => props.theme.spacings.large};
   letter-spacing: 1px;
 
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${(props) => props.theme.breakpoints.tablet},
+    ${(props) => props.theme.breakpoints.mobile} {
     font-size: ${(props) => props.theme.fontSizes.xlarge};
   }
 `;

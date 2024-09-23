@@ -5,6 +5,10 @@ const FormWrapper = styled.form`
   width: 100%;
   display: flex;
   gap: ${(props) => props.theme.spacings.small};
+
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const Input = styled.input`
@@ -17,6 +21,7 @@ const Input = styled.input`
   background-color: rgba(255, 255, 255, 0.9);
   outline: none;
   font-size: ${(props) => props.theme.fontSizes.medium};
+
   &:focus {
     background-color: rgba(255, 255, 255, 0.2);
   }
@@ -35,7 +40,14 @@ const Button = styled.button`
   &:hover {
     background-color: ${(props) => props.theme.colors.primary};
   }
+
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    width: 100%;
+  }
 `;
+const SubscribedText = styled.p`
+color: white;
+`
 
 const SignupWidget = ({ onSubmit }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -53,7 +65,7 @@ const SignupWidget = ({ onSubmit }) => {
       <Button type='submit'>Subscribe</Button>
     </FormWrapper>
   ) : (
-    <p>Thanks, sign-up confirmed!</p>
+    <SubscribedText>Thanks, sign-up confirmed!</SubscribedText>
   );
 };
 

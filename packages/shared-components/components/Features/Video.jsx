@@ -120,9 +120,17 @@ const VideoWrapper = styled.div`
   }
   iframe {
     height: 500px;
-    width: 500px;
+    width: 400px;
     border-radius: ${(props) => props.theme.borders.radius};
   }
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    iframe {
+    height: 400px;
+    width: 300px;
+    }
+  }
+
+  
 `;
 
 const TeamSection = ({ config }) => {

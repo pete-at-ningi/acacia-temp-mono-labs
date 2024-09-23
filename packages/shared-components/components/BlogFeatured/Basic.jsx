@@ -36,8 +36,13 @@ const PostsGrid = styled.div`
   gap: ${(props) => props.theme.spacings.xlarge};
 
   @media ${(props) => props.theme.breakpoints.tablet},
-    ${(props) => props.theme.breakpoints.mobile} {
+  {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media ${(props) => props.theme.breakpoints.mobile},
+  {
+    grid-template-columns: 1fr;
   }
 `;
 

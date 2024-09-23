@@ -224,6 +224,23 @@ const containerVariants = {
               ))}
             </Group>
           </TestimonialGrid>
+          <TestimonialList>
+            {config.testimonials.slice(0, 7).map((testimonial, idx) => (
+              <TestimonialCard key={idx}>
+                <TestimonialBody>{`“${testimonial.body}”`}</TestimonialBody>
+                <TestimonialAuthorWrapper>
+                  <AuthorImage
+                    src={testimonial.author.imageUrl}
+                    alt={testimonial.author.name}
+                  />
+                  <AuthorInfo>
+                    <AuthorName>{testimonial.author.name}</AuthorName>
+                    <AuthorArea>{testimonial.author.area}</AuthorArea>
+                  </AuthorInfo>
+                </TestimonialAuthorWrapper>
+              </TestimonialCard>
+            ))}
+          </TestimonialList>
         </InnerWrapper>
       </Section>
     </OutsideWrapper>

@@ -8,6 +8,14 @@ import WebsiteList from '../../components/Websites/List';
 
 const Wrapper = styled.div`
   padding: 2rem;
+  h1 {
+    span {
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+  }
 `;
 export default function FirmDetails() {
   const router = useRouter();
@@ -18,9 +26,7 @@ export default function FirmDetails() {
     handleSetActiveFirm,
     clearActiveFirm,
     isSaving,
-    unsavedChanges,
     handleUpdateFirm,
-    handleSaveUpdates,
     handleDeleteFirm,
   } = useFirms();
 
@@ -44,10 +50,6 @@ export default function FirmDetails() {
     handleUpdateFirm(name, value);
   };
 
-  const handleSave = async () => {
-    await handleSaveUpdates();
-  };
-
   const handleDeleteThisFirm = () => {
     handleDeleteFirm(activeFirm.id);
     router.push(`/firms`);
@@ -59,11 +61,11 @@ export default function FirmDetails() {
         <Link href='/firms'>
           <a>← Back to Firms</a>
         </Link>
-        <h1>{activeFirm.name}</h1>
-        <button onClick={handleSave} disabled={isSaving}>
-          {isSaving ? 'Saving...' : 'Save Changes'}
-        </button>
-        {unsavedChanges && <p>You have unsaved changes.</p>}
+        <h1>
+          {activeFirm.name}
+          <span>{isSaving && 'Saving Changes...'}</span>
+        </h1>
+
         <div>
           <label>
             Firm Name:

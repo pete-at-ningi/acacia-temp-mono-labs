@@ -1,5 +1,3 @@
-// hooks/useFirms.js
-
 import { createContext, useContext, useState, useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
 import { useDebounce } from './useDebounce';
@@ -18,17 +16,13 @@ export function FirmProvider({ children }) {
   const [search, setSearch] = useState('');
   const [isSaving, setIsSaving] = useState(false);
   const [unsavedChanges, setUnsavedChanges] = useState(false);
+
   const debouncedSearch = useDebounce(search, 500);
+  const debouncedSave = useDebounce(activeFirm, 1000); // Debounce for auto-save
 
   // Fetch all firms
   const fetchFirms = async () => {
     let query = supabase.from('firms').select('*');
-
-    // If you need to filter firms based on user profile, adjust here
-    // For example, if the user can only see their own firm:
-    // if (profile && profile.firm_id) {
-    //   query = query.eq('id', profile.firm_id);
-    // }
 
     const { data, error } = await query;
     if (error) {
@@ -58,6 +52,13 @@ export function FirmProvider({ children }) {
       setFirms(allFirms);
     }
   }, [debouncedSearch, allFirms]);
+
+  // Autosave functionality with debounced activeFirm changes
+  useEffect(() => {
+    if (debouncedSave && unsavedChanges) {
+      handleSaveUpdates();
+    }
+  }, [debouncedSave]);
 
   // Fetch a single firm by ID
   const fetchFirmById = async (firmId) => {
@@ -122,7 +123,6 @@ export function FirmProvider({ children }) {
       } else {
         await fetchFirms();
         setUnsavedChanges(false);
-        setIsSaving(false);
         addNotification(
           'Firm Saved',
           'Successfully saved changes to firm record',
@@ -133,6 +133,7 @@ export function FirmProvider({ children }) {
     } catch (error) {
       console.error('update error', error);
       addNotification('Update Error', error.message, 'error');
+    } finally {
       setIsSaving(false);
     }
   };

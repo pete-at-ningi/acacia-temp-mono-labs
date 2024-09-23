@@ -40,49 +40,12 @@ export function WebsitePagesProvider({ children }) {
     }
   };
 
-  // Update a website page
-  const updateWebsitePage = async (pageId, pageData) => {
-    setIsSaving(true);
-    const { data, error } = await supabase
-      .from('website_pages')
-      .update(pageData)
-      .eq('id', pageId)
-      .single();
-
-    if (error) {
-      addNotification('Error updating page', error.message, 'error');
-    } else {
-      setWebsitePages((prev) =>
-        prev.map((page) => (page.id === pageId ? data : page))
-      );
-      addNotification('Page Updated', 'Page updated successfully', 'success');
-    }
-    setIsSaving(false);
-  };
-
-  // Delete a website page
-  const deleteWebsitePage = async (pageId) => {
-    const { error } = await supabase
-      .from('website_pages')
-      .delete()
-      .eq('id', pageId);
-
-    if (error) {
-      addNotification('Error deleting page', error.message, 'error');
-    } else {
-      setWebsitePages((prev) => prev.filter((page) => page.id !== pageId));
-      addNotification('Page Deleted', 'Page deleted successfully', 'success');
-    }
-  };
-
   return (
     <WebsitePagesContext.Provider
       value={{
         websitePages,
         fetchWebsitePages,
         addWebsitePage,
-        updateWebsitePage,
-        deleteWebsitePage,
         isSaving,
       }}
     >

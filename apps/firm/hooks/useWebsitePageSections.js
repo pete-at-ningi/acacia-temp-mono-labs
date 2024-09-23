@@ -48,65 +48,12 @@ export function WebsitePageSectionsProvider({ children }) {
     }
   };
 
-  // Update a website section
-  const updateWebsiteSection = async (sectionId, sectionData) => {
-    setIsSaving(true);
-    const { data, error } = await supabase
-      .from('website_page_sections')
-      .update(sectionData)
-      .eq('id', sectionId)
-      .single();
-
-    if (error) {
-      addNotification('Error updating section', error.message, 'error');
-    } else {
-      const pageId = data.page_id;
-      setWebsiteSections((prev) => ({
-        ...prev,
-        [pageId]: prev[pageId].map((section) =>
-          section.id === sectionId ? data : section
-        ),
-      }));
-      addNotification(
-        'Section Updated',
-        'Section updated successfully',
-        'success'
-      );
-    }
-    setIsSaving(false);
-  };
-
-  // Delete a website section
-  const deleteWebsiteSection = async (sectionId) => {
-    const { data, error } = await supabase
-      .from('website_page_sections')
-      .delete()
-      .eq('id', sectionId);
-
-    if (error) {
-      addNotification('Error deleting section', error.message, 'error');
-    } else {
-      const pageId = data.page_id;
-      setWebsiteSections((prev) => ({
-        ...prev,
-        [pageId]: prev[pageId].filter((section) => section.id !== sectionId),
-      }));
-      addNotification(
-        'Section Deleted',
-        'Section deleted successfully',
-        'success'
-      );
-    }
-  };
-
   return (
     <WebsitePageSectionsContext.Provider
       value={{
         websiteSections,
         fetchWebsiteSections,
         addWebsiteSection,
-        updateWebsiteSection,
-        deleteWebsiteSection,
         isSaving,
       }}
     >

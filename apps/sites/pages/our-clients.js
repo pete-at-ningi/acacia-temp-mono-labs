@@ -5,6 +5,7 @@ import { Hero } from 'shared-components';
 import { Newsletter } from 'shared-components';
 import { Content } from 'shared-components';
 import { BlogFeatured } from 'shared-components';
+import { Misc } from 'shared-components';
 
 import {
   CloudArrowUpIcon,
@@ -61,12 +62,7 @@ const WithTestimonalConfig = {
     },
   ],
   quote: {
-    text: '“The peace of mind that comes with knowing my financial future is secure is priceless. Acacia has been with me every step of the way.”',
-    image:
-      'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-
-    name: 'John Doe',
-    handle: '@johndoe',
+    text: '“The peace of mind that comes with knowing your financial future is secure is priceless. Acacia will be with you every step of the way.”',
   },
 };
 
@@ -77,7 +73,7 @@ const newsletterConfig = {
 const OurClients = () => {
   return (
     <>
-      <Hero.SlantedImage config={ourClientsConfig} />{' '}
+      <Hero.SlantedImage config={ourClientsConfig} /> <Misc.Spacing />
       <Newsletter.CenterCard config={newsletterConfig} />
       <Content.WithTestimonial config={WithTestimonalConfig} />
       <BlogFeatured.Basic config={config.blog} limit={3} />

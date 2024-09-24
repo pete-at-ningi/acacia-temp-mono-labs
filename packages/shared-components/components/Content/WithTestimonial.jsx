@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const Section = styled.section`
   position: relative;
@@ -139,7 +139,6 @@ const Middle = styled(motion.div)`
   align-items: center;
 `;
 
-
 const WithTestimonial = ({ config }) => {
   return (
     <Section>
@@ -184,13 +183,15 @@ const WithTestimonial = ({ config }) => {
         >
           <QuoteSection>
             <blockquote>{config.quote.text}</blockquote>
-            <figcaption>
-              <img src={config.quote.image} alt='' />
-              <div>
-                <div className='name'>{config.quote.name}</div>
-                <div className='handle'>{config.quote.handle}</div>
-              </div>
-            </figcaption>
+            {config.quote.image && (
+              <figcaption>
+                <img src={config.quote.image} alt='' />
+                <div>
+                  <div className='name'>{config.quote.name}</div>
+                  <div className='handle'>{config.quote.handle}</div>
+                </div>
+              </figcaption>
+            )}
           </QuoteSection>
         </Middle>
       </Container>
@@ -199,4 +200,3 @@ const WithTestimonial = ({ config }) => {
 };
 
 export default WithTestimonial;
-

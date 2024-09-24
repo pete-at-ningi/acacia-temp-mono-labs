@@ -249,7 +249,6 @@ const HomePage = () => {
       <Misc.Spacing />
       <Testimonials.Quote config={QuoteConfig} />
       <Features.Basic services={services} />
-      <Misc.Spacing />
     </>
   );
 };

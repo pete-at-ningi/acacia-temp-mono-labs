@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const OutsideWrapper = styled.div``;
 
 //
-const HeroSection = styled(motion.section).attrs(() => ({
-}))`
+const HeroSection = styled(motion.section).attrs(() => ({}))`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
   margin: 0 auto;
   display: grid;
@@ -24,8 +23,7 @@ const HeroSection = styled(motion.section).attrs(() => ({
   }
 `;
 
-const LeftColumn = styled(motion.div).attrs(() => ({
-}))`
+const LeftColumn = styled(motion.div).attrs(() => ({}))`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,9 +85,8 @@ const CTAButton = styled.a`
 const RightColumn = styled(motion.div).attrs(() => ({
   initial: { opacity: 0, rotateY: 90 },
   animate: { opacity: 1, rotateY: 0 },
-  transition: { delay: 0.5, duration: 0.8, ease: "easeInOut" },
-}))`
-`;
+  transition: { delay: 0.5, duration: 0.8, ease: 'easeInOut' },
+}))``;
 
 const Image = styled.div`
   background-image: linear-gradient(
@@ -106,10 +103,9 @@ const Image = styled.div`
   width: 100%;
   @media ${(props) => props.theme.breakpoints.desktop} {
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
-    transform: translateX(18%); 
+    transform: translateX(18%);
   }
 `;
-
 
 const BlogTag = styled(motion.a).attrs(() => ({
   initial: { opacity: 0, y: 0 },
@@ -137,7 +133,7 @@ const Hero = ({ config }) => {
     <OutsideWrapper>
       <HeroSection>
         <LeftColumn>
-          <BlogTag href={config.blogtagroute}>
+          <BlogTag href='/blog'>
             {config.blogtagtitle}
             <small>
               Read Our Latest Blog <span aria-hidden='true'>→</span>
@@ -152,7 +148,7 @@ const Hero = ({ config }) => {
           </CTAButtons>
         </LeftColumn>
         <RightColumn>
-        <Image imageUrl={config.imageUrl} />
+          <Image imageUrl={config.imageUrl} />
         </RightColumn>
       </HeroSection>
     </OutsideWrapper>

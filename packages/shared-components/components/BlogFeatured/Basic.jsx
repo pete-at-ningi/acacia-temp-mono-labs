@@ -33,11 +33,11 @@ const PostsGrid = styled(motion.div)`
   margin-top: ${(props) => props.theme.spacings.xlarge};
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: ${(props) => props.theme.spacings.xlarge};
+  gap: ${(props) => props.theme.spacings.medium};
 
   @media ${(props) => props.theme.breakpoints.tablet},
     ${(props) => props.theme.breakpoints.mobile} {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -46,13 +46,12 @@ const Post = styled(motion.a)`
   flex-direction: column;
   cursor: pointer;
   transition: box-shadow 0.1s ease-in-out;
-
+  padding: ${(props) => props.theme.spacings.medium};
   &:hover {
     cursor: pointer;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
 `;
-
 
 const ImageWrapper = styled.div`
   position: relative;
@@ -148,16 +147,15 @@ const AuthorInfo = styled.div`
 `;
 
 const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delay: 0.3, 
-        staggerChildren: 0.6,
-      },
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.3,
+      staggerChildren: 0.6,
     },
-  };
-  
+  },
+};
 
 const postVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -176,22 +174,21 @@ const BlogSection = ({ limit, config }) => {
         </Header>
         <PostsGrid
           variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }} 
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.4 }}
         >
           {posts.reverse().map((post, postIndex) => (
             <Post
-            key={postIndex}
-            href={post.route}
-            variants={postVariants}
-            whileHover={{
-              y: -10,
-              transition: { duration: 0.2, ease: [0.4, 0, 0.2, 1] }, 
-            }}
-            transition={{ duration: 0.05, ease: [0.4, 0, 0.2, 1] }} 
-          >
-          
+              key={postIndex}
+              href={post.route}
+              variants={postVariants}
+              whileHover={{
+                y: -10,
+                transition: { duration: 0.2, ease: [0.4, 0, 0.2, 1] },
+              }}
+              transition={{ duration: 0.05, ease: [0.4, 0, 0.2, 1] }}
+            >
               <ImageWrapper>
                 <img src={post.image} alt={post.title} />
                 <div />

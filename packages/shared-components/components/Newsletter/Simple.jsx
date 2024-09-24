@@ -45,17 +45,12 @@ const SubText = styled.p`
 const PrivacyText = styled.a`
   font-size: ${(props) => props.theme.fontSizes.small};
   font-weight: 400;
-  letter-spacing: 1px;
   color: white;
   margin-top: ${(props) => props.theme.spacings.medium};
   display: block;
 `;
 
 const NewsletterSignup = ({ config }) => {
-  const handleSubmit = () => {
-    // Add logic to save to Supabase or another backend
-  };
-
   return (
     <OutsideWrapper>
       <NewsletterSection>
@@ -71,10 +66,9 @@ const NewsletterSignup = ({ config }) => {
               Stay updated with the latest financial planning tips and news from
               Acacia Wealth. We promise no spam, just valuable insights.
             </SubText>
-            <SignupWidgetEmoji onSubmit={handleSubmit} />
+            <SignupWidgetEmoji />
             <PrivacyText href={config.privacyUrl}>
-              We care about your data. Read our{' '}
-              <i style={{ color: '#B026FF' }}>privacy policy.</i>
+              We care about your data. Read our <i>privacy policy.</i>
             </PrivacyText>
           </TextWrapper>
         </ContentWrapper>

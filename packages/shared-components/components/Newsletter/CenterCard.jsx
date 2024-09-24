@@ -67,7 +67,7 @@ const CenterCard = ({ config }) => {
         initial={{ scale: 0.6, opacity: 0 }}
         transition={{ duration: 0.8, ease: 'easeInOut' }}
         whileInView={{ scale: 1, opacity: 1 }}
-        viewport={{ once: true, amount: 0.8 }}  
+        viewport={{ once: true, amount: 0.8 }}
       >
         <TextWrapper>
           <Heading>Subscribe to our newsletter.</Heading>
@@ -78,8 +78,7 @@ const CenterCard = ({ config }) => {
           <SignupWidget onSubmit={handleSubmit} />
         </TextWrapper>
         <PrivacyText href={config.privacyUrl}>
-          We care about your data. Read our{' '}
-          <i style={{ color: '#B026FF' }}>privacy policy.</i>
+          We care about your data. Read our <i>privacy policy.</i>
         </PrivacyText>
       </NewsletterSection>
     </OutsideWrapper>

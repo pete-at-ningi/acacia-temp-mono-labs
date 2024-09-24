@@ -225,7 +225,7 @@ const HomePage = () => {
   };
 
   const newsletterConfig = {
-    privacyUrl: '/privacy',
+    privacyUrl: '/privacy-policy',
   };
 
   const calendlyConfig = {

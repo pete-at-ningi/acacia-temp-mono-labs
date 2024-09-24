@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const FormWrapper = styled.form`
   width: 100%;
@@ -15,7 +15,7 @@ const Input = styled.input`
   border-radius: ${(props) => props.theme.borders.radius};
   border: none;
   color: ${(props) => props.theme.colors.white};
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
   outline: none;
   font-size: ${(props) => props.theme.fontSizes.medium};
   &:focus {
@@ -39,38 +39,69 @@ const Button = styled.button`
 `;
 
 const SubmittedText = styled.p`
-color: white;
-font-weight: bold;
+  color: white;
+  font-weight: bold;
 `;
 
 const SubmittedEmoji = styled(motion.p).attrs(() => ({
-    initial: { opacity: 1, scale: 1 },
-    animate: { opacity: 0, scale: 30 },
-    transition: { duration: 1.5, ease: "easeInOut" }
-  }))`
-    display: inline-block; 
-    transform-origin: center;  
-  `;
-  
+  initial: { opacity: 1, scale: 1 },
+  animate: { opacity: 0, scale: 30 },
+  transition: { duration: 1.5, ease: 'easeInOut' },
+}))`
+  display: inline-block;
+  transform-origin: center;
+`;
 
 const SignupWidget = ({ onSubmit }) => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [email, setEmail] = useState('');
 
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Add logic to save to Supabase or another backend
-    onSubmit();
-    setSubmitted(true);
-  };
+    setLoading(true);
 
+    // Send data to the API route
+    const response = await fetch('/api/sendsubscribe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: email }),
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      setLoading(false);
+      setError('Message Received! We will be in touch soon.');
+
+      setEmail('');
+      setSubmitted(true);
+      setLoading(false);
+    } else {
+      setError('Error sending message - please try again.');
+      setLoading(false);
+    }
+  };
   return !submitted ? (
     <FormWrapper onSubmit={handleSubmit}>
-      <Input type='email' placeholder='Enter your email' required />
+      <Input
+        type='email'
+        placeholder='Enter your email'
+        required
+        value={email}
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
+      />
       <Button type='submit'>Subscribe</Button>
     </FormWrapper>
   ) : (
     <div>
-    <SubmittedText>Thanks, sign-up confirmed!</SubmittedText><SubmittedEmoji>🎉</SubmittedEmoji>
+      <SubmittedText>Thanks, sign-up confirmed!</SubmittedText>
+      <SubmittedEmoji>📧</SubmittedEmoji>
     </div>
   );
 };

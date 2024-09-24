@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { VouchedForRating } from '../Misc';
 
 const OutsideWrapper = styled.div``;
 
@@ -142,6 +143,7 @@ const Hero = ({ config }) => {
           <PreTitle>{config.pretitle}</PreTitle>
           <Title>{config.title}</Title>
           <Subtitle>{config.subtitle}</Subtitle>
+          <VouchedForRating firmID={config.vouchedForFirmID} />
           <ItemWrapper>
             {config.items.map((item, index) => (
               <Item key={index}>

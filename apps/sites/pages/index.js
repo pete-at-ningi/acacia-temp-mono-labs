@@ -36,6 +36,7 @@ const HomePage = () => {
   const ourClients = {
     imageUrl: '/our-clients.png',
     pretitle: 'Our Clients',
+    vouchedForFirmID: 2418,
     title:
       'Helping Aspirational Families and Professionals Secure Their Future',
     subtitle:
@@ -227,10 +228,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Hero.Basic config={heroConfig} />
-
-      <Misc.VouchedForRating />
-
+      <Hero.Basic config={heroConfig} /> <Misc.Spacing />
       <Stats.SplitWithImage config={ourClients} />
       <Misc.Spacing />
       <HeaderSections.Basic config={whyAcacia} />

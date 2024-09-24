@@ -22,10 +22,9 @@ const Nav = styled.nav`
   transition: padding 0.3s ease;
 
   &.scrolled {
-    padding: 1.5px; 
+    padding: ${(props) => props.theme.spacings.small};
   }
 `;
-
 
 const Logo = styled.a`
   display: flex;
@@ -178,10 +177,8 @@ const MobileActionMenuWrapper = styled.div`
 `;
 
 const BasicHeader = ({ config }) => {
-
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -207,8 +204,7 @@ const BasicHeader = ({ config }) => {
     <Header>
       <Nav className={isScrolled ? 'scrolled' : ''}>
         <Logo href='/'>
-          <img src='/icon.png' alt='Acacia Wealth' />
-          Acacia Wealth
+          <img src='/logo.png' alt='Acacia Wealth' />
         </Logo>
 
         <Menu>

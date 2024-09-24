@@ -1,4 +1,4 @@
-import { Content } from 'shared-components'
+import { Content } from 'shared-components';
 
 const taxEfficientStrategiesConfig = {
   subtitle: 'Introducing',
@@ -56,9 +56,9 @@ const taxEfficientStrategiesConfig = {
       type: 'quote',
       text: '“Helping clients navigate the complexities of tax planning is a key part of what we do at Acacia Wealth. We take pride in helping our clients keep more of their hard-earned money through smart, tax-efficient strategies.”',
       author: {
-        name: 'Tyron Smith',
+        name: 'Tyron Edmonds',
         role: 'Financial Planner and Director',
-        image: '/tyron.jpg',
+        image: '/tyron-edmonds.jpg',
       },
     },
     {

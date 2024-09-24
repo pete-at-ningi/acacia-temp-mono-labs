@@ -1,4 +1,4 @@
-import { Content } from 'shared-components'
+import { Content } from 'shared-components';
 
 const holisticFinancialPlanningConfig = {
   subtitle: 'Introducing',
@@ -53,7 +53,7 @@ const holisticFinancialPlanningConfig = {
       author: {
         name: 'John Doe',
         role: 'Client',
-        image: '/tyron.jpg',
+        image: '/tyron-edmonds.jpg',
       },
     },
     {

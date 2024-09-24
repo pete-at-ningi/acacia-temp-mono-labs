@@ -1,4 +1,4 @@
-import { Content } from 'shared-components'
+import { Content } from 'shared-components';
 
 const retirementPlanningConfig = {
   subtitle: 'Introducing',
@@ -56,9 +56,9 @@ const retirementPlanningConfig = {
       type: 'quote',
       text: '“Helping our clients prepare for retirement is one of the most rewarding aspects of our work. We take pride in knowing that we have helped them achieve financial security and the freedom to enjoy their retirement on their own terms.”',
       author: {
-        name: 'Tyron Smith',
+        name: 'Tyron Edmonds',
         role: 'Financial Planner and Director',
-        image: '/tyron.jpg',
+        image: '/tyron-edmonds.jpg',
       },
     },
     {

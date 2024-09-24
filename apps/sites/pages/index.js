@@ -275,7 +275,7 @@ const HomePage = () => {
   };
 
   const QuoteConfig = {
-    imageUrl: '/ben-hayward.jpg',
+    imageUrl: '/ben_hayward.jpg',
     quote:
       'At Acacia Wealth, our clients’ futures are our priority. I believe that financial planning is not just about numbers; it’s about building trust, understanding your unique story, and guiding you towards your goals with compassion and expertise. With years of experience and a dedication to making complex financial decisions clear and manageable, I’m here to help you achieve financial confidence and security for you and your family.',
     authorName: 'Ben Hayward',

@@ -1,5 +1,4 @@
-import { Content } from 'shared-components'
-
+import { Content } from 'shared-components';
 
 const estatePlanningConfig = {
   subtitle: 'Introducing',
@@ -52,9 +51,9 @@ const estatePlanningConfig = {
       type: 'quote',
       text: '“At Acacia Wealth, we believe that estate planning is about more than just passing on your wealth—it’s about securing your legacy. We are committed to helping our clients protect their assets and ensure that their wishes are honored, providing peace of mind for the future.”',
       author: {
-        name: 'Tyron Smith',
+        name: 'Tyron Edmonds',
         role: 'Financial Planner and Director',
-        image: '/tyron.jpg',
+        image: '/tyron-edmonds.jpg',
       },
     },
     {

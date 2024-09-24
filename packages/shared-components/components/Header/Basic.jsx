@@ -75,6 +75,7 @@ const ActionButton = styled.a`
   display: flex;
   align-items: center;
   svg {
+    margin-bottom: 3px;
     width: ${(props) => props.theme.fontSizes.medium};
   }
   grid-gap: ${(props) => props.theme.spacings.small};

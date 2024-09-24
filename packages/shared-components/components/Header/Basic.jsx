@@ -137,19 +137,29 @@ const MobileMenu = styled.div`
   width: 100%;
   height: 100vh;
   background-color: ${(props) => props.theme.colors.white};
-  padding: ${(props) => props.theme.spacings.large};
+  padding: ${(props) => props.theme.spacings.medium};
   z-index: 1000;
   overflow-y: auto;
+`;
+
+const MobileHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: ${(props) => props.theme.spacings.medium};
 `;
 
 const MobileMenuCloseButton = styled.button`
   width: 100%;
   background: none;
   text-align: right;
+  margin: 0;
+  padding: 0;
   border: none;
   font-size: ${(props) => props.theme.fontSizes.large};
   cursor: pointer;
-  margin-bottom: ${(props) => props.theme.spacings.large};
+
   svg {
     width: ${(props) => props.theme.nav.logo};
   }
@@ -232,9 +242,14 @@ const BasicHeader = ({ config }) => {
       <MobileMenuOverlay open={mobileMenuOpen} onClick={toggleMobileMenu} />
 
       <MobileMenu open={mobileMenuOpen}>
-        <MobileMenuCloseButton onClick={toggleMobileMenu}>
-          <XMarkIcon />
-        </MobileMenuCloseButton>
+        <MobileHeader>
+          <Logo href='/'>
+            <img src='/logo.png' alt='Acacia Wealth' />
+          </Logo>
+          <MobileMenuCloseButton onClick={toggleMobileMenu}>
+            <XMarkIcon />
+          </MobileMenuCloseButton>
+        </MobileHeader>
         {config.menu.map((item) => (
           <MobileMenuItem
             key={item.label}

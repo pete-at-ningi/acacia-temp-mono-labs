@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const HeroSection = styled.section`
   position: relative;
-  height: 70vh;
+  min-height: 70vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -62,8 +62,7 @@ const Title = styled(motion.h1).attrs(() => ({
     props.theme.fontSizes.massive}; /* Default to xlarge for mobile */
   font-weight: 700;
   margin-bottom: ${(props) => props.theme.spacings.large};
-  letter-spacing: 1px;
-
+  line-height: 1.2;
   @media ${(props) => props.theme.breakpoints.tablet},
     ${(props) => props.theme.breakpoints.mobile} {
     font-size: ${(props) => props.theme.fontSizes.xlarge};
@@ -77,13 +76,16 @@ const SubTitle = styled(motion.p).attrs(() => ({
 }))`
   max-width: 850px;
 
-  font-weight: 700;
   margin-bottom: ${(props) => props.theme.spacings.large};
-  letter-spacing: 1px;
 
   @media ${(props) => props.theme.breakpoints.tablet},
     ${(props) => props.theme.breakpoints.mobile} {
   }
+`;
+
+const ButtonWrap = styled.div`
+  display: flex;
+  gap: ${(props) => props.theme.spacings.medium};
 `;
 
 const CTAButton = styled(motion.a).attrs(() => ({
@@ -91,7 +93,6 @@ const CTAButton = styled(motion.a).attrs(() => ({
   animate: { opacity: 1, y: 0 },
   transition: { delay: 0.2, duration: 0.8 },
 }))`
-  color: red;
   display: inline-block;
   font-size: ${(props) => props.theme.fontSizes.medium};
   padding: ${(props) => props.theme.spacings.small}
@@ -102,7 +103,7 @@ const CTAButton = styled(motion.a).attrs(() => ({
   color: ${(props) => props.theme.colors.white};
   background-color: ${(props) =>
     props.primary ? props.theme.colors.accent : 'transparent'};
-  border: 2px solid transparent;
+  border: n
   margin-right: ${(props) =>
     props.primary ? props.theme.spacings.medium : '0'};
 
@@ -119,14 +120,16 @@ const Hero = ({ config }) => {
         {config.pretitle && <PreTitle>{config.subtitle}</PreTitle>}
         <Title>{config.title}</Title>
         <SubTitle>{config.subtitle}</SubTitle>
-        <CTAButton href={config.primaryCTA.route} primary>
-          {config.primaryCTA.label}
-        </CTAButton>
-        {config.secondaryCTA && (
-          <CTAButton href={config.secondaryCTA.route}>
-            {config.secondaryCTA.label}
+        <ButtonWrap>
+          <CTAButton href={config.primaryCTA.route} primary>
+            {config.primaryCTA.label}
           </CTAButton>
-        )}
+          {config.secondaryCTA && (
+            <CTAButton href={config.secondaryCTA.route}>
+              {config.secondaryCTA.label}
+            </CTAButton>
+          )}
+        </ButtonWrap>
       </Content>
     </HeroSection>
   );

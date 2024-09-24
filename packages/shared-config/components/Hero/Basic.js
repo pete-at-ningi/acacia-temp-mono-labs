@@ -6,6 +6,14 @@ export default {
 
   fields: [
     {
+      name: 'pretitle',
+      type: 'string',
+      label: 'Pre Title',
+      required: false,
+      description:
+        'An optional small pre-heading that sits in a box before the heading, it needs to be pretty short and can be used to flag a new launch, release or some other short notification style thing',
+    },
+    {
       name: 'title',
       type: 'string',
       label: 'Title',

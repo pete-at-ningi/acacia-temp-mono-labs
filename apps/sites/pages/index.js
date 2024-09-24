@@ -17,7 +17,7 @@ import {
 
 const HomePage = () => {
   const heroConfig = {
-    imageUrl: '/home-hero.jpg',
+    imageUrl: '/home-hero.png',
     title: 'Your trusted partner, wherever life’s journeys take you.',
     subtitle:
       'Tailored, no-nonsense financial planning. It’s the passport to the life you want now, to the future you dream of – and to creating a lasting legacy for future generations.',
@@ -288,7 +288,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Hero.SlantedImage config={heroConfig} />
+      <Hero.Basic config={heroConfig} />
       <Features.Basic services={services} />
       <Features.Video config={teamSectionConfig} />
       <Newsletter.Simple config={newsletterConfig} />

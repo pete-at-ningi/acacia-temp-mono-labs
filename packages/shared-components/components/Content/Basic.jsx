@@ -8,6 +8,11 @@ import {
 const Section = styled.section`
   background-color: ${(props) => props.theme.colors.white};
   padding: ${(props) => props.theme.spacings.xlarge};
+  img {
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
+  }
 `;
 
 const Container = styled.div`
@@ -58,8 +63,10 @@ const ContentQuote = styled.blockquote`
   font-weight: 600;
   color: ${(props) => props.theme.colors.dark};
   img {
-    height: 300px;
-    border-radius: ${(props) => props.theme.borders.radius};
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 `;
 

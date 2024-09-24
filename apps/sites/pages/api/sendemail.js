@@ -2,7 +2,7 @@ import Mailgun from 'mailgun-js';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, message, company, phone } = req.body;
+    const { name, email, message, phone } = req.body;
     try {
       await Mailgun({
         apiKey: process.env.MAILGUN_API_KEY,
@@ -13,8 +13,8 @@ export default async function handler(req, res) {
         .send({
           from: 'noreply@email.ningi.io', // Customize or use environment variable
           to: 'pete@ningi.co.uk',
-          subject: `AllAdvised: New message from ${name}`,
-          html: `<p>You have received a new message from ${name} (${email}):</p><p>Message: ${message}</p><p>Company: ${company}</p><p>Phone: ${phone}</p><p>Email: ${email}</p>`,
+          subject: `Acacia Wealth: New message from ${name}`,
+          html: `<p>You have received a new message from ${name} (${email}):</p><p>Message: ${message}</p><p>Phone: ${phone}</p><p>Email: ${email}</p>`,
         });
       res.status(200).json({ success: true });
     } catch (error) {

@@ -52,8 +52,8 @@ const estatePlanningConfig = {
       text: '“At Acacia Wealth, we believe that estate planning is about more than just passing on your wealth—it’s about securing your legacy. We are committed to helping our clients protect their assets and ensure that their wishes are honored, providing peace of mind for the future.”',
       author: {
         name: 'Tyron Edmonds',
-        role: 'Financial Planner and Director',
-        image: '/tyron-edmonds.jpg',
+        role: 'Adviser at Acacia Wealth',
+        image: '/tyron_edmonds_min.jpg',
       },
     },
     {

@@ -37,4 +37,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${(props) => props.theme.fonts.primary};
     font-size: ${(props) => props.theme.fontSizes.medium};
   }
+  textarea {
+    font-family: ${(props) => props.theme.fonts.primary};
+  }
 `;

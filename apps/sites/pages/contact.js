@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
   EnvelopeIcon,
@@ -6,6 +6,7 @@ import {
   MapPinIcon,
 } from '@heroicons/react/24/outline';
 import { Misc } from 'shared-components';
+import Link from 'next/link';
 
 const Section = styled.section`
   background-color: ${(props) => props.theme.colors.white};
@@ -29,13 +30,14 @@ const Container = styled.div`
 const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 const Heading = styled.h2`
   font-size: ${(props) => props.theme.fontSizes.xlarge};
   font-weight: 700;
   color: ${(props) => props.theme.colors.dark};
+  margin-top: 0;
 `;
 
 const Description = styled.p`
@@ -69,6 +71,7 @@ const RightColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: ${(props) => props.theme.spacings.small};
 `;
 
 const Form = styled.form`
@@ -84,7 +87,6 @@ const Input = styled.input`
   font-size: ${(props) => props.theme.fontSizes.medium};
   color: ${(props) => props.theme.colors.dark};
   outline: none;
-
   &:focus {
     border-color: ${(props) => props.theme.colors.accent};
   }
@@ -129,6 +131,53 @@ const ContactPage = () => {
   const calendlyConfig = {
     url: 'https://calendly.com/ben-hayward-jhwm/30min',
   };
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+
+    // Send data to the API route
+    const response = await fetch('/api/sendemail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      setLoading(false);
+      setError('Complete - message sent! We will be in touch soon.');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+    } else {
+      setError('Error sending message - please try again.');
+      setLoading(false);
+    }
+  };
+
+  // Handle change in form inputs
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <Section>
       <Container>
@@ -140,14 +189,12 @@ const ContactPage = () => {
             to us directly.
           </Description>
           <ContactInfo>
-            <InfoItem>
-              <EnvelopeIcon />
-              <span>info@acaciawealth.co.uk</span>
-            </InfoItem>
-            <InfoItem>
-              <PhoneIcon />
-              <span>+44 1234 567890</span>
-            </InfoItem>
+            <Link href='mailto:support@acaciawealth.co.uk'>
+              <InfoItem>
+                <EnvelopeIcon />
+                <span>support@acaciawealth.co.uk</span>
+              </InfoItem>
+            </Link>
             <InfoItem>
               <MapPinIcon />
               <span>
@@ -157,12 +204,48 @@ const ContactPage = () => {
           </ContactInfo>
         </LeftColumn>
         <RightColumn>
+          {error && <p>{error}</p>}
           <Form>
-            <Input type='text' placeholder='Your Name' required />
-            <Input type='email' placeholder='Your Email' required />
-            <Input type='text' placeholder='Subject' required />
-            <TextArea placeholder='Your Message' rows='6' required></TextArea>
-            <SubmitButton type='submit'>Send Message</SubmitButton>
+            <Input
+              type='text'
+              placeholder='Your Name'
+              required
+              value={formData.name}
+              name='name'
+              onChange={handleChange}
+            />
+            <Input
+              type='email'
+              placeholder='Your Email'
+              required
+              value={formData.email}
+              name='email'
+              onChange={handleChange}
+            />
+
+            <Input
+              type='text'
+              placeholder='Subject'
+              required
+              value={formData.phone}
+              name='phone'
+              onChange={handleChange}
+            />
+            <TextArea
+              placeholder='Your Message'
+              rows='6'
+              required
+              value={formData.message}
+              name='message'
+              onChange={handleChange}
+            ></TextArea>
+            <SubmitButton
+              onClick={(e) => {
+                handleSubmit(e);
+              }}
+            >
+              {loading ? 'Sending...' : 'Send Message'}
+            </SubmitButton>
           </Form>
         </RightColumn>
       </Container>

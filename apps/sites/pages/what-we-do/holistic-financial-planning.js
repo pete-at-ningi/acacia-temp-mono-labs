@@ -51,9 +51,9 @@ const holisticFinancialPlanningConfig = {
       type: 'quote',
       text: '“As a financial adviser at Acacia Wealth, I take pride in helping our clients achieve peace of mind. We ensure that every aspect of their financial lives is carefully managed and aligned with their goals, providing them with a clear and confident roadmap for the future.”',
       author: {
-        name: 'John Doe',
-        role: 'Client',
-        image: '/tyron-edmonds.jpg',
+        name: 'Tyron Edmonds',
+        role: 'Adviser at Acacia Wealth',
+        image: '/tyron_edmonds_min.jpg',
       },
     },
     {

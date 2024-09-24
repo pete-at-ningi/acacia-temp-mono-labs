@@ -2,6 +2,7 @@ import { Hero } from 'shared-components';
 import { Features } from 'shared-components';
 import { Newsletter } from 'shared-components';
 import { Testimonials } from 'shared-components';
+import { Misc } from 'shared-components';
 
 import {
   ArrowPathIcon,
@@ -286,14 +287,21 @@ const HomePage = () => {
     privacyUrl: '/privacy',
   };
 
+  const calendlyConfig = {
+    url: 'https://calendly.com/ben-hayward-jhwm/30min',
+  };
+
   return (
     <>
       <Hero.Basic config={heroConfig} />
       <Features.Basic services={services} />
       <Features.Video config={teamSectionConfig} />
       <Newsletter.Simple config={newsletterConfig} />
+      <Misc.VouchedForCarousel />
       <Features.Checklist config={questionsConfig} />
+      <Misc.CalendlyEmbed config={calendlyConfig} />
       <Testimonials.Basic config={testimonialsConfig} />
+      <Misc.VouchedForRating />
       <Testimonials.Quote config={QuoteConfig} />
     </>
   );

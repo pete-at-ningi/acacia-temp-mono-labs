@@ -78,15 +78,7 @@ export default {
   socials: [
     {
       label: 'LinkedIn',
-      url: 'https://www.linkedin.com/company/acacia-wealth',
-    },
-    {
-      label: 'X',
-      url: 'https://twitter.com/AcaciaWealth',
-    },
-    {
-      label: 'Facebook',
-      url: 'https://www.facebook.com/AcaciaWealth',
+      url: 'https://www.linkedin.com/in/tyron-edmonds-cfa-chartered-msci-15696415/',
     },
   ],
   legal: [

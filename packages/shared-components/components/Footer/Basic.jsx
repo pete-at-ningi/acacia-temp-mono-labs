@@ -167,18 +167,22 @@ const Footer = ({ config }) => {
                   <p>{config.business.address}</p>
                 </Address>
               </Group>
-              <Group>
-                <EnvelopeIcon />
-                <FooterLink href={`mailto:${config.business.email}`}>
-                  Email Us
-                </FooterLink>
-              </Group>
-              <Group>
-                <PhoneIcon />
-                <FooterLink href={`tel:${config.business.phone}`}>
-                  {config.business.phone}
-                </FooterLink>
-              </Group>
+              {config.business.email && (
+                <Group>
+                  <EnvelopeIcon />
+                  <FooterLink href={`mailto:${config.business.email}`}>
+                    Email Us
+                  </FooterLink>
+                </Group>
+              )}
+              {config.business.phone && (
+                <Group>
+                  <PhoneIcon />
+                  <FooterLink href={`tel:${config.business.phone}`}>
+                    {config.business.phone}
+                  </FooterLink>
+                </Group>
+              )}
             </ContactRow>
 
             <FooterRow>

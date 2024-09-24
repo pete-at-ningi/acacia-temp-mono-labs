@@ -23,7 +23,6 @@ const Container = styled.div`
   @media ${(props) => props.theme.breakpoints.desktop} {
     flex-direction: row;
     justify-content: space-between;
-    margin: calc(-2 * ${(props) => props.theme.spacings.xlarge}) auto;
   }
 `;
 

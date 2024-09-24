@@ -22,7 +22,7 @@ const WhatWeDoHero = {
     label: 'Meet our Team',
     route: '/the-team',
   },
-  imageUrl: '/what-we-do-hero.jpg',
+  imageUrl: '/what-we-do.png',
 };
 
 const services = {

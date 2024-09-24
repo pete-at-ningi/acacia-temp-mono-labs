@@ -250,16 +250,6 @@ const ContactPage = () => {
         </RightColumn>
       </Container>
       <Misc.CalendlyEmbed config={calendlyConfig} />
-      <MapWrapper>
-        <iframe
-          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.6087390102826!2d-0.12764748402421216!3d51.507350479635455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b6b7f5e2a2b%3A0x4667dc94e1ab1a1a!2s123%20Finance%20St%2C%20London%20WC2N%205DU%2C%20UK!5e0!3m2!1sen!2sus!4v1630000000000!5m2!1sen!2sus'
-          width='100%'
-          height='400'
-          style={{ border: 0 }}
-          allowFullScreen=''
-          loading='lazy'
-        ></iframe>
-      </MapWrapper>
     </Section>
   );
 };

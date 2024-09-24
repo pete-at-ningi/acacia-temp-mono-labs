@@ -248,7 +248,6 @@ const HomePage = () => {
       <Newsletter.Simple config={newsletterConfig} />
       <Misc.Spacing />
       <Testimonials.Quote config={QuoteConfig} />
-      <Misc.Spacing />
       <Features.Basic services={services} />
       <Misc.Spacing />
     </>

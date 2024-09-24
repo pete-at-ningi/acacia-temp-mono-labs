@@ -1,15 +1,15 @@
 export default {
   theme: {
     colors: {
-      primary: '#283149',
-      secondary: '#3a476a',
-      accent: '#b5dae6',
-      light: '#dbedf3',
-      dark: '#161b28',
+      primary: '#002522',
+      secondary: '#003836',
+      accent: '#008883',
+      light: '#a5cdce',
+      dark: '#0e1615',
       white: '#ffffff',
     },
     fonts: {
-      primary: "'Outfit', sans-serif",
+      primary: "'Nunito Sans', sans-serif",
     },
     fontSizes: {
       small: '0.875rem', // 14px
@@ -41,7 +41,7 @@ export default {
   header: {
     title: 'Acacia Wealth',
     description:
-      'Acacia Wealth is a premier financial planning firm dedicated to helping you build wealth, secure your legacy, and empower your financial future. Our experienced advisers offer personalised strategies tailored to your unique needs, ensuring transparency, integrity, and empathy at every step. Discover a trusted partner in Acacia Wealth, where your aspirations are our priority.',
+      'Your trusted partner, wherever life’s journeys take you. Tailored, no-nonsense financial planning. It’s the passport to the life you want now, to the future you dream of – and to creating a lasting legacy for future generations.',
     keywords:
       'financial planning, wealth management, retirement planning, investment strategies, inheritance tax planning, financial advice UK, wealth building, legacy planning, financial literacy, Birmingham financial advisers, London financial advisers',
     ogTitle:

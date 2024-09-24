@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-import { Hero } from 'shared-components'
+import { Hero } from 'shared-components';
 import { Features } from 'shared-components';
 import {
   ArrowPathIcon,
@@ -16,9 +15,9 @@ import {
 } from '@heroicons/react/20/solid';
 
 const WhatWeDoHero = {
-  title: 'Comprehensive Financial Planning Tailored to You',
+  title: 'We make financial planning simple.',
   subtitle:
-    'At Acacia Wealth, we understand that your financial situation is as unique as you are. Our mission is to provide you with personalized financial planning services that not only address your current needs but also help you achieve your long-term goals. Whether you are planning for retirement, looking to invest wisely, or seeking tax-efficient strategies, our team of experienced advisers is here to guide you every step of the way.',
+    'Acacia is a boutique financial planning business built on becoming a long-term, proactive partner supporting every client through their life’s opportunities and challenges. ',
   primaryCTA: {
     label: 'Meet our Team',
     route: '/the-team',
@@ -30,7 +29,7 @@ const services = {
   title: 'Our Services',
   subtitle: 'What We Do',
   description:
-    'At Acacia Wealth, we provide a comprehensive range of financial planning services tailored to meet your unique needs.',
+    'we invest time in getting to know you: your financial circumstances, your priorities and goals. Our approach is a world away from the big corporates, allowing us to custom-build financial plans that are a great fit now – and can flex and switch as life unfolds.',
   items: [
     {
       name: 'Holistic financial planning',

@@ -47,7 +47,6 @@ const StepContainer = styled.div`
 `;
 
 const Step = styled.div`
-  padding: ${(props) => props.theme.spacings.large};
   background-color: ${(props) => props.theme.colors.lightGray};
   border-radius: ${(props) => props.theme.borders.radius};
 `;
@@ -87,7 +86,7 @@ const HowWeWork = () => {
   const processSteps = [
     {
       step: 'Step 1',
-      title: 'Deep Dive',
+      title: 'Discovery',
       description: `In this free, initial meeting, we’ll get to know each other, discover what’s important to you, and understand where you are on your journey. You'll leave this meeting knowing:
       - We’ve listened to your concerns and ambitions
       - If you’d like us to be your financial planner
@@ -95,7 +94,7 @@ const HowWeWork = () => {
     },
     {
       step: 'Step 2',
-      title: 'Designing Your Plan',
+      title: 'Planning',
       description: `Over the next 2-4 weeks, we’ll work with you to:
       - Clearly define your financial objectives
       - Review your existing finances
@@ -108,7 +107,7 @@ const HowWeWork = () => {
     },
     {
       step: 'Step 3',
-      title: 'Bringing Your Plan to Life',
+      title: 'Execution',
       description: `Once you’re happy with your plan, we’ll help you to bring it to life by:
       - Applying for suitable insurance
       - Organising your pensions
@@ -117,7 +116,7 @@ const HowWeWork = () => {
     },
     {
       step: 'Step 4',
-      title: 'Ongoing Support',
+      title: 'Review',
       description: `Once built, we understand your life and priorities may change. We’ll work with you to:
       - Review and adjust your plan as needed
       - Provide ongoing advice
@@ -186,6 +185,11 @@ const HowWeWork = () => {
 
       <Section>
         <Subtitle>Our Process</Subtitle>
+        <p>
+          At Acacia we’re a small team with a wealth of experience in financial
+          planning. Our specialists work with you to create a jargon-free,
+          simple financial plan based on a four- step process:
+        </p>
         <StepContainer>
           {processSteps.map((step, index) => (
             <Step key={index}>
@@ -195,6 +199,12 @@ const HowWeWork = () => {
             </Step>
           ))}
         </StepContainer>
+        <p>
+          We hope that’s the start of a lifelong, proactive partnership. Along
+          the way we’ll leverage our knowledge of your circumstances and
+          ambitions, and a suite of technology solutions, to flag up things you
+          should be thinking about, and ideas you might want to explore.
+        </p>
       </Section>
 
       <ImageBanner src='/questions.jpg' />

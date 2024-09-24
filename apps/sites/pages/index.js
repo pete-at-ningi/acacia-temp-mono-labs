@@ -18,9 +18,9 @@ import {
 const HomePage = () => {
   const heroConfig = {
     imageUrl: '/home-hero.jpg',
-    title: 'Clarity and confidence in your financial journey',
+    title: 'Your trusted partner, wherever life’s journeys take you.',
     subtitle:
-      'Surrey based financial planners working with clients across the UK',
+      'Tailored, no-nonsense financial planning. It’s the passport to the life you want now, to the future you dream of – and to creating a lasting legacy for future generations.',
     primaryCTA: {
       label: 'Speak to an adviser',
       route: '/contact',

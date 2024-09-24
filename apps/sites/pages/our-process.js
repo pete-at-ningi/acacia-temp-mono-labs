@@ -181,7 +181,7 @@ const HowWeWork = () => {
 
   return (
     <PageContainer>
-      <ImageBanner src='/process.jpg' />
+      <ImageBanner src='/process.png' />
 
       <Section>
         <Subtitle>Our Process</Subtitle>

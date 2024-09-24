@@ -86,6 +86,9 @@ const SubTitle = styled(motion.p).attrs(() => ({
 const ButtonWrap = styled.div`
   display: flex;
   gap: ${(props) => props.theme.spacings.medium};
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const CTAButton = styled(motion.a).attrs(() => ({
@@ -109,6 +112,10 @@ const CTAButton = styled(motion.a).attrs(() => ({
 
   &:hover {
     opacity: ${(props) => props.theme.hover.opacity};
+  }
+  @media 
+    ${(props) => props.theme.breakpoints.mobile} {
+   border: 2px solid ${(props) => props.theme.colors.accent};
   }
 `;
 

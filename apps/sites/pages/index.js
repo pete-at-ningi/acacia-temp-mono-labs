@@ -357,19 +357,28 @@ const HomePage = () => {
   return (
     <>
       <Hero.Basic config={heroConfig} />
-      <Misc.Spacing />
+
+      <Misc.VouchedForRating />
+
       <Stats.SplitWithImage config={ourClients} />
       <Misc.Spacing />
       <HeaderSections.Basic config={whyAcacia} />
-      <Features.Basic services={services} />
+      <Misc.Spacing />
       <Features.Video config={teamSectionConfig} />
-      <Newsletter.Simple config={newsletterConfig} />
+      <Misc.Spacing />
       <Misc.VouchedForCarousel />
-      <Features.Checklist config={questionsConfig} />
-      <Misc.CalendlyEmbed config={calendlyConfig} />
-      <Testimonials.Basic config={testimonialsConfig} />
-      <Misc.VouchedForRating />
+      <Misc.Spacing />
+      <Newsletter.Simple config={newsletterConfig} />
+      <Misc.Spacing />
+      <Misc.Spacing />
       <Testimonials.Quote config={QuoteConfig} />
+      <Misc.Spacing />
+      <Features.Checklist config={questionsConfig} />
+      <Misc.Spacing />
+      <Misc.CalendlyEmbed config={calendlyConfig} />
+      <Misc.Spacing />
+      <Features.Basic services={services} />
+      <Misc.Spacing />
     </>
   );
 };

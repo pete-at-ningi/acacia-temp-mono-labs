@@ -115,6 +115,8 @@ const BadgeDescription = styled.span`
 `;
 
 const VideoWrapper = styled.div`
+  padding: 0;
+  margin: 0;
   @media ${(props) => props.theme.breakpoints.desktop} {
     margin-top: -100px;
   }
@@ -122,6 +124,10 @@ const VideoWrapper = styled.div`
     height: 500px;
     width: 500px;
     border-radius: ${(props) => props.theme.borders.radius};
+    @media ${(props) => props.theme.breakpoints.mobile} {
+      height: 60vh;
+      width: 90vw;
+    }
   }
 `;
 

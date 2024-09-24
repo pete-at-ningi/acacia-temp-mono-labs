@@ -6,6 +6,9 @@ const OuterWrapper = styled.div`
   @media ${(props) => props.theme.breakpoints.desktop} {
     padding-top: 100px;
   }
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    padding: 0;
+  }
 `;
 
 const Section = styled.section`
@@ -69,16 +72,9 @@ const CTAButton = styled.a`
 
 const BadgesWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: ${(props) => props.theme.spacings.medium};
   margin: ${(props) => props.theme.spacings.large} 0;
-  @media ${(props) => props.theme.breakpoints.tablet},
-    ${(props) => props.theme.breakpoints.mobile} {
-    flex-direction: row;
-  }
-  @media ${(props) => props.theme.breakpoints.desktop} {
-    flex-direction: row;
-  }
 `;
 
 const Badge = styled.div`

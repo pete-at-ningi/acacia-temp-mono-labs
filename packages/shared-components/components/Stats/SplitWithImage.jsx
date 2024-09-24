@@ -101,6 +101,9 @@ const RightColumn = styled(motion.div).attrs(() => ({
     ${(props) => props.theme.breakpoints.mobile} {
     height: 550px;
   }
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    height: 370px;
+  }
 `;
 
 const PreTitle = styled.p`
@@ -114,6 +117,9 @@ const ItemWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: ${(props) => props.theme.spacings.medium};
   margin: ${(props) => props.theme.spacings.xlarge} 0;
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Item = styled.div`

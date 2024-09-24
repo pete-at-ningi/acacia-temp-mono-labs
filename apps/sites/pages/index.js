@@ -147,6 +147,12 @@ const HomePage = () => {
     ],
   };
 
+  const vouchedForConfig = {
+    vouchedForFirmID: '2418',
+    title: 'What Our Clients Say',
+    backgroundImageUrl: '/process.png',
+  };
+
   const teamSectionConfig = {
     subheading: 'Good financial planning',
     heading: '...is a team effort',
@@ -155,17 +161,17 @@ const HomePage = () => {
     badges: [
       {
         icon: UsersIcon,
-        number: 8,
+        number: 4,
         description: 'Team Members',
       },
       {
         icon: ClockIcon,
-        number: 142,
+        number: 55,
         description: 'Years Combined Experience',
       },
       {
         icon: TrophyIcon,
-        number: 24,
+        number: 14,
         description: 'Financial Planning Exams Passed',
       },
     ],
@@ -234,17 +240,14 @@ const HomePage = () => {
       <HeaderSections.Basic config={whyAcacia} />
       <Misc.Spacing />
       <Features.Video config={teamSectionConfig} />
-      <Misc.Spacing />
-      <Misc.VouchedForCarousel />
-      <Misc.Spacing />
-      <Newsletter.Simple config={newsletterConfig} />
-      <Misc.Spacing />
-      <Misc.Spacing />
-      <Testimonials.Quote config={QuoteConfig} />
+      <Misc.CalendlyEmbed config={calendlyConfig} />
+      <Misc.VouchedForCarousel config={vouchedForConfig} />
       <Misc.Spacing />
       <Features.Checklist config={questionsConfig} />
       <Misc.Spacing />
-      <Misc.CalendlyEmbed config={calendlyConfig} />
+      <Newsletter.Simple config={newsletterConfig} />
+      <Misc.Spacing />
+      <Testimonials.Quote config={QuoteConfig} />
       <Misc.Spacing />
       <Features.Basic services={services} />
       <Misc.Spacing />

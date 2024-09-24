@@ -1,4 +1,5 @@
 export * as Header from './components/Header';
+export * as HeaderSections from './components/HeaderSections';
 export * as BlogFeatured from './components/BlogFeatured';
 export * as Content from './components/Content';
 export * as Features from './components/Features';

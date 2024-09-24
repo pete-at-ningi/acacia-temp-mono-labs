@@ -4,6 +4,7 @@ import { Newsletter } from 'shared-components';
 import { Testimonials } from 'shared-components';
 import { Misc } from 'shared-components';
 import { Stats } from 'shared-components';
+import { HeaderSections } from 'shared-components';
 
 import {
   ArrowPathIcon,
@@ -32,39 +33,67 @@ const HomePage = () => {
       route: '/the-team',
     },
   };
-
   const ourClients = {
     imageUrl: '/our-clients.png',
     pretitle: 'Our Clients',
     title:
-      'Trusted by our clients to protect and grow their wealth for over 30 Years',
+      'Helping Aspirational Families and Professionals Secure Their Future',
     subtitle:
-      'At Acacia Wealth, we partner with clients who are thoughtful about their financial future and legacy. From young professionals navigating complex financial choices to families securing their wealth for future generations, we provide tailored strategies that empower you to achieve your life goals with confidence.',
+      'At Acacia Wealth, we work with clients who are navigating complex financial decisions in a fast-paced world. Whether you’re a young professional planning for your first home or a family securing wealth for future generations, we provide tailored financial advice that supports your goals and values.',
     items: [
       {
-        title: 'Holistic Lifetime Financial Advice',
-        content: 'Personalized plans that adapt to every stage of your life.',
+        title: 'Aspirational Families',
+        content:
+          'Supporting families who are juggling careers, childcare, and life’s priorities, ensuring their finances grow as their dreams evolve.',
       },
       {
-        title: 'Legacy Planning for Future Generations',
+        title: 'Legacy Builders',
         content:
-          'Helping you secure your legacy with clear, efficient strategies.',
+          'We work with clients who are thoughtful about creating a meaningful legacy, whether through financial security or making memories with loved ones.',
       },
       {
-        title: 'Professionals Navigating Complex Finances',
+        title: 'Young Professionals',
         content:
-          'Tailored financial advice to help you manage competing priorities.',
+          'Helping ambitious professionals make informed decisions on saving, investing, and planning for long-term financial success while navigating their careers.',
       },
       {
-        title: 'Proactive Support & Review',
+        title: 'Proactive Planning and Support',
         content:
-          'Ongoing advice and review to ensure your plan stays on track.',
+          'We provide ongoing support, regular reviews, and expert advice, ensuring your financial plan adapts as your life and priorities change.',
       },
     ],
     CTA: {
       label: 'More about our Clients',
       route: '/our-clients',
     },
+  };
+
+  const whyAcacia = {
+    imageUrl: '/leaf.png',
+    pretitle: 'Why Acacia?',
+    title: 'Your Trusted Financial Partner',
+    subtitle:
+      'At Acacia Wealth, we combine decades of experience with a deeply personal approach. We offer financial planning that not only secures your future but empowers you to live the life you want. Our commitment to transparent advice, cutting-edge technology, and a proactive relationship ensures that you have a trusted partner every step of the way.',
+    items: [
+      {
+        icon: ArrowPathIcon,
+        title: 'Holistic Planning',
+        content:
+          'We take a 360-degree view of your financial life, helping you align your goals, values, and aspirations with a clear plan for your future.',
+      },
+      {
+        icon: CloudArrowUpIcon,
+        title: 'Client-Centered Approach',
+        content:
+          'We build long-term relationships with our clients, offering personalized advice and support that evolves as your life changes.',
+      },
+      {
+        icon: LockClosedIcon,
+        title: 'Transparent and Trusted',
+        content:
+          'With our jargon-free advice and transparent fee structure, you always know where you stand, ensuring you feel confident in every decision.',
+      },
+    ],
   };
   const services = {
     title: 'Our Services',
@@ -330,6 +359,8 @@ const HomePage = () => {
       <Hero.Basic config={heroConfig} />
       <Misc.Spacing />
       <Stats.SplitWithImage config={ourClients} />
+      <Misc.Spacing />
+      <HeaderSections.Basic config={whyAcacia} />
       <Features.Basic services={services} />
       <Features.Video config={teamSectionConfig} />
       <Newsletter.Simple config={newsletterConfig} />

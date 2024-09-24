@@ -6,4 +6,5 @@ export * as Footer from './components/Footer';
 export * as Hero from './components/Hero';
 export * as Misc from './components/Misc';
 export * as Newsletter from './components/Newsletter';
+export * as Stats from './components/Stats';
 export * as Testimonials from './components/Testimonials';

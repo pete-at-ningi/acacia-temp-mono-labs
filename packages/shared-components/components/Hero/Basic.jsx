@@ -99,8 +99,7 @@ const CTAButton = styled(motion.a).attrs(() => ({
   border-radius: ${(props) => props.theme.borders.radius};
   text-decoration: none;
   font-weight: 600;
-  color: ${(props) =>
-    props.primary ? props.theme.colors.dark : props.theme.colors.white};
+  color: ${(props) => props.theme.colors.white};
   background-color: ${(props) =>
     props.primary ? props.theme.colors.accent : 'transparent'};
   border: 2px solid transparent;

@@ -3,6 +3,7 @@ import { Features } from 'shared-components';
 import { Newsletter } from 'shared-components';
 import { Testimonials } from 'shared-components';
 import { Misc } from 'shared-components';
+import { Stats } from 'shared-components';
 
 import {
   ArrowPathIcon,
@@ -32,6 +33,39 @@ const HomePage = () => {
     },
   };
 
+  const ourClients = {
+    imageUrl: '/our-clients.png',
+    pretitle: 'Our Clients',
+    title:
+      'Trusted by our clients to protect and grow their wealth for over 30 Years',
+    subtitle:
+      'At Acacia Wealth, we partner with clients who are thoughtful about their financial future and legacy. From young professionals navigating complex financial choices to families securing their wealth for future generations, we provide tailored strategies that empower you to achieve your life goals with confidence.',
+    items: [
+      {
+        title: 'Holistic Lifetime Financial Advice',
+        content: 'Personalized plans that adapt to every stage of your life.',
+      },
+      {
+        title: 'Legacy Planning for Future Generations',
+        content:
+          'Helping you secure your legacy with clear, efficient strategies.',
+      },
+      {
+        title: 'Professionals Navigating Complex Finances',
+        content:
+          'Tailored financial advice to help you manage competing priorities.',
+      },
+      {
+        title: 'Proactive Support & Review',
+        content:
+          'Ongoing advice and review to ensure your plan stays on track.',
+      },
+    ],
+    CTA: {
+      label: 'More about our Clients',
+      route: '/our-clients',
+    },
+  };
   const services = {
     title: 'Our Services',
     subtitle: 'What We Do',
@@ -294,6 +328,8 @@ const HomePage = () => {
   return (
     <>
       <Hero.Basic config={heroConfig} />
+      <Misc.Spacing />
+      <Stats.SplitWithImage config={ourClients} />
       <Features.Basic services={services} />
       <Features.Video config={teamSectionConfig} />
       <Newsletter.Simple config={newsletterConfig} />

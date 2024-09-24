@@ -53,11 +53,10 @@ export default {
   },
   business: {
     name: 'Acacia Wealth Ltd',
-    address: '123 Acacia Avenue, Birmingham, B1 2CD',
-    phone: '0121 234 5678',
-    email: 'hello@acaciawealth.co.uk',
-    FCAnumber: '123456',
-    companyNumber: '123456',
+    address: '7 Bell Yard, London, WC2A 2JR',
+    email: 'support@acaciawealth.co.uk',
+    FCAnumber: '504742',
+    companyNumber: '06956439',
   },
   nav: {
     primaryCTA: {

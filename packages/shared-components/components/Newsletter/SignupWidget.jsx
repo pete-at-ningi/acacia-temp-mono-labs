@@ -26,6 +26,10 @@ const Input = styled.input`
   &:focus {
     background-color: rgba(255, 255, 255, 0.2);
   }
+  &::placeholder {
+    color: ${(props) => props.theme.colors.white};
+    opacity: 0.7;
+  }
 `;
 
 const Button = styled.button`
@@ -47,8 +51,8 @@ const Button = styled.button`
   }
 `;
 const SubscribedText = styled.p`
-color: white;
-`
+  color: white;
+`;
 
 const SubmittedText = styled.p`
   color: white;
@@ -101,7 +105,7 @@ const SignupWidget = ({ onSubmit }) => {
     <FormWrapper onSubmit={handleSubmit}>
       <Input
         type='email'
-        placeholder='Enter your email'
+        placeholder='Please enter your email...'
         required
         value={email}
         onChange={(e) => {

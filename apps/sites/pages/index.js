@@ -5,6 +5,7 @@ import { Testimonials } from 'shared-components';
 import { Misc } from 'shared-components';
 import { Stats } from 'shared-components';
 import { HeaderSections } from 'shared-components';
+import { CTASections } from 'shared-components';
 
 import {
   ArrowPathIcon,
@@ -19,6 +20,26 @@ import {
 } from '@heroicons/react/20/solid';
 
 const HomePage = () => {
+  const lcmConfig = {
+    imageUrl: '/lcm_mockup.png',
+    pretitle: 'A Personal Financial Forecast',
+    title: 'Lifetime Cashflow Model',
+    subtitle:
+      "Our lifetime cashflow modeller helps you assess your current wealth and project retirement needs. It provides a personalized report with tailored recommendations to ensure you're on track. Start today and plan your financial future with confidence.",
+    CTAroute: 'https://lcm--d8c2351b.ningi.app/intro',
+    CTAlabel: 'Get Started',
+  };
+
+  const fhcConfig = {
+    imageUrl: '/fhc_mockup.png',
+    pretitle: 'A Personal Financial Overview',
+    title: 'Financial Health Check',
+    subtitle:
+      'Our Financial Health Check helps you understand your financial wellbeing by identifying key areas for improvement. It provides a personalized report with clear next steps. Get started today and take control of your financial future.',
+    CTAroute: 'https://fhc--e5eab88e.ningi.app/questions',
+    CTAlabel: 'Get Started',
+  };
+
   const heroConfig = {
     imageUrl: '/home-hero.png',
     title: 'Your trusted partner, wherever life’s journeys take you.',
@@ -241,6 +262,7 @@ const HomePage = () => {
       <Misc.Spacing />
       <Features.Video config={teamSectionConfig} />
       <Misc.CalendlyEmbed config={calendlyConfig} />
+      <CTASections.DarkPanelWithScreenshot config={lcmConfig} />
       <Misc.VouchedForCarousel config={vouchedForConfig} />
       <Misc.Spacing />
       <Features.Checklist config={questionsConfig} />
@@ -248,6 +270,7 @@ const HomePage = () => {
       <Newsletter.Simple config={newsletterConfig} />
       <Misc.Spacing />
       <Testimonials.Quote config={QuoteConfig} />
+      <CTASections.DarkPanelWithScreenshot config={fhcConfig} />
       <Features.Basic services={services} />
     </>
   );

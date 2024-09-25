@@ -6,6 +6,7 @@ import { Newsletter } from 'shared-components';
 import { Content } from 'shared-components';
 import { BlogFeatured } from 'shared-components';
 import { Misc } from 'shared-components';
+import { CTASections } from 'shared-components';
 
 import {
   CloudArrowUpIcon,
@@ -66,6 +67,16 @@ const WithTestimonalConfig = {
   },
 };
 
+const lcmConfig = {
+  imageUrl: '/lcm_mockup.png',
+  pretitle: 'A Personal Financial Forecast',
+  title: 'Lifetime Cashflow Model',
+  subtitle:
+    "Our lifetime cashflow modeller helps you assess your current wealth and project retirement needs. It provides a personalized report with tailored recommendations to ensure you're on track. Start today and plan your financial future with confidence.",
+  CTAroute: 'https://lcm--d8c2351b.ningi.app/intro',
+  CTAlabel: 'Get Started',
+};
+
 const newsletterConfig = {
   privacyUrl: '/privacy',
 };
@@ -73,10 +84,12 @@ const newsletterConfig = {
 const OurClients = () => {
   return (
     <>
-      <Hero.SlantedImage config={ourClientsConfig} /> <Misc.Spacing />
-      <Newsletter.CenterCard config={newsletterConfig} />
+      <Hero.SlantedImage config={ourClientsConfig} />
+      <Misc.Spacing />
+      <CTASections.DarkPanelWithScreenshot config={lcmConfig} />
       <Content.WithTestimonial config={WithTestimonalConfig} />
       <BlogFeatured.Basic config={config.blog} limit={3} />
+      <Newsletter.CenterCard config={newsletterConfig} />
     </>
   );
 };

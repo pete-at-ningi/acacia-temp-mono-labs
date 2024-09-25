@@ -64,7 +64,7 @@ export default {
       route: '/contact',
     },
     secondaryCTA: {
-      label: 'Subscribe',
+      label: 'Latest News',
       route: '/blog',
     },
     menu: [
@@ -134,6 +134,10 @@ export default {
       ogType: 'website',
       ogUrl: 'https://www.acaciawealth.co.uk/the-team',
       ogImage: '/android-chrome-512x512.png',
+    },
+    {
+      route: '/tools-and-calculators',
+      title: 'Tools & Caclulators',
     },
     {
       route: '/blog',

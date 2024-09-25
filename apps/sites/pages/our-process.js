@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CTASections } from 'shared-components';
 
 const PageContainer = styled.div`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
@@ -179,6 +180,16 @@ const HowWeWork = () => {
     },
   ];
 
+  const fhcConfig = {
+    imageUrl: '/fhc_mockup.png',
+    pretitle: 'A Personal Financial Overview',
+    title: 'Financial Health Check',
+    subtitle:
+      'Our Financial Health Check helps you understand your financial wellbeing by identifying key areas for improvement. It provides a personalized report with clear next steps. Get started today and take control of your financial future.',
+    CTAroute: 'https://fhc--e5eab88e.ningi.app/questions',
+    CTAlabel: 'Get Started',
+  };
+
   return (
     <PageContainer>
       <ImageBanner src='/process.png' />
@@ -206,6 +217,7 @@ const HowWeWork = () => {
           should be thinking about, and ideas you might want to explore.
         </p>
       </Section>
+      <CTASections.DarkPanelWithScreenshot config={fhcConfig} />
 
       <ImageBanner src='/questions.jpg' />
 

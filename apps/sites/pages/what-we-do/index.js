@@ -9,10 +9,8 @@ import {
   ChartBarIcon,
   BanknotesIcon,
   ShieldCheckIcon,
-  UsersIcon,
-  ClockIcon,
-  TrophyIcon,
 } from '@heroicons/react/20/solid';
+import { CTASections } from 'shared-components';
 
 const WhatWeDoHero = {
   title: 'We make financial planning simple.',
@@ -23,6 +21,16 @@ const WhatWeDoHero = {
     route: '/the-team',
   },
   imageUrl: '/what-we-do.png',
+};
+
+const fhcConfig = {
+  imageUrl: '/fhc_mockup.png',
+  pretitle: 'A Personal Financial Overview',
+  title: 'Financial Health Check',
+  subtitle:
+    'Our Financial Health Check helps you understand your financial wellbeing by identifying key areas for improvement. It provides a personalized report with clear next steps. Get started today and take control of your financial future.',
+  CTAroute: 'https://fhc--e5eab88e.ningi.app/questions',
+  CTAlabel: 'Get Started',
 };
 
 const services = {
@@ -81,6 +89,7 @@ const OurClients = () => {
     <>
       <Hero.WithOffsetImage config={WhatWeDoHero} />
       <Features.Basic services={services} />
+      <CTASections.DarkPanelWithScreenshot config={fhcConfig} />
     </>
   );
 };

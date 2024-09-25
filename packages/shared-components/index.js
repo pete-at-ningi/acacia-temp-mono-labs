@@ -2,6 +2,7 @@ export * as Header from './components/Header';
 export * as HeaderSections from './components/HeaderSections';
 export * as BlogFeatured from './components/BlogFeatured';
 export * as Content from './components/Content';
+export * as CTASections from './components/CTASections';
 export * as Features from './components/Features';
 export * as Footer from './components/Footer';
 export * as Hero from './components/Hero';

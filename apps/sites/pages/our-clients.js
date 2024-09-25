@@ -78,7 +78,7 @@ const lcmConfig = {
 };
 
 const newsletterConfig = {
-  privacyUrl: '/privacy',
+  privacyUrl: '/privacy-policy',
 };
 
 const OurClients = () => {

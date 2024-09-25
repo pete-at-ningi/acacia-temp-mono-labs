@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const HeroSection = styled.section`
   position: relative;
@@ -36,8 +36,8 @@ const Content = styled.div`
 
 // border based props????
 const Subtitle = styled(motion.p).attrs(() => ({
-  initial: { opacity: 0},
-  animate: { opacity: 1},
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
   transition: { delay: 0.6, duration: 0.8 },
 }))`
   font-size: ${(props) => props.theme.fontSizes.medium};
@@ -45,7 +45,7 @@ const Subtitle = styled(motion.p).attrs(() => ({
   max-width: 850px;
   margin-bottom: ${(props) => props.theme.spacings.small};
   padding: 5px 8px;
-  letter-spacing: 1px;
+
   display: inline-block;
   border: 1px solid white;
   border-radius: 20px;
@@ -61,7 +61,6 @@ const Title = styled(motion.h1).attrs(() => ({
     props.theme.fontSizes.massive}; /* Default to xlarge for mobile */
   font-weight: 700;
   margin-bottom: ${(props) => props.theme.spacings.large};
-  letter-spacing: 1px;
 
   @media ${(props) => props.theme.breakpoints.tablet},
     ${(props) => props.theme.breakpoints.mobile} {
@@ -106,10 +105,11 @@ const Hero = ({ config }) => {
         <CTAButton href={config.primaryCTA.route} $primary>
           {config.primaryCTA.label}
         </CTAButton>
-        {config.secondaryCTA && 
-        <CTAButton href={config.secondaryCTA.route}>
-          {config.secondaryCTA.label}
-        </CTAButton>}
+        {config.secondaryCTA && (
+          <CTAButton href={config.secondaryCTA.route}>
+            {config.secondaryCTA.label}
+          </CTAButton>
+        )}
       </Content>
     </HeroSection>
   );

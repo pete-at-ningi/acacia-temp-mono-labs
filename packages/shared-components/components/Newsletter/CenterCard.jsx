@@ -51,7 +51,7 @@ const PrivacyText = styled.a`
   margin-top: ${(props) => props.theme.spacings.small};
   max-width: 850px;
   margin-bottom: ${(props) => props.theme.spacings.small};
-  letter-spacing: 1px;
+
   display: inline-block;
   color: white;
 `;

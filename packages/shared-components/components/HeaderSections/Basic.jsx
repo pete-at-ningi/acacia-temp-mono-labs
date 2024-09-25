@@ -133,8 +133,8 @@ const Hero = ({ config }) => {
         <SubTitle>{config.subtitle}</SubTitle>
         {config.items && (
           <ItemWrapper>
-            {config.items.map((item) => (
-              <Item key={item.id}>
+            {config.items.map((item, index) => (
+              <Item key={index}>
                 <ItemInner>
                   <item.icon />
                 </ItemInner>

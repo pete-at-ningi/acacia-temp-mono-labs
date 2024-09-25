@@ -1,4 +1,4 @@
-import { Content } from 'shared-components'
+import { Content } from 'shared-components';
 
 const buildWealthConfig = {
   subtitle: 'Introducing',
@@ -51,10 +51,9 @@ const buildWealthConfig = {
       type: 'quote',
       text: '“Building wealth is not just about making money; it’s about creating a financial plan that supports your life goals. At Acacia Wealth, we help our clients build a secure financial future through thoughtful planning and expert guidance.”',
       author: {
-        name: 'John Doe',
-        role: 'Financial Adviser',
-        image:
-          'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Tyron Edmonds',
+        role: 'Adviser at Acacia Wealth',
+        image: '/tyron_edmonds_min.jpg',
       },
     },
     {
@@ -85,7 +84,7 @@ const buildWealthConfig = {
 const BuildWealth = () => {
   return (
     <>
-      <Content.BlogProgress config={buildWealthConfig} />
+      <Content.Basic config={buildWealthConfig} />
     </>
   );
 };

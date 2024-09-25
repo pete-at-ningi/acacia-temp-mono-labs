@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion, useScroll } from 'framer-motion';
+
 import {
   CheckCircleIcon,
   InformationCircleIcon,
@@ -120,70 +122,87 @@ const Figure = styled.figure`
   }
 `;
 
-const ContentPage = ({ config }) => {
-  return (
-    <Section>
-      <Container>
-        <Subtitle>{config.subtitle}</Subtitle>
-        <Title>{config.title}</Title>
-        <Description>{config.description}</Description>
+const ProgressBar = styled(motion.div)`
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: ${(props) => props.theme.colors.primary};
+  transform-origin: 0%;
+  z-index: 1000;
+`;
 
-        <ContentSection>
-          {config.content.map((item, index) => {
-            if (item.type === 'paragraph') {
-              return (
-                <ContentParagraph key={index}>{item.text}</ContentParagraph>
-              );
-            }
-            if (item.type === 'title') {
-              return <ContentTitle key={index}>{item.text}</ContentTitle>;
-            }
-            if (item.type === 'quote') {
-              return (
-                <ContentQuote key={index}>
-                  <p>{item.text}</p>
-                  {item.author && (
+const Basic = ({ config }) => {
+  const { scrollYProgress } = useScroll();
+
+  return (
+    <div>
+      <ProgressBar style={{ scaleX: scrollYProgress }} />
+      <Section>
+        <Container>
+          <Subtitle>{config.subtitle}</Subtitle>
+          <Title>{config.title}</Title>
+          <Description>{config.description}</Description>
+
+          <ContentSection>
+            {config.content.map((item, index) => {
+              if (item.type === 'paragraph') {
+                return (
+                  <ContentParagraph key={index}>{item.text}</ContentParagraph>
+                );
+              }
+              if (item.type === 'title') {
+                return <ContentTitle key={index}>{item.text}</ContentTitle>;
+              }
+              if (item.type === 'quote') {
+                return (
+                  <ContentQuote key={index}>
+                    <p>{item.text}</p>
+                    {item.author && (
+                      <figcaption>
+                        <img src={item.author.image} alt={item.author.name} />
+                        <div>
+                          <strong>{item.author.name}</strong> –{' '}
+                          {item.author.role}
+                        </div>
+                      </figcaption>
+                    )}
+                  </ContentQuote>
+                );
+              }
+              if (item.type === 'list') {
+                return (
+                  <List key={index}>
+                    {item.items.map((listItem, listIndex) => (
+                      <li key={listIndex}>
+                        <CheckCircleIcon aria-hidden='true' />
+                        <span>
+                          <strong>{listItem.title}</strong>{' '}
+                          {listItem.description}
+                        </span>
+                      </li>
+                    ))}
+                  </List>
+                );
+              }
+              if (item.type === 'image') {
+                return (
+                  <Figure key={index}>
+                    <img src={item.src} alt={item.caption} />
                     <figcaption>
-                      <img src={item.author.image} alt={item.author.name} />
-                      <div>
-                        <strong>{item.author.name}</strong> – {item.author.role}
-                      </div>
+                      <InformationCircleIcon aria-hidden='true' />
+                      {item.caption}
                     </figcaption>
-                  )}
-                </ContentQuote>
-              );
-            }
-            if (item.type === 'list') {
-              return (
-                <List key={index}>
-                  {item.items.map((listItem, listIndex) => (
-                    <li key={listIndex}>
-                      <CheckCircleIcon aria-hidden='true' />
-                      <span>
-                        <strong>{listItem.title}</strong> {listItem.description}
-                      </span>
-                    </li>
-                  ))}
-                </List>
-              );
-            }
-            if (item.type === 'image') {
-              return (
-                <Figure key={index}>
-                  <img src={item.src} alt={item.caption} />
-                  <figcaption>
-                    <InformationCircleIcon aria-hidden='true' />
-                    {item.caption}
-                  </figcaption>
-                </Figure>
-              );
-            }
-            return null;
-          })}
-        </ContentSection>
-      </Container>
-    </Section>
+                  </Figure>
+                );
+              }
+              return null;
+            })}
+          </ContentSection>
+        </Container>
+      </Section>
+    </div>
   );
 };
 
-export default ContentPage;
+export default Basic;

@@ -1,4 +1,4 @@
-import { Content } from 'shared-components'
+import { Content } from 'shared-components';
 
 const secureLegacyConfig = {
   subtitle: 'Introducing',
@@ -51,10 +51,9 @@ const secureLegacyConfig = {
       type: 'quote',
       text: '“At Acacia Wealth, we believe that legacy planning is about more than just protecting your assets—it’s about preserving your values and ensuring that your wishes are honored. We are committed to helping our clients secure their legacy and provide for future generations.”',
       author: {
-        name: 'John Doe',
-        role: 'Financial Adviser',
-        image:
-          'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Tyron Edmonds',
+        role: 'Adviser at Acacia Wealth',
+        image: '/tyron_edmonds_min.jpg',
       },
     },
     {
@@ -85,7 +84,7 @@ const secureLegacyConfig = {
 const SecureLegacy = () => {
   return (
     <>
-      <Content.BlogProgress config={secureLegacyConfig} />
+      <Content.Basic config={secureLegacyConfig} />
     </>
   );
 };

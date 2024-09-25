@@ -136,6 +136,10 @@ export default {
       ogImage: '/android-chrome-512x512.png',
     },
     {
+      route: '/blog',
+      title: 'Blog',
+    },
+    {
       route: '/privacy-policy',
       title: 'Privacy Policy',
       description:
@@ -176,10 +180,11 @@ export default {
         image: '/blog/build-wealth.jpg',
         date: '2nd September 2024',
         author: {
-          name: 'John Doe',
-          role: 'Financial Adviser',
-          imageUrl:
-            'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          author: {
+            name: 'Tyron Edmonds',
+            role: 'Adviser at Acacia Wealth',
+            imageUrl: '/tyron_edmonds_min.jpg',
+          },
           href: '/the-team',
         },
       },
@@ -197,10 +202,11 @@ export default {
         image: '/blog/secure-legacy.jpg',
         date: '5th September 2024',
         author: {
-          name: 'John Doe',
-          role: 'Financial Adviser',
-          imageUrl:
-            'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          author: {
+            name: 'Tyron Edmonds',
+            role: 'Adviser at Acacia Wealth',
+            imageUrl: '/tyron_edmonds_min.jpg',
+          },
           href: '/the-team',
         },
       },
@@ -219,10 +225,11 @@ export default {
         image: '/blog/empower-future.jpg',
         date: '14th September 2024',
         author: {
-          name: 'John Doe',
-          role: 'Financial Adviser',
-          imageUrl:
-            'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          author: {
+            name: 'Tyron Edmonds',
+            role: 'Adviser at Acacia Wealth',
+            imageUrl: '/tyron_edmonds_min.jpg',
+          },
           href: '/the-team',
         },
       },
@@ -240,10 +247,11 @@ export default {
         image: '/blog/financial-literacy.jpg',
         date: '22nd September 2024',
         author: {
-          name: 'John Doe',
-          role: 'Financial Adviser',
-          imageUrl:
-            'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          author: {
+            name: 'Tyron Edmonds',
+            role: 'Adviser at Acacia Wealth',
+            imageUrl: '/tyron_edmonds_min.jpg',
+          },
           href: '/the-team',
         },
       },

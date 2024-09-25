@@ -162,7 +162,6 @@ const TeamSection = ({ config }) => {
             src={config.videoUrl}
             frameBorder='0'
             allow='autoplay; fullscreen; picture-in-picture'
-            allowFullScreen
           ></iframe>
         </VideoWrapper>
       </Section>

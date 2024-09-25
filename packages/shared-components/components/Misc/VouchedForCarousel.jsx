@@ -11,6 +11,10 @@ const CarouselWrapper = styled.div`
   justify-content: flex-start;
   padding: ${(props) => props.theme.spacings.large};
 
+  max-width: ${(props) => props.theme.breakpoints.maxWidth};
+  margin: 0 auto;
+  text-align: left;
+  width: 100%;
   iframe {
     border: none;
     width: 900px;

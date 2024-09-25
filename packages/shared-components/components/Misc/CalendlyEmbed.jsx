@@ -7,6 +7,11 @@ const CalendlyWrapper = styled.div`
   width: 100vw;
   padding: ${(props) => props.theme.spacings.large};
   padding-bottom: ${(props) => props.$small && 0};
+
+  max-width: ${(props) => props.theme.breakpoints.maxWidth};
+  margin: 0 auto;
+  text-align: left;
+  width: 100%;
 `;
 
 const Title = styled(motion.h1).attrs(() => ({

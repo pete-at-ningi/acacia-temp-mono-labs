@@ -288,7 +288,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Hero.ImageTilesAnimated config={heroConfig} />
+      <Hero.SlantedImageAnimated config={heroConfig} />
       <Features.OffsetGridAnimated services={services} />
       <Features.Video config={teamSectionConfig} />
       <Newsletter.SimpleAnimated config={newsletterConfig}/>

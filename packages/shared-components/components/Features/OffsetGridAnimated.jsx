@@ -94,13 +94,12 @@ const FeatureDescription = styled.dd`
   color: ${(props) => props.theme.colors.gray};
 `;
 
-// Animation Variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3, // Staggered effect between items
+      staggerChildren: 0.3, 
     },
   },
 };
@@ -121,12 +120,11 @@ const ServicesFeature = ({ services }) => {
             <SectionDescription>{services.description}</SectionDescription>
           </LeftColumn>
 
-          {/* FeaturesGrid with motion for animation */}
           <FeaturesGrid
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.7 }} // Triggers when 70% in view
+            viewport={{ once: true, amount: 0.7 }}
           >
             {services.items.map((feature) => (
               <FeatureItem key={feature.name} variants={itemVariants}>

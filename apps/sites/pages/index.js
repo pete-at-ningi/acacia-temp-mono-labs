@@ -42,14 +42,14 @@ const HomePage = () => {
 
   const heroConfig = {
     imageUrl: '/home-hero.png',
-    pretitle: 'Join our Next Money Tree Event',
+    pretitle: 'Join our next Money Tree event',
     preTitleLink:
       'https://www.linkedin.com/company/jackson-hodge-wealth/events/',
     title: 'Your trusted partner, wherever life’s journeys take you.',
     subtitle:
       'Tailored, no-nonsense financial planning. It’s the passport to the life you want now, to the future you dream of – and to creating a lasting legacy for future generations.',
     primaryCTA: {
-      label: 'Speak to an adviser',
+      label: 'Book a call',
       route: '/contact',
     },
     secondaryCTA: {
@@ -174,7 +174,6 @@ const HomePage = () => {
   const vouchedForConfig = {
     vouchedForFirmID: '2418',
     title: 'What Our Clients Say',
-    backgroundImageUrl: '/process.png',
   };
 
   const teamSectionConfig = {
@@ -201,7 +200,7 @@ const HomePage = () => {
     ],
     cta: {
       text: 'Meet the Team',
-      link: '/team',
+      link: '/the-team',
     },
     videoUrl:
       'https://player.vimeo.com/video/1005109818?h=f467e048b6&amp;badge=0&amp;autopause=0&amp;transparent=0&amp;player_id=0&amp;app_id=5847',

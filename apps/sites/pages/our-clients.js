@@ -20,7 +20,7 @@ const ourClientsConfig = {
     'We understand that each client’s financial situation is unique, and we take pride in working with individuals and families who are thoughtful about their future, their legacy, and their impact on the world. Our clients come to us not only for financial advice but also for a partnership that helps them navigate life’s complexities with confidence and clarity.',
   title: 'Who We Work With',
   primaryCTA: {
-    label: 'Speak to an adviser',
+    label: 'Book a call',
     route: '/contact',
   },
 };

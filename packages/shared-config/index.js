@@ -1,7 +1,7 @@
 import BlogFeaturedBasic from './components/BlogFeatured/Basic';
 
 import ContentBasic from './components/Content/Basic';
-import ContentBlogProgress from './components/Content/BlogProgress';
+import ContentBasic from './components/Content/Basic';
 import ContentWithTestimonial from './components/Content/WithTestimonial';
 
 import FeaturesBasic from './components/Features/Basic';
@@ -36,7 +36,7 @@ export default {
   content: {
     description:
       'Content sections with titles, subtitles, descriptions, and various content elements like paragraphs, titles, quotes, lists, and images',
-    components: [ContentBasic, ContentBlogProgress, ContentWithTestimonial],
+    components: [ContentBasic, ContentBasic, ContentWithTestimonial],
   },
   features: {
     description:

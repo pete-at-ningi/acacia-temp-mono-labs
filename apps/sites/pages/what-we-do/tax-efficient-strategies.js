@@ -89,7 +89,7 @@ const taxEfficientStrategiesConfig = {
 const TaxEfficientStrategies = () => {
   return (
     <>
-      <Content.BlogProgress config={taxEfficientStrategiesConfig} />
+      <Content.Basic config={taxEfficientStrategiesConfig} />
     </>
   );
 };

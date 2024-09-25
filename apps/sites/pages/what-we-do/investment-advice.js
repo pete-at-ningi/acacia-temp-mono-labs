@@ -89,7 +89,7 @@ const investmentAdviceConfig = {
 const InvestmentAdvice = () => {
   return (
     <>
-      <Content.BlogProgress config={investmentAdviceConfig} />
+      <Content.Basic config={investmentAdviceConfig} />
     </>
   );
 };

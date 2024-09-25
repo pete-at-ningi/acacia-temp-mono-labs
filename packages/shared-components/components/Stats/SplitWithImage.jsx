@@ -72,10 +72,10 @@ const CTAButton = styled.a`
   font-weight: 600;
   color: ${(props) => props.theme.colors.white};
   background-color: ${(props) =>
-    props.primary ? props.theme.colors.accent : 'transparent'};
+    props.$primary ? props.theme.colors.accent : 'transparent'};
   border: 2px solid transparent;
   margin-right: ${(props) =>
-    props.primary ? props.theme.spacings.medium : '0'};
+    props.$primary ? props.theme.spacings.medium : '0'};
 
   &:hover {
     opacity: ${(props) => props.theme.hover.opacity};
@@ -159,7 +159,7 @@ const Hero = ({ config }) => {
             ))}
           </ItemWrapper>
           <CTAButtons>
-            <CTAButton href={config.CTA.route} primary>
+            <CTAButton href={config.CTA.route} $primary>
               {config.CTA.label}
             </CTAButton>
             {config.secondaryCTA && 

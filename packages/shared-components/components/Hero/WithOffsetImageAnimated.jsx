@@ -67,8 +67,6 @@ const CTAButtons = styled(motion.div).attrs(() => ({
   }
 `;
 
-
-// Hover button
 const CTAButton = styled(motion.a).attrs(() => ({
   whileHover: {
     scale: 1.1,
@@ -83,12 +81,12 @@ const CTAButton = styled(motion.a).attrs(() => ({
   text-decoration: none;
   font-weight: 600;
   color: ${(props) =>
-    props.primary ? props.theme.colors.dark : props.theme.colors.white};
+    props.$primary ? props.theme.colors.dark : props.theme.colors.white};
   background-color: ${(props) =>
-    props.primary ? props.theme.colors.accent : 'transparent'};
+    props.$primary ? props.theme.colors.accent : 'transparent'};
   border: 2px solid transparent;
   margin-right: ${(props) =>
-    props.primary ? props.theme.spacings.medium : '0'};
+    props.$primary ? props.theme.spacings.medium : '0'};
 `;
 
 const RightColumn = styled(motion.div).attrs(() => ({
@@ -117,7 +115,7 @@ const Hero = ({ config }) => {
           <Title>{config.title}</Title>
           <Subtitle>{config.subtitle}</Subtitle>
           <CTAButtons>
-            <CTAButton href={config.primaryCTA.route} primary>
+            <CTAButton href={config.primaryCTA.route} $primary>
               {config.primaryCTA.label}
             </CTAButton>
             {config.secondaryCTA && 

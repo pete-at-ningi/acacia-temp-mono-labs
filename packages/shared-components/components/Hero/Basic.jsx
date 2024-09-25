@@ -104,20 +104,19 @@ const CTAButton = styled(motion.a).attrs(() => ({
   text-decoration: none;
   font-weight: 600;
   color: ${(props) => props.theme.colors.white};
-  background-color: ${(props) =>
-    props.primary ? props.theme.colors.accent : 'transparent'};
-  border: n
-  margin-right: ${(props) =>
-    props.primary ? props.theme.spacings.medium : '0'};
+  background-color: ${(props) => props.$primary ? props.theme.colors.accent : 'transparent'}; 
+  border: none;
+  margin-right: ${(props) => props.$primary ? props.theme.spacings.medium : '0'};
 
   &:hover {
     opacity: ${(props) => props.theme.hover.opacity};
   }
-  @media 
-    ${(props) => props.theme.breakpoints.mobile} {
-   border: 2px solid ${(props) => props.theme.colors.accent};
+
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    border: 2px solid ${(props) => props.theme.colors.accent};
   }
 `;
+
 
 const Hero = ({ config }) => {
   return (
@@ -128,7 +127,7 @@ const Hero = ({ config }) => {
         <Title>{config.title}</Title>
         <SubTitle>{config.subtitle}</SubTitle>
         <ButtonWrap>
-          <CTAButton href={config.primaryCTA.route} primary>
+          <CTAButton href={config.primaryCTA.route} $primary>
             {config.primaryCTA.label}
           </CTAButton>
           {config.secondaryCTA && (

@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 
 const CalendlyWrapper = styled.div`
   position: relative;
-  min-height: 70vh;
   width: 100vw;
   padding: ${(props) => props.theme.spacings.large};
+  padding-bottom: ${(props) => props.$small && 0};
 `;
 
 const Title = styled(motion.h1).attrs(() => ({
@@ -39,12 +39,12 @@ const CalendlyEmbed = ({ config }) => {
   }, []);
 
   return (
-    <CalendlyWrapper>
-      <Title>Book a meeting</Title>
+    <CalendlyWrapper $small={config.small}>
+      {!config.small && <Title>Book a meeting</Title>}
       <div
         className='calendly-inline-widget'
         data-url={config.url}
-        style={{ height: '950px' }}
+        style={{ height: '750px' }}
       ></div>
     </CalendlyWrapper>
   );

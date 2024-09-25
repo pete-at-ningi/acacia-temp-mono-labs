@@ -7,10 +7,12 @@ import {
 } from '@heroicons/react/24/outline';
 import { Misc } from 'shared-components';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const Section = styled.section`
   background-color: ${(props) => props.theme.colors.white};
-  padding: ${(props) => props.theme.spacings.xlarge}
+  padding: 0 ${(props) => props.theme.spacings.large}
+    ${(props) => props.theme.spacings.xlarge}
     ${(props) => props.theme.spacings.large};
 `;
 
@@ -33,15 +35,25 @@ const LeftColumn = styled.div`
   justify-content: flex-start;
 `;
 
-const Heading = styled.h2`
-  font-size: ${(props) => props.theme.fontSizes.xlarge};
+const Heading = styled(motion.h1).attrs(() => ({
+  initial: { opacity: 0, y: 70 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8 },
+}))`
+  max-width: 850px;
+  font-size: ${(props) =>
+    props.theme.fontSizes.massive}; /* Default to xlarge for mobile */
   font-weight: 700;
-  color: ${(props) => props.theme.colors.dark};
-  margin-top: 0;
+  margin-bottom: ${(props) => props.theme.spacings.large};
+  line-height: 1.2;
+  @media ${(props) => props.theme.breakpoints.tablet},
+    ${(props) => props.theme.breakpoints.mobile} {
+    font-size: ${(props) => props.theme.fontSizes.xlarge};
+  }
 `;
 
 const Description = styled.p`
-  margin-top: ${(props) => props.theme.spacings.medium};
+  margin-top: 0;
   font-size: ${(props) => props.theme.fontSizes.medium};
   color: ${(props) => props.theme.colors.gray};
 `;
@@ -71,7 +83,6 @@ const RightColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: ${(props) => props.theme.spacings.small};
 `;
 
 const Form = styled.form`
@@ -129,6 +140,7 @@ const MapWrapper = styled.div`
 
 const ContactPage = () => {
   const calendlyConfig = {
+    small: true,
     url: 'https://calendly.com/ben-hayward-jhwm/30min',
   };
 
@@ -180,13 +192,14 @@ const ContactPage = () => {
 
   return (
     <Section>
+      <Misc.CalendlyEmbed config={calendlyConfig} />
+      <Heading>Contact Us</Heading>
       <Container>
         <LeftColumn>
-          <Heading>Contact Us</Heading>
           <Description>
             We're here to help. If you have any questions or would like to
-            schedule a consultation, please fill out the form below or reach out
-            to us directly.
+            schedule a consultation, please fill out the form or reach out to us
+            directly.
           </Description>
           <ContactInfo>
             <Link href='mailto:support@acaciawealth.co.uk'>
@@ -249,7 +262,6 @@ const ContactPage = () => {
           </Form>
         </RightColumn>
       </Container>
-      <Misc.CalendlyEmbed config={calendlyConfig} />
     </Section>
   );
 };

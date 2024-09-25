@@ -130,6 +130,7 @@ const AuthorInfo = styled.div`
     height: 40px;
     border-radius: 50%;
     background-color: ${(props) => props.theme.colors.lightGray};
+    object-fit: cover;
   }
 
   div {
@@ -162,8 +163,13 @@ const postVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const BlogSection = ({ limit, config }) => {
-  const posts = limit ? config.content.slice(0, limit) : config.content;
+const BlogSection = ({ limit = null, config }) => {
+  // Use slice and reverse on a copied array to avoid mutating the original content array
+  const posts = limit
+    ? [...config.content].slice(0, limit).reverse()
+    : [...config.content].reverse();
+
+  console.log(limit, config);
 
   return (
     <Section>
@@ -178,7 +184,7 @@ const BlogSection = ({ limit, config }) => {
           whileInView='visible'
           viewport={{ once: true, amount: 0.4 }}
         >
-          {posts.reverse().map((post, postIndex) => (
+          {posts.map((post, postIndex) => (
             <Post
               key={postIndex}
               href={post.route}

@@ -6,6 +6,9 @@ const OuterWrapper = styled.div`
   @media ${(props) => props.theme.breakpoints.desktop} {
     padding-top: 100px;
   }
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    padding: 0;
+  }
 `;
 
 const Section = styled.section`
@@ -69,16 +72,9 @@ const CTAButton = styled.a`
 
 const BadgesWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: ${(props) => props.theme.spacings.medium};
   margin: ${(props) => props.theme.spacings.large} 0;
-  @media ${(props) => props.theme.breakpoints.tablet},
-    ${(props) => props.theme.breakpoints.mobile} {
-    flex-direction: row;
-  }
-  @media ${(props) => props.theme.breakpoints.desktop} {
-    flex-direction: row;
-  }
 `;
 
 const Badge = styled.div`
@@ -115,6 +111,8 @@ const BadgeDescription = styled.span`
 `;
 
 const VideoWrapper = styled.div`
+  padding: 0;
+  margin: 0;
   @media ${(props) => props.theme.breakpoints.desktop} {
     margin-top: -100px;
   }
@@ -122,6 +120,10 @@ const VideoWrapper = styled.div`
     height: 500px;
     width: 400px;
     border-radius: ${(props) => props.theme.borders.radius};
+    @media ${(props) => props.theme.breakpoints.mobile} {
+      height: 60vh;
+      width: 90vw;
+    }
   }
   @media ${(props) => props.theme.breakpoints.mobile} {
     iframe {

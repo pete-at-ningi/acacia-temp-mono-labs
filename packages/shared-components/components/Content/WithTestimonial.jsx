@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const Section = styled.section`
   position: relative;
@@ -132,7 +133,7 @@ const ContentSection = styled.div`
   }
 `;
 
-const Middle = styled.div`
+const Middle = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,16 +175,23 @@ const WithTestimonial = ({ config }) => {
             ))}
           </ContentSection>
         </div>
-        <Middle>
+        <Middle
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          viewport={{ once: true, amount: 0.8 }}
+        >
           <QuoteSection>
             <blockquote>{config.quote.text}</blockquote>
-            <figcaption>
-              <img src={config.quote.image} alt='' />
-              <div>
-                <div className='name'>{config.quote.name}</div>
-                <div className='handle'>{config.quote.handle}</div>
-              </div>
-            </figcaption>
+            {config.quote.image && (
+              <figcaption>
+                <img src={config.quote.image} alt='' />
+                <div>
+                  <div className='name'>{config.quote.name}</div>
+                  <div className='handle'>{config.quote.handle}</div>
+                </div>
+              </figcaption>
+            )}
           </QuoteSection>
         </Middle>
       </Container>

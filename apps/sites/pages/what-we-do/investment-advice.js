@@ -1,4 +1,4 @@
-import { Content } from 'shared-components'
+import { Content } from 'shared-components';
 
 const investmentAdviceConfig = {
   subtitle: 'Introducing',
@@ -56,9 +56,9 @@ const investmentAdviceConfig = {
       type: 'quote',
       text: '“At Acacia Wealth, we believe that successful investing is about more than just picking the right stocks. It’s about creating a balanced, diversified portfolio that aligns with your goals and risk tolerance. Our clients trust us to provide the guidance they need to navigate the complexities of the financial markets and achieve long-term success.”',
       author: {
-        name: 'Tyron Smith',
-        role: 'Financial Planner and Director',
-        image: '/tyron.jpg',
+        name: 'Tyron Edmonds',
+        role: 'Adviser at Acacia Wealth',
+        image: '/tyron_edmonds_min.jpg',
       },
     },
     {

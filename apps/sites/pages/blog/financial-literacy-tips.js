@@ -1,4 +1,4 @@
-import { Content } from 'shared-components'
+import { Content } from 'shared-components';
 
 const financialLiteracyConfig = {
   subtitle: 'Introducing',
@@ -51,10 +51,9 @@ const financialLiteracyConfig = {
       type: 'quote',
       text: '“Financial literacy is the key to unlocking your financial potential. At Acacia Wealth, we are dedicated to helping our clients build their financial knowledge, empowering them to make informed decisions and achieve their financial goals.”',
       author: {
-        name: 'John Doe',
-        role: 'Financial Adviser',
-        image:
-          'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Tyron Edmonds',
+        role: 'Adviser at Acacia Wealth',
+        image: '/tyron_edmonds_min.jpg',
       },
     },
     {
@@ -85,7 +84,7 @@ const financialLiteracyConfig = {
 const FinancialLiteracyTips = () => {
   return (
     <>
-      <Content.BlogProgress config={financialLiteracyConfig} />
+      <Content.Basic config={financialLiteracyConfig} />
     </>
   );
 };

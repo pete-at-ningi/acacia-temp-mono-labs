@@ -1,15 +1,15 @@
 export default {
   theme: {
     colors: {
-      primary: '#283149',
-      secondary: '#3a476a',
-      accent: '#b5dae6',
-      light: '#dbedf3',
-      dark: '#161b28',
+      primary: '#002522',
+      secondary: '#003836',
+      accent: '#008883',
+      light: '#a5cdce',
+      dark: '#0e1615',
       white: '#ffffff',
     },
     fonts: {
-      primary: "'Outfit', sans-serif",
+      primary: "'Nunito Sans', sans-serif",
     },
     fontSizes: {
       small: '0.875rem', // 14px
@@ -41,7 +41,7 @@ export default {
   header: {
     title: 'Acacia Wealth',
     description:
-      'Acacia Wealth is a premier financial planning firm dedicated to helping you build wealth, secure your legacy, and empower your financial future. Our experienced advisers offer personalised strategies tailored to your unique needs, ensuring transparency, integrity, and empathy at every step. Discover a trusted partner in Acacia Wealth, where your aspirations are our priority.',
+      'Your trusted partner, wherever life’s journeys take you. Tailored, no-nonsense financial planning. It’s the passport to the life you want now, to the future you dream of – and to creating a lasting legacy for future generations.',
     keywords:
       'financial planning, wealth management, retirement planning, investment strategies, inheritance tax planning, financial advice UK, wealth building, legacy planning, financial literacy, Birmingham financial advisers, London financial advisers',
     ogTitle:
@@ -53,11 +53,10 @@ export default {
   },
   business: {
     name: 'Acacia Wealth Ltd',
-    address: '123 Acacia Avenue, Birmingham, B1 2CD',
-    phone: '0121 234 5678',
-    email: 'hello@acaciawealth.co.uk',
-    FCAnumber: '123456',
-    companyNumber: '123456',
+    address: '7 Bell Yard, London, WC2A 2JR',
+    email: 'support@acaciawealth.co.uk',
+    FCAnumber: '504742',
+    companyNumber: '06956439',
   },
   nav: {
     primaryCTA: {
@@ -79,15 +78,7 @@ export default {
   socials: [
     {
       label: 'LinkedIn',
-      url: 'https://www.linkedin.com/company/acacia-wealth',
-    },
-    {
-      label: 'X',
-      url: 'https://twitter.com/AcaciaWealth',
-    },
-    {
-      label: 'Facebook',
-      url: 'https://www.facebook.com/AcaciaWealth',
+      url: 'https://www.linkedin.com/in/tyron-edmonds-cfa-chartered-msci-15696415/',
     },
   ],
   legal: [
@@ -145,6 +136,10 @@ export default {
       ogImage: '/android-chrome-512x512.png',
     },
     {
+      route: '/blog',
+      title: 'Blog',
+    },
+    {
       route: '/privacy-policy',
       title: 'Privacy Policy',
       description:
@@ -172,23 +167,23 @@ export default {
     ogImage: '/android-chrome-512x512.png',
     content: [
       {
-        route: '/blog/how-to-build-wealth',
-        title: 'How to Build Wealth',
+        route: '/blog/empowering-your-financial-future',
+        title: 'Empowering Your Financial Future',
         description:
-          'Building wealth is a journey that requires careful planning, discipline, and patience. In this article, we explore the key steps to building wealth and achieving your financial goals. Discover how to build wealth with Acacia Wealth today.',
+          'Empowering your financial future is about taking control of your finances and making informed decisions that support your long-term goals. In this article, we explore how to empower your financial future with Acacia Wealth.',
         keywords:
           'financial planning, wealth management, retirement planning, investment strategies, inheritance tax planning, financial advice UK, wealth building, legacy planning, financial literacy, Birmingham financial advisers, London financial advisers',
-        ogTitle: 'How to Build Wealth | Acacia Wealth Blog',
+        ogTitle: 'Empowering Your Financial Future | Acacia Wealth Blog',
         ogType: 'website',
-        ogUrl: 'https://www.acaciawealth.co.uk/blog/how-to-build-wealth',
+        ogUrl:
+          'https://www.acaciawealth.co.uk/blog/empowering-your-financial-future',
         ogImage: '/android-chrome-512x512.png',
-        image: '/blog/build-wealth.jpg',
-        date: '2nd September 2024',
+        image: '/blog/empower-future.jpg',
+        date: '8th April 2024',
         author: {
-          name: 'John Doe',
-          role: 'Financial Adviser',
-          imageUrl:
-            'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          name: 'Tyron Edmonds',
+          role: 'Adviser at Acacia Wealth',
+          imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
       },
@@ -204,55 +199,99 @@ export default {
         ogUrl: 'https://www.acaciawealth.co.uk/blog/securing-your-legacy',
         ogImage: '/android-chrome-512x512.png',
         image: '/blog/secure-legacy.jpg',
-        date: '5th September 2024',
+        date: '15th May 2024',
         author: {
-          name: 'John Doe',
-          role: 'Financial Adviser',
-          imageUrl:
-            'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          name: 'Tyron Edmonds',
+          role: 'Adviser at Acacia Wealth',
+          imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
       },
       {
-        route: '/blog/empowering-your-financial-future',
-        title: 'Empowering Your Financial Future',
+        route: '/blog/how-to-build-wealth',
+        title: 'How to Build Wealth',
         description:
-          'Empowering your financial future is about taking control of your finances and making informed decisions that support your long-term goals. In this article, we explore how to empower your financial future with Acacia Wealth.',
+          'Building wealth is a journey that requires careful planning, discipline, and patience. In this article, we explore the key steps to building wealth and achieving your financial goals. Discover how to build wealth with Acacia Wealth today.',
         keywords:
           'financial planning, wealth management, retirement planning, investment strategies, inheritance tax planning, financial advice UK, wealth building, legacy planning, financial literacy, Birmingham financial advisers, London financial advisers',
-        ogTitle: 'Empowering Your Financial Future | Acacia Wealth Blog',
+        ogTitle: 'How to Build Wealth | Acacia Wealth Blog',
+        ogType: 'website',
+        ogUrl: 'https://www.acaciawealth.co.uk/blog/how-to-build-wealth',
+        ogImage: '/android-chrome-512x512.png',
+        image: '/blog/build-wealth.jpg',
+        date: '12th June 2024',
+        author: {
+          name: 'Tyron Edmonds',
+          role: 'Adviser at Acacia Wealth',
+          imageUrl: '/tyron_edmonds_min.jpg',
+          href: '/the-team',
+        },
+      },
+      {
+        route: '/blog/what-new-government-means-for-you',
+        title: 'A New Government - What Could This Mean for You?',
+        description:
+          'With the recent UK election results, the Labour party takes over, and Rachel Reeves becomes the first female Chancellor of the Exchequer. What does this mean for your personal finances? In this article, we explore the key changes and their potential impact.',
+        keywords:
+          'financial planning, UK election, government change, personal finances, Labour policies, investment strategies, Acacia Wealth, UK financial advisers, pension planning, tax policies',
+        ogTitle:
+          'A New Government - What Could This Mean for You? | Acacia Wealth Blog',
         ogType: 'website',
         ogUrl:
-          'https://www.acaciawealth.co.uk/blog/empowering-your-financial-future',
+          'https://www.acaciawealth.co.uk/blog/what-new-government-means-for-you',
         ogImage: '/android-chrome-512x512.png',
-        image: '/blog/empower-future.jpg',
-        date: '14th September 2024',
+        image: '/blog/new-government-impact.jpg',
+        date: '19th July 2024',
         author: {
-          name: 'John Doe',
-          role: 'Financial Adviser',
-          imageUrl:
-            'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          name: 'Tyron Edmonds',
+          role: 'Adviser at Acacia Wealth',
+          imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
       },
       {
-        route: '/blog/financial-literacy-tips',
-        title: 'Financial Literacy Tips',
+        route: '/blog/power-of-marginal-gains-in-financial-planning',
+        title:
+          'The Power of Marginal Gains in Financial Planning: Lessons from British Cycling',
         description:
-          'Financial literacy is the foundation of sound financial planning, helping you make informed decisions about your money. In this article, we share valuable financial literacy tips to help you build wealth, secure your legacy, and empower your financial future.',
+          'Discover how the concept of marginal gains, made famous by British Cycling, can be applied to financial planning. Learn how small, incremental improvements can create significant long-term benefits for your financial health.',
         keywords:
-          'financial planning, wealth management, retirement planning, investment strategies, inheritance tax planning, financial advice UK, wealth building, legacy planning, financial literacy, Birmingham financial advisers, London financial advisers',
-        ogTitle: 'Financial Literacy Tips | Acacia Wealth Blog',
+          'financial planning, marginal gains, British Cycling, personal finance, incremental improvements, wealth building, budget management, Acacia Wealth, UK financial advisers, financial goals',
+        ogTitle:
+          'The Power of Marginal Gains in Financial Planning | Acacia Wealth Blog',
         ogType: 'website',
-        ogUrl: 'https://www.acaciawealth.co.uk/blog/financial-literacy-tips',
+        ogUrl:
+          'https://www.acaciawealth.co.uk/blog/power-of-marginal-gains-in-financial-planning',
         ogImage: '/android-chrome-512x512.png',
-        image: '/blog/financial-literacy.jpg',
-        date: '22nd September 2024',
+        image: '/blog/marginal-gains-financial-planning.png',
+        date: '7th August 2024',
         author: {
-          name: 'John Doe',
-          role: 'Financial Adviser',
-          imageUrl:
-            'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          name: 'Tyron Edmonds',
+          role: 'Adviser at Acacia Wealth',
+          imageUrl: '/tyron_edmonds_min.jpg',
+          href: '/the-team',
+        },
+      },
+      {
+        route: '/blog/how-does-new-school-term-affect-financial-planning',
+        title:
+          'How Does the New School Term Affect Financial Planning for Working Parents?',
+        description:
+          'The start of a new school term brings a unique set of financial challenges for working parents. In this article, we explore how to manage childcare, school costs, and financial goals effectively during this period.',
+        keywords:
+          'financial planning, working parents, school term expenses, childcare costs, financial goals, budget management, Acacia Wealth, back to school, family finances, UK financial advisers',
+        ogTitle:
+          'How Does the New School Term Affect Financial Planning for Working Parents? | Acacia Wealth Blog',
+        ogType: 'website',
+        ogUrl:
+          'https://www.acaciawealth.co.uk/blog/how-does-new-school-term-affect-financial-planning',
+        ogImage: '/android-chrome-512x512.png',
+        image: '/blog/back-to-school-financial-planning.png',
+        date: '13th September 2024',
+        author: {
+          name: 'Tyron Edmonds',
+          role: 'Adviser at Acacia Wealth',
+          imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
       },

@@ -1,10 +1,11 @@
 import React from 'react';
-import config from '../config'
+import config from '../config';
 
-import { Hero } from 'shared-components'
+import { Hero } from 'shared-components';
 import { Newsletter } from 'shared-components';
 import { Content } from 'shared-components';
 import { BlogFeatured } from 'shared-components';
+import { Misc } from 'shared-components';
 
 import {
   CloudArrowUpIcon,
@@ -13,14 +14,14 @@ import {
 } from '@heroicons/react/20/solid';
 
 const ourClientsConfig = {
-  imageUrl: '/ourclients-hero.jpg',
+  imageUrl: '/our-clients.png',
   subtitle:
     'We understand that each client’s financial situation is unique, and we take pride in working with individuals and families who are thoughtful about their future, their legacy, and their impact on the world. Our clients come to us not only for financial advice but also for a partnership that helps them navigate life’s complexities with confidence and clarity.',
   title: 'Who We Work With',
   primaryCTA: {
     label: 'Speak to an adviser',
     route: '/contact',
-  }
+  },
 };
 
 const WithTestimonalConfig = {
@@ -61,25 +62,21 @@ const WithTestimonalConfig = {
     },
   ],
   quote: {
-    text: '“The peace of mind that comes with knowing my financial future is secure is priceless. Acacia has been with me every step of the way.”',
-    image:
-      'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-
-    name: 'John Doe',
-    handle: '@johndoe',
+    text: '“The peace of mind that comes with knowing your financial future is secure is priceless. Acacia will be with you every step of the way.”',
   },
 };
 
 const newsletterConfig = {
-  privacyUrl: "/privacy"
-}
+  privacyUrl: '/privacy',
+};
 
 const OurClients = () => {
   return (
     <>
-      <Hero.SlantedImageAnimated config={ourClientsConfig} /> <Newsletter.CenterCardAnimated config={newsletterConfig}/>
-      <Content.WithTestimonialAnimated config={WithTestimonalConfig} />
-      <BlogFeatured.BasicAnimated config={config.blog} limit={3} />
+      <Hero.SlantedImage config={ourClientsConfig} /> <Misc.Spacing />
+      <Newsletter.CenterCard config={newsletterConfig} />
+      <Content.WithTestimonial config={WithTestimonalConfig} />
+      <BlogFeatured.Basic config={config.blog} limit={3} />
     </>
   );
 };

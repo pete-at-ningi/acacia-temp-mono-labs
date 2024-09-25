@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const HeroSection = styled.section`
   position: relative;
-  height: 70vh;
+  min-height: 70vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -35,7 +36,11 @@ const Content = styled.div`
   width: 100%;
 `;
 
-const Subtitle = styled.p`
+const PreTitle = styled(motion.p).attrs(() => ({
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { delay: 0.6, duration: 0.8 },
+}))`
   font-size: ${(props) => props.theme.fontSizes.medium};
   font-weight: 400;
   max-width: 850px;
@@ -47,22 +52,55 @@ const Subtitle = styled.p`
   border-radius: 10px;
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1).attrs(() => ({
+  initial: { opacity: 0, y: 70 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8 },
+}))`
   max-width: 850px;
   font-size: ${(props) =>
     props.theme.fontSizes.massive}; /* Default to xlarge for mobile */
   font-weight: 700;
   margin-bottom: ${(props) => props.theme.spacings.large};
+<<<<<<< HEAD
   letter-spacing: 1px;
 
+=======
+  line-height: 1.2;
+>>>>>>> 91a433e8505e76a80bc5d15772e88921a06ce25c
   @media ${(props) => props.theme.breakpoints.tablet},
     ${(props) => props.theme.breakpoints.mobile} {
     font-size: ${(props) => props.theme.fontSizes.xlarge};
   }
 `;
 
-const CTAButton = styled.a`
-  color: red;
+const SubTitle = styled(motion.p).attrs(() => ({
+  initial: { opacity: 0, y: 70 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8 },
+}))`
+  max-width: 850px;
+
+  margin-bottom: ${(props) => props.theme.spacings.large};
+
+  @media ${(props) => props.theme.breakpoints.tablet},
+    ${(props) => props.theme.breakpoints.mobile} {
+  }
+`;
+
+const ButtonWrap = styled.div`
+  display: flex;
+  gap: ${(props) => props.theme.spacings.medium};
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    flex-direction: column;
+  }
+`;
+
+const CTAButton = styled(motion.a).attrs(() => ({
+  initial: { opacity: 0, y: 70 },
+  animate: { opacity: 1, y: 0 },
+  transition: { delay: 0.2, duration: 0.8 },
+}))`
   display: inline-block;
   font-size: ${(props) => props.theme.fontSizes.medium};
   padding: ${(props) => props.theme.spacings.small}
@@ -70,16 +108,19 @@ const CTAButton = styled.a`
   border-radius: ${(props) => props.theme.borders.radius};
   text-decoration: none;
   font-weight: 600;
-  color: ${(props) =>
-    props.primary ? props.theme.colors.dark : props.theme.colors.white};
+  color: ${(props) => props.theme.colors.white};
   background-color: ${(props) =>
     props.primary ? props.theme.colors.accent : 'transparent'};
-  border: 2px solid transparent;
+  border: n
   margin-right: ${(props) =>
     props.primary ? props.theme.spacings.medium : '0'};
 
   &:hover {
     opacity: ${(props) => props.theme.hover.opacity};
+  }
+  @media 
+    ${(props) => props.theme.breakpoints.mobile} {
+   border: 2px solid ${(props) => props.theme.colors.accent};
   }
 `;
 
@@ -88,16 +129,19 @@ const Hero = ({ config }) => {
     <HeroSection imageUrl={config.imageUrl}>
       <Overlay />
       <Content>
-        <Subtitle>{config.subtitle}</Subtitle>
+        {config.pretitle && <PreTitle>{config.subtitle}</PreTitle>}
         <Title>{config.title}</Title>
-
-        <CTAButton href={config.primaryCTA.route} primary>
-          {config.primaryCTA.label}
-        </CTAButton>
-        {config.secondaryCTA && 
-        <CTAButton href={config.secondaryCTA.route}>
-          {config.secondaryCTA.label}
-        </CTAButton>}
+        <SubTitle>{config.subtitle}</SubTitle>
+        <ButtonWrap>
+          <CTAButton href={config.primaryCTA.route} primary>
+            {config.primaryCTA.label}
+          </CTAButton>
+          {config.secondaryCTA && (
+            <CTAButton href={config.secondaryCTA.route}>
+              {config.secondaryCTA.label}
+            </CTAButton>
+          )}
+        </ButtonWrap>
       </Content>
     </HeroSection>
   );

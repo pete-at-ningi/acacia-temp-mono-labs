@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';  // Import framer-motion
 import DividerLine from '../Misc/DividerLine';
+
 const OutsideWrapper = styled.div`
   padding: ${(props) => props.theme.spacings.xlarge}
     ${(props) => props.theme.spacings.large};
 `;
+
 const ServicesSection = styled.section`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
   margin: 0 auto;
@@ -51,7 +54,22 @@ const ServicesGrid = styled.dl`
   }
 `;
 
-const ServiceItem = styled.a`
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25, 
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const ServiceItem = styled(motion.a)` 
   display: flex;
   flex-direction: column;
   max-width: 350px;
@@ -106,9 +124,9 @@ const Services = ({ services }) => {
           <SectionDescription>{services.description}</SectionDescription>
           <DividerLine />
         </SectionHeader>
-        <ServicesGrid>
+        <ServicesGrid as={motion.div} variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           {services.items.map((service) => (
-            <ServiceItem key={service.name} href={service.href}>
+            <ServiceItem key={service.name} href={service.href} variants={itemVariants}>
               <ServiceTitle>
                 <service.icon aria-hidden='true' />
                 {service.name}

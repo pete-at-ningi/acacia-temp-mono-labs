@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { CheckIcon } from '@heroicons/react/20/solid';
 
 const OutsideWrapper = styled.div`
@@ -42,13 +43,13 @@ const Description = styled.p`
   color: ${(props) => props.theme.colors.black};
 `;
 
-const QuestionsColumnWrapper = styled.div`
+const QuestionsColumnWrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: ${(props) => props.theme.spacings.large};
 `;
 
-const QuestionWrapper = styled.div`
+const QuestionWrapper = styled(motion.div)`
   display: flex;
   align-items: flex-start;
   gap: ${(props) => props.theme.spacings.small};
@@ -73,10 +74,24 @@ const QuestionText = styled.dd`
   margin-top: ${(props) => props.theme.spacings.xsmall};
 `;
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3, 
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }, 
+};
+
 const QuestionsSection = ({ config }) => {
   return (
     <OutsideWrapper>
-      {' '}
       <Section>
         <BoldText>{config.boldText}</BoldText>
         <ContentWrapper>
@@ -84,9 +99,14 @@ const QuestionsSection = ({ config }) => {
             <Title>{config.title}</Title>
             <Description>{config.description}</Description>
           </div>
-          <QuestionsColumnWrapper>
+          <QuestionsColumnWrapper
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.8 }}
+          >
             {config.questions.map((question, index) => (
-              <QuestionWrapper key={index}>
+              <QuestionWrapper key={index} variants={itemVariants}>
                 <QuestionIcon aria-hidden='true' />
                 <div>
                   <QuestionTitle>{question.title}</QuestionTitle>

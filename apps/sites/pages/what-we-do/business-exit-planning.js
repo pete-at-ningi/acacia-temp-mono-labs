@@ -1,4 +1,4 @@
-import { Content } from 'shared-components'
+import { Content } from 'shared-components';
 
 const businessExitPlanningConfig = {
   subtitle: 'Introducing',
@@ -51,9 +51,9 @@ const businessExitPlanningConfig = {
       type: 'quote',
       text: '“Exiting a business is a monumental decision, and at Acacia Wealth, we are here to guide you through every step. Our tailored exit strategies are designed to maximize value, minimize tax liabilities, and ensure a smooth transition, allowing you to confidently move on to the next chapter of your life.”',
       author: {
-        name: 'Tyron Smith',
-        role: 'Financial Planner and Director',
-        image: '/tyron.jpg',
+        name: 'Tyron Edmonds',
+        role: 'Adviser at Acacia Wealth',
+        image: '/tyron_edmonds_min.jpg',
       },
     },
     {

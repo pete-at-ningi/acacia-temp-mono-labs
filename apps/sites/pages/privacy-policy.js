@@ -1,4 +1,4 @@
-import { Content } from 'shared-components'
+import { Content } from 'shared-components';
 
 const privacyPolicyConfig = {
   subtitle: 'Our Commitment to Your Privacy',
@@ -64,7 +64,7 @@ const privacyPolicyConfig = {
     },
     {
       type: 'paragraph',
-      text: 'We regularly review and update our privacy policy to ensure it remains relevant and compliant with legal requirements. Any updates will be posted on this page. This policy was last updated on [Insert Date].',
+      text: 'We regularly review and update our privacy policy to ensure it remains relevant and compliant with legal requirements. Any updates will be posted on this page. This policy was last updated on 24 September 2024.',
     },
     {
       type: 'title',
@@ -76,11 +76,11 @@ const privacyPolicyConfig = {
     },
     {
       type: 'paragraph',
-      text: 'By Email: info@acaciawealth.co.uk',
+      text: 'By Email: support@acaciawealth.co.uk',
     },
     {
       type: 'paragraph',
-      text: 'By Post: Acacia Wealth, [Your Address Here]',
+      text: 'By Post: Acacia Wealth,7 Bell Yard, London, WC2A 2JR',
     },
   ],
 };

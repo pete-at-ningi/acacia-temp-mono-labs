@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { motion } from 'framer-motion';
 
 const Section = styled.section`
   background-color: ${(props) => props.theme.colors.white};
@@ -29,15 +29,15 @@ const Header = styled.div`
   }
 `;
 
-const PostsGrid = styled.div`
+const PostsGrid = styled(motion.div)`
   margin-top: ${(props) => props.theme.spacings.xlarge};
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: ${(props) => props.theme.spacings.xlarge};
+  gap: ${(props) => props.theme.spacings.medium};
 
   @media ${(props) => props.theme.breakpoints.tablet},
-  {
-    grid-template-columns: 1fr 1fr 1fr;
+    ${(props) => props.theme.breakpoints.mobile} {
+    grid-template-columns: 1fr;
   }
 
   @media ${(props) => props.theme.breakpoints.mobile},
@@ -46,12 +46,15 @@ const PostsGrid = styled.div`
   }
 `;
 
-const Post = styled.a`
+const Post = styled(motion.a)`
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease-in-out;
+  padding: ${(props) => props.theme.spacings.medium};
   &:hover {
     cursor: pointer;
-    opacity: ${(props) => props.theme.hover.opacity};
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -132,6 +135,7 @@ const AuthorInfo = styled.div`
     height: 40px;
     border-radius: 50%;
     background-color: ${(props) => props.theme.colors.lightGray};
+    object-fit: cover;
   }
 
   div {
@@ -148,8 +152,29 @@ const AuthorInfo = styled.div`
   }
 `;
 
-const BlogSection = ({ limit, config }) => {
-  const posts = limit ? config.content.slice(0, limit) : config.content;
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.3,
+      staggerChildren: 0.6,
+    },
+  },
+};
+
+const postVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const BlogSection = ({ limit = null, config }) => {
+  // Use slice and reverse on a copied array to avoid mutating the original content array
+  const posts = limit
+    ? [...config.content].slice(0, limit).reverse()
+    : [...config.content].reverse();
+
+  console.log(limit, config);
 
   return (
     <Section>
@@ -158,9 +183,23 @@ const BlogSection = ({ limit, config }) => {
           <h2>{config.featuredIntro}</h2>
           <p>{config.featuredSub}</p>
         </Header>
-        <PostsGrid>
-          {posts.reverse().map((post, postIndex) => (
-            <Post key={postIndex} href={post.route}>
+        <PostsGrid
+          variants={containerVariants}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.4 }}
+        >
+          {posts.map((post, postIndex) => (
+            <Post
+              key={postIndex}
+              href={post.route}
+              variants={postVariants}
+              whileHover={{
+                y: -10,
+                transition: { duration: 0.2, ease: [0.4, 0, 0.2, 1] },
+              }}
+              transition={{ duration: 0.05, ease: [0.4, 0, 0.2, 1] }}
+            >
               <ImageWrapper>
                 <img src={post.image} alt={post.title} />
                 <div />

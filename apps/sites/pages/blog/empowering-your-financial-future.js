@@ -1,4 +1,4 @@
-import { Content } from 'shared-components'
+import { Content } from 'shared-components';
 
 const empowerFutureConfig = {
   subtitle: 'Introducing',
@@ -51,10 +51,9 @@ const empowerFutureConfig = {
       type: 'quote',
       text: '“Empowering our clients to take control of their financial future is at the heart of what we do. At Acacia Wealth, we provide the guidance and strategies needed to help our clients achieve financial independence and live the life they’ve always dreamed of.”',
       author: {
-        name: 'John Doe',
-        role: 'Financial Adviser',
-        image:
-          'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Tyron Edmonds',
+        role: 'Adviser at Acacia Wealth',
+        image: '/tyron_edmonds_min.jpg',
       },
     },
     {
@@ -85,7 +84,7 @@ const empowerFutureConfig = {
 const EmpowerFuture = () => {
   return (
     <>
-      <Content.BlogProgress config={empowerFutureConfig} />
+      <Content.Basic config={empowerFutureConfig} />
     </>
   );
 };

@@ -1,0 +1,29 @@
+import Mailgun from 'mailgun-js';
+
+export default async function handler(req, res) {
+  if (req.method === 'POST') {
+    const { email } = req.body;
+    try {
+      await Mailgun({
+        apiKey: process.env.MAILGUN_API_KEY,
+        domain: 'email.ningi.io',
+        host: 'api.eu.mailgun.net',
+      })
+        .messages()
+        .send({
+          from: 'noreply@email.ningi.io', // Customize or use environment variable
+          to: 'pete@ningi.co.uk',
+          subject: `Acacia Wealth: New Mailist Subscription from ${email}`,
+          html: `<p>You have received a new mailing list subscription via the website from ${email}.`,
+        });
+      res.status(200).json({ success: true });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      res.status(500).json({ success: false, error: error.message });
+    }
+  } else {
+    // Handle any other HTTP method
+    res.setHeader('Allow', ['POST']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
+}

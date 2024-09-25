@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 import { Bars3Icon, XMarkIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 const Header = styled.header`
@@ -18,6 +19,11 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: padding 0.3s ease;
+
+  &.scrolled {
+    padding: ${(props) => props.theme.spacings.small};
+  }
 `;
 
 const Logo = styled.a`
@@ -69,6 +75,7 @@ const ActionButton = styled.a`
   display: flex;
   align-items: center;
   svg {
+    margin-bottom: 3px;
     width: ${(props) => props.theme.fontSizes.medium};
   }
   grid-gap: ${(props) => props.theme.spacings.small};
@@ -131,19 +138,29 @@ const MobileMenu = styled.div`
   width: 100%;
   height: 100vh;
   background-color: ${(props) => props.theme.colors.white};
-  padding: ${(props) => props.theme.spacings.large};
+  padding: ${(props) => props.theme.spacings.medium};
   z-index: 1000;
   overflow-y: auto;
+`;
+
+const MobileHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: ${(props) => props.theme.spacings.medium};
 `;
 
 const MobileMenuCloseButton = styled.button`
   width: 100%;
   background: none;
   text-align: right;
+  margin: 0;
+  padding: 0;
   border: none;
   font-size: ${(props) => props.theme.fontSizes.large};
   cursor: pointer;
-  margin-bottom: ${(props) => props.theme.spacings.large};
+
   svg {
     width: ${(props) => props.theme.nav.logo};
   }
@@ -172,6 +189,23 @@ const MobileActionMenuWrapper = styled.div`
 
 const BasicHeader = ({ config }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -179,10 +213,9 @@ const BasicHeader = ({ config }) => {
 
   return (
     <Header>
-      <Nav>
+      <Nav className={isScrolled ? 'scrolled' : ''}>
         <Logo href='/'>
-          <img src='/icon.png' alt='Acacia Wealth' />
-          Acacia Wealth
+          <img src='/logo.png' alt='Acacia Wealth' />
         </Logo>
 
         <Menu>
@@ -210,9 +243,14 @@ const BasicHeader = ({ config }) => {
       <MobileMenuOverlay open={mobileMenuOpen} onClick={toggleMobileMenu} />
 
       <MobileMenu open={mobileMenuOpen}>
-        <MobileMenuCloseButton onClick={toggleMobileMenu}>
-          <XMarkIcon />
-        </MobileMenuCloseButton>
+        <MobileHeader>
+          <Logo href='/'>
+            <img src='/logo.png' alt='Acacia Wealth' />
+          </Logo>
+          <MobileMenuCloseButton onClick={toggleMobileMenu}>
+            <XMarkIcon />
+          </MobileMenuCloseButton>
+        </MobileHeader>
         {config.menu.map((item) => (
           <MobileMenuItem
             key={item.label}

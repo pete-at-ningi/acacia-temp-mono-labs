@@ -72,12 +72,12 @@ const CTAButton = styled.a`
   text-decoration: none;
   font-weight: 600;
   color: ${(props) =>
-    props.primary ? props.theme.colors.dark : props.theme.colors.white};
+    props.$primary ? props.theme.colors.dark : props.theme.colors.white};
   background-color: ${(props) =>
-    props.primary ? props.theme.colors.accent : 'transparent'};
+    props.$primary ? props.theme.colors.accent : 'transparent'};
   border: 2px solid transparent;
   margin-right: ${(props) =>
-    props.primary ? props.theme.spacings.medium : '0'};
+    props.$primary ? props.theme.spacings.medium : '0'};
 
   &:hover {
     opacity: ${(props) => props.theme.hover.opacity};
@@ -94,7 +94,7 @@ const RightColumn = styled(motion.div).attrs(() => ({
       ${(props) => props.theme.colors.primary} 0%,
       ${(props) => props.theme.colors.dark} 100%
     ),
-    url(${(props) => props.imageUrl});
+    url(${(props) => props.$imageUrl});
   background-blend-mode: overlay;
   background-size: cover;
   background-position: center;
@@ -132,12 +132,16 @@ const Hero = ({ config }) => {
           <Title>{config.title}</Title>
           <Subtitle>{config.subtitle}</Subtitle>
           <CTAButtons>
-            <CTAButton href={config.primaryCTA.route} primary>
+            <CTAButton href={config.primaryCTA.route} $primary>
               {config.primaryCTA.label}
             </CTAButton>
+            {config.secondaryCTA && 
+        <CTAButton href={config.secondaryCTA.route}>
+          {config.secondaryCTA.label}
+        </CTAButton>}
           </CTAButtons>
         </LeftColumn>
-        <RightColumn imageUrl={config.imageUrl} />
+        <RightColumn $imageUrl={config.imageUrl} />
       </HeroSection>
     </OutsideWrapper>
   );

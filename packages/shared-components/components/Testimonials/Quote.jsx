@@ -33,6 +33,14 @@ const ImageWrapper = styled.div`
   @media ${(props) => props.theme.breakpoints.desktop} {
     margin-bottom: 0;
   }
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    max-width: 250px;
+  }
+  @media ${(props) => props.theme.breakpoints.tablet} {
+    min-width: 400px;
+  }
+
+
 `;
 
 const Image = styled.img`
@@ -44,8 +52,13 @@ const Image = styled.img`
 
 const QuoteWrapper = styled.figure`
   flex: 2;
+<<<<<<< HEAD
+  color: ${(props) => props.theme.colors.white};
+  padding: ${(props) => props.theme.spacings.xlarge};
+=======
   color: ${(props) => props.theme.colors.dark};
   padding: ${(props) => props.theme.spacings.large};
+>>>>>>> 91a433e8505e76a80bc5d15772e88921a06ce25c
 `;
 
 const Quote = styled.blockquote`

@@ -118,13 +118,21 @@ const VideoWrapper = styled.div`
   }
   iframe {
     height: 500px;
-    width: 500px;
+    width: 400px;
     border-radius: ${(props) => props.theme.borders.radius};
     @media ${(props) => props.theme.breakpoints.mobile} {
       height: 60vh;
       width: 90vw;
     }
   }
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    iframe {
+    height: 400px;
+    width: 300px;
+    }
+  }
+
+  
 `;
 
 const TeamSection = ({ config }) => {
@@ -154,7 +162,6 @@ const TeamSection = ({ config }) => {
             src={config.videoUrl}
             frameBorder='0'
             allow='autoplay; fullscreen; picture-in-picture'
-            allowFullScreen
           ></iframe>
         </VideoWrapper>
       </Section>

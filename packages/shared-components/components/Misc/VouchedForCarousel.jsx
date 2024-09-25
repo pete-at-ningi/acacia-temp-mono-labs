@@ -11,7 +11,7 @@ const CarouselWrapper = styled.div`
   justify-content: flex-start;
   color: ${(props) => props.theme.colors.white};
   padding: ${(props) => props.theme.spacings.large};
-  background-image: ${(props) => `url(${props.imageUrl})`};
+  background-image: ${(props) => `url(${props.$imageUrl})`};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -43,7 +43,7 @@ const Title = styled(motion.h1).attrs(() => ({
 
 const VouchedForCarousel = ({ config }) => {
   return (
-    <CarouselWrapper imageUrl={config.backgroundImageUrl}>
+    <CarouselWrapper $imageUrl={config.backgroundImageUrl}>
       <Title>{config.title}</Title>
       <iframe
         src={`https://api.vouchedfor.co.uk/v2/public/firm/${config.vouchedForFirmID}/widget?light_theme=1&version=vf2023`}

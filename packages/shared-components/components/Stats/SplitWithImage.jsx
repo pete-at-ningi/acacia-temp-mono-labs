@@ -72,10 +72,10 @@ const CTAButton = styled.a`
   font-weight: 600;
   color: ${(props) => props.theme.colors.white};
   background-color: ${(props) =>
-    props.primary ? props.theme.colors.accent : 'transparent'};
+    props.$primary ? props.theme.colors.accent : 'transparent'};
   border: 2px solid transparent;
   margin-right: ${(props) =>
-    props.primary ? props.theme.spacings.medium : '0'};
+    props.$primary ? props.theme.spacings.medium : '0'};
 
   &:hover {
     opacity: ${(props) => props.theme.hover.opacity};
@@ -92,7 +92,7 @@ const RightColumn = styled(motion.div).attrs(() => ({
       ${(props) => props.theme.colors.primary} 0%,
       ${(props) => props.theme.colors.dark} 100%
     ),
-    url(${(props) => props.imageUrl});
+    url(${(props) => props.$imageUrl});
   background-blend-mode: overlay;
   background-size: cover;
   background-position: center;
@@ -159,12 +159,16 @@ const Hero = ({ config }) => {
             ))}
           </ItemWrapper>
           <CTAButtons>
-            <CTAButton href={config.CTA.route} primary>
+            <CTAButton href={config.CTA.route} $primary>
               {config.CTA.label}
             </CTAButton>
+            {config.secondaryCTA && 
+        <CTAButton href={config.secondaryCTA.route}>
+          {config.secondaryCTA.label}
+        </CTAButton>}
           </CTAButtons>
         </LeftColumn>
-        <RightColumn imageUrl={config.imageUrl} />
+        <RightColumn $imageUrl={config.imageUrl} />
       </HeroSection>
     </OutsideWrapper>
   );

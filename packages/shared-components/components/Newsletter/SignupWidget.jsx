@@ -6,6 +6,10 @@ const FormWrapper = styled.form`
   width: 100%;
   display: flex;
   gap: ${(props) => props.theme.spacings.small};
+
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const Input = styled.input`
@@ -18,6 +22,7 @@ const Input = styled.input`
   background-color: rgba(255, 255, 255, 0.3);
   outline: none;
   font-size: ${(props) => props.theme.fontSizes.medium};
+
   &:focus {
     background-color: rgba(255, 255, 255, 0.2);
   }
@@ -36,7 +41,14 @@ const Button = styled.button`
   &:hover {
     background-color: ${(props) => props.theme.colors.primary};
   }
+
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    width: 100%;
+  }
 `;
+const SubscribedText = styled.p`
+color: white;
+`
 
 const SubmittedText = styled.p`
   color: white;

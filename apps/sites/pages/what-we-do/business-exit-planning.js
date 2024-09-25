@@ -84,7 +84,7 @@ const businessExitPlanningConfig = {
 const BusinessExitPlanning = () => {
   return (
     <>
-      <Content.Basic config={businessExitPlanningConfig} />
+      <Content.BlogProgress config={businessExitPlanningConfig} />
     </>
   );
 };

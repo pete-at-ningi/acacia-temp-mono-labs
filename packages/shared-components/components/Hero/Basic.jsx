@@ -12,7 +12,7 @@ const HeroSection = styled.section`
   justify-content: flex-start;
   color: ${(props) => props.theme.colors.white};
   padding: ${(props) => props.theme.spacings.large};
-  background-image: ${(props) => `url(${props.imageUrl})`};
+  background-image: ${(props) => `url(${props.$imageUrl})`};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -113,17 +113,17 @@ const CTAButton = styled(motion.a).attrs(() => ({
   font-weight: 600;
   color: ${(props) => props.theme.colors.white};
   background-color: ${(props) =>
-    props.primary ? props.theme.colors.accent : 'transparent'};
-  border: n
+    props.$primary ? props.theme.colors.accent : 'transparent'};
+  border: none;
   margin-right: ${(props) =>
-    props.primary ? props.theme.spacings.medium : '0'};
+    props.$primary ? props.theme.spacings.medium : '0'};
 
   &:hover {
     opacity: ${(props) => props.theme.hover.opacity};
   }
-  @media 
-    ${(props) => props.theme.breakpoints.mobile} {
-   border: 2px solid ${(props) => props.theme.colors.accent};
+
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    border: 2px solid ${(props) => props.theme.colors.accent};
   }
 `;
 
@@ -133,7 +133,7 @@ const SearchIcon = styled(FiCalendar)`
 
 const Hero = ({ config }) => {
   return (
-    <HeroSection imageUrl={config.imageUrl}>
+    <HeroSection $imageUrl={config.imageUrl}>
       <Overlay />
       <Content>
         {config.pretitle && (
@@ -148,7 +148,7 @@ const Hero = ({ config }) => {
         <Title>{config.title}</Title>
         <SubTitle>{config.subtitle}</SubTitle>
         <ButtonWrap>
-          <CTAButton href={config.primaryCTA.route} primary>
+          <CTAButton href={config.primaryCTA.route} $primary>
             {config.primaryCTA.label}
           </CTAButton>
           {config.secondaryCTA && (

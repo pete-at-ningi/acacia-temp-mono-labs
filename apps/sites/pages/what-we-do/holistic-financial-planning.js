@@ -83,7 +83,7 @@ const holisticFinancialPlanningConfig = {
 const OurClients = () => {
   return (
     <>
-      <Content.Basic config={holisticFinancialPlanningConfig} />
+      <Content.BlogProgress config={holisticFinancialPlanningConfig} />
     </>
   );
 };

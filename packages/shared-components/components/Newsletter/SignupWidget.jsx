@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 
 const FormWrapper = styled.form`
   width: 100%;
@@ -43,15 +42,12 @@ const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.primary};
+    opacity: ${(props) => props.theme.hover.opacity};
   }
 
   @media ${(props) => props.theme.breakpoints.mobile} {
     width: 100%;
   }
-`;
-const SubscribedText = styled.p`
-  color: white;
 `;
 
 const SubmittedText = styled.p`
@@ -59,16 +55,7 @@ const SubmittedText = styled.p`
   font-weight: bold;
 `;
 
-const SubmittedEmoji = styled(motion.p).attrs(() => ({
-  initial: { opacity: 1, scale: 1 },
-  animate: { opacity: 0, scale: 30 },
-  transition: { duration: 1.5, ease: 'easeInOut' },
-}))`
-  display: inline-block;
-  transform-origin: center;
-`;
-
-const SignupWidget = ({ onSubmit }) => {
+const SignupWidget = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -117,7 +104,6 @@ const SignupWidget = ({ onSubmit }) => {
   ) : (
     <div>
       <SubmittedText>Thanks, sign-up confirmed!</SubmittedText>
-      <SubmittedEmoji>📧</SubmittedEmoji>
     </div>
   );
 };

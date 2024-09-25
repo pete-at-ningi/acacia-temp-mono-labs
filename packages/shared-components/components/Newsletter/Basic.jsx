@@ -50,8 +50,9 @@ const SubText = styled.p`
 `;
 
 const BadgeWrapper = styled(motion.div)`
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: ${(props) => props.theme.spacings.large};
   margin-top: ${(props) => props.theme.spacings.large};
 
@@ -66,7 +67,6 @@ const Badge = styled(motion.div)`
   align-items: center;
   gap: ${(props) => props.theme.spacings.medium};
 `;
-
 
 const BadgeIcon = styled.div`
   background-color: rgba(255, 255, 255, 0.1);
@@ -99,74 +99,72 @@ const BadgeDescription = styled.dd`
 `;
 
 const badgeWrapperVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3, 
-      },
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
     },
-  };
-  
-  const badgeVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }, 
-  };
-  
+  },
+};
 
-  const NewsletterSignup = () => {
-    const handleSubmit = () => {
-      // Add logic to save to Supabase or another backend
-    };
-  
-    return (
-      <OutsideWrapper>
-        <NewsletterSection>
-          <ContentWrapper>
-            <TextWrapper>
-              <Heading>Subscribe to our newsletter.</Heading>
-              <SubText>
-                Stay updated with the latest financial planning tips and news from
-                Acacia Wealth. We promise no spam, just valuable insights.
-              </SubText>
-              <SignupWidget onSubmit={handleSubmit} />
-            </TextWrapper>
-  
-            <BadgeWrapper
-                variants={badgeWrapperVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }} 
-                >
-              <Badge variants={badgeVariants}>
-                <BadgeIcon>
-                  <CalendarDaysIcon aria-hidden='true' />
-                </BadgeIcon>
-                <BadgeText>
-                  <BadgeTitle>Monthly articles</BadgeTitle>
-                  <BadgeDescription>
-                    Get the latest insights and tips on managing your wealth.
-                  </BadgeDescription>
-                </BadgeText>
-              </Badge>
-  
-              <Badge variants={badgeVariants}>
-                <BadgeIcon>
-                  <HandRaisedIcon aria-hidden='true' />
-                </BadgeIcon>
-                <BadgeText>
-                  <BadgeTitle>No spam</BadgeTitle>
-                  <BadgeDescription>
-                    Only valuable content. We respect your inbox.
-                  </BadgeDescription>
-                </BadgeText>
-              </Badge>
-            </BadgeWrapper>
-          </ContentWrapper>
-        </NewsletterSection>
-      </OutsideWrapper>
-    );
+const badgeVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const NewsletterSignup = () => {
+  const handleSubmit = () => {
+    // Add logic to save to Supabase or another backend
   };
-  
+
+  return (
+    <OutsideWrapper>
+      <NewsletterSection>
+        <ContentWrapper>
+          <TextWrapper>
+            <Heading>Subscribe to our newsletter.</Heading>
+            <SubText>
+              Stay updated with the latest financial planning tips and news from
+              Acacia Wealth. We promise no spam, just valuable insights.
+            </SubText>
+            <SignupWidget onSubmit={handleSubmit} />
+          </TextWrapper>
+
+          <BadgeWrapper
+            variants={badgeWrapperVariants}
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            <Badge variants={badgeVariants}>
+              <BadgeIcon>
+                <CalendarDaysIcon aria-hidden='true' />
+              </BadgeIcon>
+              <BadgeText>
+                <BadgeTitle>Monthly articles</BadgeTitle>
+                <BadgeDescription>
+                  Get the latest insights and tips on managing your wealth.
+                </BadgeDescription>
+              </BadgeText>
+            </Badge>
+
+            <Badge variants={badgeVariants}>
+              <BadgeIcon>
+                <HandRaisedIcon aria-hidden='true' />
+              </BadgeIcon>
+              <BadgeText>
+                <BadgeTitle>No spam</BadgeTitle>
+                <BadgeDescription>
+                  Only valuable content. We respect your inbox.
+                </BadgeDescription>
+              </BadgeText>
+            </Badge>
+          </BadgeWrapper>
+        </ContentWrapper>
+      </NewsletterSection>
+    </OutsideWrapper>
+  );
+};
 
 export default NewsletterSignup;

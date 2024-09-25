@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { FiCalendar } from 'react-icons/fi';
 
 const HeroSection = styled.section`
   position: relative;
@@ -36,7 +37,7 @@ const Content = styled.div`
   width: 100%;
 `;
 
-const PreTitle = styled(motion.p).attrs(() => ({
+const PreTitle = styled(motion.a).attrs(() => ({
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   transition: { delay: 0.6, duration: 0.8 },
@@ -46,10 +47,17 @@ const PreTitle = styled(motion.p).attrs(() => ({
   max-width: 850px;
   margin-bottom: ${(props) => props.theme.spacings.small};
   padding: 5px 8px;
-  letter-spacing: 1px;
   display: inline-block;
   border: 1px solid white;
   border-radius: 10px;
+  color: ${(props) => props.theme.colors.white};
+  display: inline-flex;
+  align-items: center;
+  gap: ${(props) => props.theme.spacings.medium};
+  &:hover {
+    opacity: ${(props) => props.theme.hover.opacity};
+    cursor: pointer;
+  }
 `;
 
 const Title = styled(motion.h1).attrs(() => ({
@@ -119,12 +127,24 @@ const CTAButton = styled(motion.a).attrs(() => ({
   }
 `;
 
+const SearchIcon = styled(FiCalendar)`
+  margin-bottom: 3px;
+`;
+
 const Hero = ({ config }) => {
   return (
     <HeroSection imageUrl={config.imageUrl}>
       <Overlay />
       <Content>
-        {config.pretitle && <PreTitle>{config.subtitle}</PreTitle>}
+        {config.pretitle && (
+          <PreTitle
+            href={config.preTitleLink}
+            target='_blank'
+            rel='noreferrer noopener'
+          >
+            <SearchIcon size={20} /> {config.pretitle} &#8594;
+          </PreTitle>
+        )}
         <Title>{config.title}</Title>
         <SubTitle>{config.subtitle}</SubTitle>
         <ButtonWrap>

@@ -42,6 +42,9 @@ const HomePage = () => {
 
   const heroConfig = {
     imageUrl: '/home-hero.png',
+    pretitle: 'Join our Next Money Tree Event',
+    preTitleLink:
+      'https://www.linkedin.com/company/jackson-hodge-wealth/events/',
     title: 'Your trusted partner, wherever life’s journeys take you.',
     subtitle:
       'Tailored, no-nonsense financial planning. It’s the passport to the life you want now, to the future you dream of – and to creating a lasting legacy for future generations.',

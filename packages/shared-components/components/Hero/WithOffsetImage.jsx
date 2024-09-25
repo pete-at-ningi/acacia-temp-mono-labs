@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion'
-const OutsideWrapper = styled.div``;
+import { motion } from 'framer-motion';
 
 const HeroSection = styled.section`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
   margin: 0 auto;
   display: grid;
   grid-template-columns: 3fr 2fr;
-  height: 60vh;
+
   width: 100vw;
   color: ${(props) => props.theme.colors.dark};
   overflow: hidden;
   border-radius: ${(props) => props.theme.borders.radius};
-  background-color: ${(props) => props.theme.colors.white};
   @media ${(props) => props.theme.breakpoints.tablet},
     ${(props) => props.theme.breakpoints.mobile} {
     grid-template-columns: 1fr;
@@ -71,7 +69,7 @@ const CTAButton = styled(motion.a).attrs(() => ({
   whileHover: {
     scale: 1.1,
     transition: { duration: 0.2 },
-  }
+  },
 }))`
   display: inline-block;
   font-size: ${(props) => props.theme.fontSizes.medium};
@@ -80,8 +78,7 @@ const CTAButton = styled(motion.a).attrs(() => ({
   border-radius: ${(props) => props.theme.borders.radius};
   text-decoration: none;
   font-weight: 600;
-  color: ${(props) =>
-    props.$primary ? props.theme.colors.dark : props.theme.colors.white};
+  color: ${(props) => props.theme.colors.white};
   background-color: ${(props) =>
     props.$primary ? props.theme.colors.accent : 'transparent'};
   border: 2px solid transparent;
@@ -92,7 +89,7 @@ const CTAButton = styled(motion.a).attrs(() => ({
 const RightColumn = styled(motion.div).attrs(() => ({
   initial: { opacity: 0, rotateY: 90 },
   animate: { opacity: 1, rotateY: 0 },
-  transition: { delay: 0.3, duration: 0.8, ease: "easeInOut" },
+  transition: { delay: 0.3, duration: 0.8, ease: 'easeInOut' },
 }))`
   display: flex;
   justify-content: center;
@@ -109,26 +106,25 @@ const ImageItem = styled.img`
 
 const Hero = ({ config }) => {
   return (
-    <OutsideWrapper>
-      <HeroSection>
-        <LeftColumn>
-          <Title>{config.title}</Title>
-          <Subtitle>{config.subtitle}</Subtitle>
-          <CTAButtons>
-            <CTAButton href={config.primaryCTA.route} $primary>
-              {config.primaryCTA.label}
+    <HeroSection>
+      <LeftColumn>
+        <Title>{config.title}</Title>
+        <Subtitle>{config.subtitle}</Subtitle>
+        <CTAButtons>
+          <CTAButton href={config.primaryCTA.route} $primary>
+            {config.primaryCTA.label}
+          </CTAButton>
+          {config.secondaryCTA && (
+            <CTAButton href={config.secondaryCTA.route}>
+              {config.secondaryCTA.label}
             </CTAButton>
-            {config.secondaryCTA && 
-        <CTAButton href={config.secondaryCTA.route}>
-          {config.secondaryCTA.label}
-        </CTAButton>}
-          </CTAButtons>
-        </LeftColumn>
-        <RightColumn>
-          <ImageItem src={config.imageUrl} />
-        </RightColumn>
-      </HeroSection>
-    </OutsideWrapper>
+          )}
+        </CTAButtons>
+      </LeftColumn>
+      <RightColumn>
+        <ImageItem src={config.imageUrl} />
+      </RightColumn>
+    </HeroSection>
   );
 };
 

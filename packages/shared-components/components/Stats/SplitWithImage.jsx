@@ -36,11 +36,16 @@ const Title = styled(motion.h1).attrs(() => ({
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.8 },
 }))`
-  font-size: ${(props) => props.theme.fontSizes.xlarge};
+  max-width: 850px;
+  font-size: ${(props) =>
+    props.theme.fontSizes.massive}; /* Default to xlarge for mobile */
   font-weight: 700;
-  margin-top: 0;
   margin-bottom: ${(props) => props.theme.spacings.large};
-  color: ${(props) => props.theme.colors.dark};
+  line-height: 1.2;
+  @media ${(props) => props.theme.breakpoints.tablet},
+    ${(props) => props.theme.breakpoints.mobile} {
+    font-size: ${(props) => props.theme.fontSizes.xlarge};
+  }
 `;
 
 const Subtitle = styled(motion.p).attrs(() => ({
@@ -162,10 +167,11 @@ const Hero = ({ config }) => {
             <CTAButton href={config.CTA.route} $primary>
               {config.CTA.label}
             </CTAButton>
-            {config.secondaryCTA && 
-        <CTAButton href={config.secondaryCTA.route}>
-          {config.secondaryCTA.label}
-        </CTAButton>}
+            {config.secondaryCTA && (
+              <CTAButton href={config.secondaryCTA.route}>
+                {config.secondaryCTA.label}
+              </CTAButton>
+            )}
           </CTAButtons>
         </LeftColumn>
         <RightColumn $imageUrl={config.imageUrl} />

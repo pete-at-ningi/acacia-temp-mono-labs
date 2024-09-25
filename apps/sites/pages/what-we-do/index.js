@@ -37,7 +37,7 @@ const services = {
   title: 'Our Services',
   subtitle: 'What We Do',
   description:
-    'we invest time in getting to know you: your financial circumstances, your priorities and goals. Our approach is a world away from the big corporates, allowing us to custom-build financial plans that are a great fit now – and can flex and switch as life unfolds.',
+    'We invest time in getting to know you: your financial circumstances, your priorities and goals. Our approach is a world away from the big corporates, allowing us to custom-build financial plans that are a great fit now – and can flex and switch as life unfolds.',
   items: [
     {
       name: 'Holistic financial planning',

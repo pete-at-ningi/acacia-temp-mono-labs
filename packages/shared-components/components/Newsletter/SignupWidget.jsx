@@ -111,14 +111,10 @@ const SignupWidget = ({ onSubmit }) => {
       <Button type='submit'>Subscribe</Button>
     </FormWrapper>
   ) : (
-<<<<<<< HEAD
-    <SubscribedText>Thanks, sign-up confirmed!</SubscribedText>
-=======
     <div>
       <SubmittedText>Thanks, sign-up confirmed!</SubmittedText>
       <SubmittedEmoji>📧</SubmittedEmoji>
     </div>
->>>>>>> 91a433e8505e76a80bc5d15772e88921a06ce25c
   );
 };
 

@@ -11,7 +11,7 @@ const HeroSection = styled.section`
   justify-content: flex-start;
   color: ${(props) => props.theme.colors.white};
   padding: ${(props) => props.theme.spacings.large};
-  background-image: ${(props) => `url(${props.imageUrl})`};
+  background-image: ${(props) => `url(${props.$imageUrl})`};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -62,12 +62,7 @@ const Title = styled(motion.h1).attrs(() => ({
     props.theme.fontSizes.massive}; /* Default to xlarge for mobile */
   font-weight: 700;
   margin-bottom: ${(props) => props.theme.spacings.large};
-<<<<<<< HEAD
-  letter-spacing: 1px;
-
-=======
   line-height: 1.2;
->>>>>>> 91a433e8505e76a80bc5d15772e88921a06ce25c
   @media ${(props) => props.theme.breakpoints.tablet},
     ${(props) => props.theme.breakpoints.mobile} {
     font-size: ${(props) => props.theme.fontSizes.xlarge};
@@ -126,7 +121,7 @@ const CTAButton = styled(motion.a).attrs(() => ({
 
 const Hero = ({ config }) => {
   return (
-    <HeroSection imageUrl={config.imageUrl}>
+    <HeroSection $imageUrl={config.imageUrl}>
       <Overlay />
       <Content>
         {config.pretitle && <PreTitle>{config.subtitle}</PreTitle>}

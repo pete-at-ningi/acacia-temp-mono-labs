@@ -10,7 +10,7 @@ const ImageSectionSection = styled.section`
   color: ${(props) => props.theme.colors.white};
   padding: ${(props) => props.theme.spacings.xlarge}
     ${(props) => props.theme.spacings.large};
-  background-image: ${(props) => `url(${props.imageUrl})`};
+  background-image: ${(props) => `url(${props.$imageUrl})`};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@ const Overlay = styled.div`
 `;
 const ImageSection = ({ config }) => {
   return (
-    <ImageSectionSection imageUrl={config.imageUrl}>
+    <ImageSectionSection $imageUrl={config.imageUrl}>
       <Overlay />
     </ImageSectionSection>
   );

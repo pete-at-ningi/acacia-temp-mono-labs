@@ -94,7 +94,7 @@ const Image = styled.div`
       ${(props) => props.theme.colors.primary} 0%,
       ${(props) => props.theme.colors.dark} 100%
     ),
-    url(${(props) => props.imageUrl});
+    url(${(props) => props.$imageUrl});
   background-blend-mode: overlay;
   background-size: cover;
   background-position: center;
@@ -152,7 +152,7 @@ const Hero = ({ config }) => {
           </CTAButtons>
         </LeftColumn>
         <RightColumn>
-          <Image imageUrl={config.imageUrl} />
+          <Image $imageUrl={config.imageUrl} />
         </RightColumn>
       </HeroSection>
     </OutsideWrapper>

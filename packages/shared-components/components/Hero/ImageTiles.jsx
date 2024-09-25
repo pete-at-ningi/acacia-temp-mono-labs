@@ -81,7 +81,7 @@ const ImageTile = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: ${(props) => props.theme.borders.radius};
-  background-image: url(${(props) => props.imageUrl});
+  background-image: url(${(props) => props.$imageUrl});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -138,7 +138,7 @@ const imageUrls = [
         </LeftColumn>
         <RightColumn>
           {imageUrls.map((imageUrl, index) => (
-            <ImageTile key={index} imageUrl={imageUrl} />
+            <ImageTile key={index} $imageUrl={imageUrl} />
           ))}
         </RightColumn>
       </HeroSection>

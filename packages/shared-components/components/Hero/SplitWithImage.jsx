@@ -94,7 +94,7 @@ const RightColumn = styled(motion.div).attrs(() => ({
       ${(props) => props.theme.colors.primary} 0%,
       ${(props) => props.theme.colors.dark} 100%
     ),
-    url(${(props) => props.imageUrl});
+    url(${(props) => props.$imageUrl});
   background-blend-mode: overlay;
   background-size: cover;
   background-position: center;
@@ -141,7 +141,7 @@ const Hero = ({ config }) => {
         </CTAButton>}
           </CTAButtons>
         </LeftColumn>
-        <RightColumn imageUrl={config.imageUrl} />
+        <RightColumn $imageUrl={config.imageUrl} />
       </HeroSection>
     </OutsideWrapper>
   );

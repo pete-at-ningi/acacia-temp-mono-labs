@@ -12,7 +12,7 @@ const HeroSection = styled.section`
   color: ${(props) => props.theme.colors.white};
   padding: ${(props) => props.theme.spacings.xlarge}
     ${(props) => props.theme.spacings.large};
-  background-image: ${(props) => `url(${props.imageUrl})`};
+  background-image: ${(props) => `url(${props.$imageUrl})`};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -125,7 +125,7 @@ const ItemContent = styled.p`
 
 const Hero = ({ config }) => {
   return (
-    <HeroSection imageUrl={config.imageUrl}>
+    <HeroSection $imageUrl={config.imageUrl}>
       <Overlay />
       <Content>
         {config.pretitle && <PreTitle>{config.pretitle}</PreTitle>}

@@ -82,7 +82,7 @@ const MotionImageTile = styled(motion.div)`
   position: relative;
   overflow: hidden;
   border-radius: ${(props) => props.theme.borders.radius};
-  background-image: url(${(props) => props.imageUrl});
+  background-image: url(${(props) => props.$imageUrl});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -154,7 +154,7 @@ const Hero = ({ config }) => {
           {imageUrls.map((imageUrl, index) => (
             <MotionImageTile
               key={index}
-              imageUrl={imageUrl}
+              $imageUrl={imageUrl}
               custom={index}
               initial="hidden"
               animate="visible"

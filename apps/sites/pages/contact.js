@@ -141,7 +141,7 @@ const MapWrapper = styled.div`
 const ContactPage = () => {
   const calendlyConfig = {
     small: true,
-    url: 'https://calendly.com/ben-hayward-jhwm/30min',
+    url: 'https://calendly.com/ben-hayward/free-30-minute-introductory-call-with-ben-hayward',
   };
 
   const [formData, setFormData] = useState({

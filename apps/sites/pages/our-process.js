@@ -50,6 +50,11 @@ const StepContainer = styled.div`
 const Step = styled.div`
   background-color: ${(props) => props.theme.colors.lightGray};
   border-radius: ${(props) => props.theme.borders.radius};
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
 `;
 
 const StepTitle = styled.h3`
@@ -88,6 +93,7 @@ const HowWeWork = () => {
     {
       step: 'Step 1',
       title: 'Discovery',
+      imgUrl: '/our-process-discovery.jpg',
       description: `In this free, initial meeting, we’ll get to know each other, discover what’s important to you, and understand where you are on your journey. You'll leave this meeting knowing:
       - We’ve listened to your concerns and ambitions
       - If you’d like us to be your financial planner
@@ -96,6 +102,7 @@ const HowWeWork = () => {
     {
       step: 'Step 2',
       title: 'Planning',
+      imgUrl: '/our-process-planning.jpg',
       description: `Over the next 2-4 weeks, we’ll work with you to:
       - Clearly define your financial objectives
       - Review your existing finances
@@ -109,6 +116,7 @@ const HowWeWork = () => {
     {
       step: 'Step 3',
       title: 'Execution',
+      imgUrl: '/our-process-execution.jpg',
       description: `Once you’re happy with your plan, we’ll help you to bring it to life by:
       - Applying for suitable insurance
       - Organising your pensions
@@ -118,6 +126,7 @@ const HowWeWork = () => {
     {
       step: 'Step 4',
       title: 'Review',
+      imgUrl: '/our-process-review.jpg',
       description: `Once built, we understand your life and priorities may change. We’ll work with you to:
       - Review and adjust your plan as needed
       - Provide ongoing advice
@@ -206,6 +215,7 @@ const HowWeWork = () => {
             <Step key={index}>
               <StepTitle>{step.step}</StepTitle>
               <Subtitle>{step.title}</Subtitle>
+              <img src={step.imgUrl} alt={step.title} />
               <StepDescription>{step.description}</StepDescription>
             </Step>
           ))}

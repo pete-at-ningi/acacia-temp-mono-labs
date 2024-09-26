@@ -64,7 +64,7 @@ const marginalGainsFinancialPlanningConfig = {
       text: '“Small, continuous improvements can lead to remarkable financial outcomes. The principle of marginal gains teaches us that incremental changes are a powerful strategy for achieving big goals.”',
       author: {
         name: 'Tyron Edmonds',
-        role: 'Adviser at Acacia Wealth',
+        role: 'Financial Planner & Managing Director at Acacia Wealth',
         image: '/tyron_edmonds_min.jpg',
       },
     },

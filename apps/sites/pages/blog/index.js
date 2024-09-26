@@ -32,7 +32,7 @@ const HomePage = () => {
         date: '8th April 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
@@ -52,7 +52,7 @@ const HomePage = () => {
         date: '15th May 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
@@ -72,7 +72,7 @@ const HomePage = () => {
         date: '12th June 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
@@ -94,7 +94,7 @@ const HomePage = () => {
         date: '19th July 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
@@ -117,7 +117,7 @@ const HomePage = () => {
         date: '7th August 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
@@ -140,7 +140,7 @@ const HomePage = () => {
         date: '13th September 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },

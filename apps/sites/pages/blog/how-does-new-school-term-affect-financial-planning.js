@@ -99,7 +99,7 @@ const backToSchoolFinancialPlanningConfig = {
       text: '“The return to school in September brings routine and excitement but also financial adjustments. By planning ahead and maintaining a flexible budget, working parents can ensure their financial goals stay on track.”',
       author: {
         name: 'Tyron Edmonds',
-        role: 'Financial Planner & Director at Acacia Wealth',
+        role: 'Financial Planner & Managing Director at Acacia Wealth',
         image: '/tyron_edmonds_min.jpg',
       },
     },

@@ -57,7 +57,7 @@ const retirementPlanningConfig = {
       text: '“Helping our clients prepare for retirement is one of the most rewarding aspects of our work. We take pride in knowing that we have helped them achieve financial security and the freedom to enjoy their retirement on their own terms.”',
       author: {
         name: 'Tyron Edmonds',
-        role: 'Adviser at Acacia Wealth',
+        role: 'Financial Planner & Managing Director at Acacia Wealth',
         image: '/tyron_edmonds_min.jpg',
       },
     },

@@ -52,7 +52,7 @@ const buildWealthConfig = {
       text: '“Building wealth is not just about making money; it’s about creating a financial plan that supports your life goals. At Acacia Wealth, we help our clients build a secure financial future through thoughtful planning and expert guidance.”',
       author: {
         name: 'Tyron Edmonds',
-        role: 'Adviser at Acacia Wealth',
+        role: 'Financial Planner & Managing Director at Acacia Wealth',
         image: '/tyron_edmonds_min.jpg',
       },
     },

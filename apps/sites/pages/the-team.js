@@ -41,7 +41,7 @@ const TeamMember = styled.div`
 
 const TeamImage = styled.img`
   width: 100%;
-  height: 250px;
+  height: 400px;
   object-fit: cover;
   border-radius: ${(props) => props.theme.borders.radius};
   margin-bottom: ${(props) => props.theme.spacings.medium};
@@ -92,7 +92,7 @@ const SocialLinks = styled.div`
 const teamMembers = [
   {
     name: 'Tyron Edmonds',
-    title: 'Financial Planner & Director',
+    title: 'Managing Director',
     bio: 'Tyron is a Chartered Financial Analyst and Chartered member of the MSCI. He has been responsible for leading established wealth management companies in the capacity of COO and CFO.',
     imageUrl: '/tyron_edmonds_min.jpg',
     linkedin:
@@ -102,7 +102,7 @@ const teamMembers = [
   },
   {
     name: 'Ben Hayward',
-    title: 'Financial Planner & Director',
+    title: 'Wealth Adviser & Director',
     bio: 'Ben is a fully qualified wealth adviser who served in the British military and worked for a leading insurance broker before starting his career as an adviser. Prior to joining Acacia Wealth, he was an advisor with a FTSE100 wealth management company.',
     imageUrl: '/ben_hayward_min.jpg',
     linkedin: 'https://www.linkedin.com/in/ben-hayward-dip-pfs-2b669913/',
@@ -121,7 +121,7 @@ const teamMembers = [
   {
     name: 'Catherine Rees',
     title: 'Client Experience Executive',
-    bio: 'Catherine works in Business Development and Client Experience at Jackson Hodge, with extensive experience in the Financial Services sector and start-up businesses.',
+    bio: 'Catherine is a business development and client experience professional, with extensive experience in the Financial Services sector and start-up businesses. She is also a freelance Communication and Public Speaking Coach, specialising in empowering women.',
     imageUrl: 'catherine_rees_min.png',
     linkedin: 'https://www.linkedin.com/in/catherine-rees-9677a4127/',
     email: 'catherine.rees@jacksonhodgewealth.co.uk',

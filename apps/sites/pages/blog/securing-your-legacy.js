@@ -52,7 +52,7 @@ const secureLegacyConfig = {
       text: '“At Acacia Wealth, we believe that legacy planning is about more than just protecting your assets—it’s about preserving your values and ensuring that your wishes are honored. We are committed to helping our clients secure their legacy and provide for future generations.”',
       author: {
         name: 'Tyron Edmonds',
-        role: 'Adviser at Acacia Wealth',
+        role: 'Financial Planner & Managing Director at Acacia Wealth',
         image: '/tyron_edmonds_min.jpg',
       },
     },

@@ -52,7 +52,7 @@ const financialLiteracyConfig = {
       text: '“Financial literacy is the key to unlocking your financial potential. At Acacia Wealth, we are dedicated to helping our clients build their financial knowledge, empowering them to make informed decisions and achieve their financial goals.”',
       author: {
         name: 'Tyron Edmonds',
-        role: 'Adviser at Acacia Wealth',
+        role: 'Financial Planner & Managing Director at Acacia Wealth',
         image: '/tyron_edmonds_min.jpg',
       },
     },

@@ -52,7 +52,7 @@ const empowerFutureConfig = {
       text: '“Empowering our clients to take control of their financial future is at the heart of what we do. At Acacia Wealth, we provide the guidance and strategies needed to help our clients achieve financial independence and live the life they’ve always dreamed of.”',
       author: {
         name: 'Tyron Edmonds',
-        role: 'Adviser at Acacia Wealth',
+        role: 'Financial Planner & Managing Director at Acacia Wealth',
         image: '/tyron_edmonds_min.jpg',
       },
     },

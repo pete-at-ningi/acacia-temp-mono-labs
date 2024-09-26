@@ -58,7 +58,7 @@ const HomePage = () => {
     },
   };
   const ourClients = {
-    imageUrl: '/our-clients.png',
+    imageUrl: '/our-clients.jpg',
     pretitle: 'Our Clients',
     vouchedForFirmID: 2418,
     title:
@@ -155,7 +155,7 @@ const HomePage = () => {
         icon: ChartBarIcon,
       },
       {
-        name: 'Estate planning & will writing',
+        name: 'Estate planning',
         description:
           'Secure your legacy by ensuring that your assets are passed on according to your wishes, protecting your loved ones and your wealth.',
         href: '/what-we-do/estate-planning-will-writing',
@@ -252,7 +252,7 @@ const HomePage = () => {
   };
 
   const calendlyConfig = {
-    url: 'https://calendly.com/ben-hayward-jhwm/30min',
+    url: 'https://calendly.com/ben-hayward/free-30-minute-introductory-call-with-ben-hayward',
   };
 
   return (

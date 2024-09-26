@@ -68,7 +68,7 @@ const services = {
       icon: ChartBarIcon,
     },
     {
-      name: 'Estate planning & will writing',
+      name: 'Estate planning',
       description:
         'Secure your legacy by ensuring that your assets are passed on according to your wishes, protecting your loved ones and your wealth.',
       href: '/what-we-do/estate-planning-will-writing',

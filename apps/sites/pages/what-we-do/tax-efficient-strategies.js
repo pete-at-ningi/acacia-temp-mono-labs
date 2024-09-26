@@ -57,7 +57,7 @@ const taxEfficientStrategiesConfig = {
       text: '“Helping clients navigate the complexities of tax planning is a key part of what we do at Acacia Wealth. We take pride in helping our clients keep more of their hard-earned money through smart, tax-efficient strategies.”',
       author: {
         name: 'Tyron Edmonds',
-        role: 'Adviser at Acacia Wealth',
+        role: 'Financial Planner & Managing Director at Acacia Wealth',
         image: '/tyron_edmonds_min.jpg',
       },
     },

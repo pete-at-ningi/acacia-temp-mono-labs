@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { Bars3Icon, XMarkIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import Button from '../../elements/Button';
+import ButtonsGroup from '../../elements/ButtonsGroup';
 
 const Header = styled.header`
   background-color: ${(props) => props.theme.colors.white};
@@ -10,12 +12,16 @@ const Header = styled.header`
   top: 0;
   width: 100%;
   z-index: 100;
+  &.scrolled {
+    padding: ${(props) => props.theme.spacings.small};
+  }
 `;
 
 const Nav = styled.nav`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
   margin: 0 auto;
-  padding: ${(props) => props.theme.spacings.medium};
+  padding: ${(props) => props.theme.spacings.large}
+    ${(props) => props.theme.spacings.medium};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,6 +29,22 @@ const Nav = styled.nav`
 
   &.scrolled {
     padding: ${(props) => props.theme.spacings.small};
+  }
+`;
+
+const DesktopNav = styled(Nav)`
+  display: none;
+  @media ${(props) => props.theme.breakpoints.desktop} {
+    display: flex;
+  }
+`;
+
+const MobileNav = styled(Nav)`
+  display: none;
+
+  @media ${(props) => props.theme.breakpoints.tablet},
+    ${(props) => props.theme.breakpoints.mobile} {
+    display: flex;
   }
 `;
 
@@ -40,71 +62,6 @@ const Logo = styled.a`
   }
 `;
 
-const Menu = styled.div`
-  display: none;
-
-  @media ${(props) => props.theme.breakpoints.desktop} {
-    display: flex;
-    gap: ${(props) => props.theme.spacings.large};
-  }
-`;
-
-const MenuItem = styled.a`
-  font-size: ${(props) => props.theme.fontSizes.medium};
-  font-weight: 500;
-  color: ${(props) => props.theme.colors.dark};
-  text-decoration: none;
-
-  &:hover {
-    color: ${(props) => props.theme.colors.primary};
-    opacity: ${(props) => props.theme.hover.opacity};
-    cursor: pointer;
-  }
-`;
-
-const Actions = styled.div`
-  display: none;
-
-  @media ${(props) => props.theme.breakpoints.desktop} {
-    display: flex;
-    gap: ${(props) => props.theme.spacings.large};
-  }
-`;
-
-const ActionButton = styled.a`
-  display: flex;
-  align-items: center;
-  svg {
-    margin-bottom: 3px;
-    width: ${(props) => props.theme.fontSizes.medium};
-  }
-  grid-gap: ${(props) => props.theme.spacings.small};
-  font-size: ${(props) => props.theme.fontSizes.medium};
-  padding: ${(props) => props.theme.spacings.small}
-    ${(props) => props.theme.spacings.medium};
-  border-radius: ${(props) => props.theme.borders.radius};
-  text-decoration: none;
-  font-weight: 600;
-
-  &.primary {
-    border: 2px solid ${(props) => props.theme.colors.primary};
-    background-color: ${(props) => props.theme.colors.primary};
-    color: ${(props) => props.theme.colors.white};
-    &:hover {
-      background-color: ${(props) => props.theme.colors.secondary};
-    }
-  }
-
-  &.secondary {
-    background-color: transparent;
-    color: ${(props) => props.theme.colors.primary};
-    border: 2px solid ${(props) => props.theme.colors.primary};
-    &:hover {
-      background-color: ${(props) => props.theme.colors.light};
-    }
-  }
-`;
-
 const MobileMenuButton = styled.button`
   background: none;
   border: none;
@@ -113,9 +70,6 @@ const MobileMenuButton = styled.button`
   padding: 0;
   svg {
     min-width: ${(props) => props.theme.nav.logo};
-  }
-  @media ${(props) => props.theme.breakpoints.desktop} {
-    display: none;
   }
 `;
 
@@ -169,24 +123,6 @@ const MobileMenuCloseButton = styled.button`
   }
 `;
 
-const MobileMenuItem = styled.a`
-  display: block;
-  font-size: ${(props) => props.theme.fontSizes.large};
-  margin-bottom: ${(props) => props.theme.spacings.medium};
-  text-decoration: none;
-  color: ${(props) => props.theme.colors.dark};
-
-  &:hover {
-    color: ${(props) => props.theme.colors.primary};
-  }
-`;
-
-const MobileActionMenuWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${(props) => props.theme.spacings.medium};
-`;
-
 const BasicHeader = ({ config }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -213,32 +149,45 @@ const BasicHeader = ({ config }) => {
 
   return (
     <Header>
-      <Nav className={isScrolled ? 'scrolled' : ''}>
+      <DesktopNav className={isScrolled ? 'scrolled' : ''}>
         <Logo href='/'>
           <img src='/logo.png' alt='Acacia Wealth' />
         </Logo>
-
-        <Menu>
-          {config.menu.map((item) => (
-            <MenuItem key={item.label} href={item.route}>
-              {item.label}
-            </MenuItem>
+        <ButtonsGroup>
+          {config.menu.map((item, index) => (
+            <Button
+              route={item.route}
+              label={item.label}
+              key={index}
+              color='dark'
+              type='link'
+            />
           ))}
-        </Menu>
+        </ButtonsGroup>
+        <ButtonsGroup>
+          <Button
+            route={config.primaryCTA.route}
+            label={config.primaryCTA.label}
+            color='primary'
+            icon={<PhoneIcon />}
+          />
+          <Button
+            route={config.secondaryCTA.route}
+            label={config.secondaryCTA.label}
+            color='primary'
+            type='outline'
+          />
+        </ButtonsGroup>
+      </DesktopNav>
 
-        <Actions>
-          <ActionButton href={config.primaryCTA.route} className='primary'>
-            <PhoneIcon /> {config.primaryCTA.label}
-          </ActionButton>
-          <ActionButton href={config.secondaryCTA.route} className='secondary'>
-            {config.secondaryCTA.label}
-          </ActionButton>
-        </Actions>
-
+      <MobileNav className={isScrolled ? 'scrolled' : ''}>
+        <Logo href='/'>
+          <img src='/logo.png' alt='Acacia Wealth' />
+        </Logo>
         <MobileMenuButton onClick={toggleMobileMenu}>
           <Bars3Icon />
         </MobileMenuButton>
-      </Nav>
+      </MobileNav>
 
       <MobileMenuOverlay open={mobileMenuOpen} onClick={toggleMobileMenu} />
 
@@ -251,23 +200,32 @@ const BasicHeader = ({ config }) => {
             <XMarkIcon />
           </MobileMenuCloseButton>
         </MobileHeader>
-        {config.menu.map((item) => (
-          <MobileMenuItem
-            key={item.label}
-            href={item.route}
-            onClick={toggleMobileMenu}
+        <ButtonsGroup>
+          {config.menu.map((item) => (
+            <Button
+              key={item.label}
+              route={item.route}
+              onClick={toggleMobileMenu}
+              color='dark'
+              type='link'
+              label={item.label}
+            />
+          ))}
+          <Button
+            route={config.primaryCTA.route}
+            label={config.primaryCTA.label}
+            color='primary'
+            icon={<PhoneIcon />}
           >
-            {item.label}
-          </MobileMenuItem>
-        ))}
-        <MobileActionMenuWrapper>
-          <ActionButton href={config.primaryCTA.route} className='primary'>
             {config.primaryCTA.label}
-          </ActionButton>
-          <ActionButton href={config.secondaryCTA.route} className='secondary'>
-            {config.secondaryCTA.label}
-          </ActionButton>
-        </MobileActionMenuWrapper>
+          </Button>
+          <Button
+            route={config.secondaryCTA.route}
+            label={config.secondaryCTA.label}
+            color='primary'
+            type='outline'
+          />
+        </ButtonsGroup>
       </MobileMenu>
     </Header>
   );

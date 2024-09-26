@@ -52,7 +52,7 @@ export default {
     themeColor: '#ffffff',
   },
   business: {
-    name: 'Acacia Wealth Ltd',
+    name: 'Acacia Wealth Limited',
     address: '7 Bell Yard, London, WC2A 2JR',
     email: 'support@acaciawealth.co.uk',
     FCAnumber: '504742',
@@ -186,7 +186,7 @@ export default {
         date: '8th April 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
@@ -206,7 +206,7 @@ export default {
         date: '15th May 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
@@ -226,7 +226,7 @@ export default {
         date: '12th June 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
@@ -248,7 +248,7 @@ export default {
         date: '19th July 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
@@ -271,7 +271,7 @@ export default {
         date: '7th August 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },
@@ -294,7 +294,7 @@ export default {
         date: '13th September 2024',
         author: {
           name: 'Tyron Edmonds',
-          role: 'Adviser at Acacia Wealth',
+          role: 'Financial Planner & Managing Director at Acacia Wealth',
           imageUrl: '/tyron_edmonds_min.jpg',
           href: '/the-team',
         },

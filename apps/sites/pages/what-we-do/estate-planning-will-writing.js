@@ -2,7 +2,7 @@ import { Content } from 'shared-components';
 
 const estatePlanningConfig = {
   subtitle: 'Introducing',
-  title: 'Estate Planning & Will Writing',
+  title: 'Estate Planning',
   description:
     'At Acacia Wealth, we understand that estate planning is about more than just distributing your assets—it’s about securing your legacy and ensuring that your wishes are honored. Our comprehensive estate planning services are designed to protect your loved ones and your wealth, giving you peace of mind for the future.',
   content: [
@@ -52,7 +52,7 @@ const estatePlanningConfig = {
       text: '“At Acacia Wealth, we believe that estate planning is about more than just passing on your wealth—it’s about securing your legacy. We are committed to helping our clients protect their assets and ensure that their wishes are honored, providing peace of mind for the future.”',
       author: {
         name: 'Tyron Edmonds',
-        role: 'Adviser at Acacia Wealth',
+        role: 'Financial Planner & Managing Director at Acacia Wealth',
         image: '/tyron_edmonds_min.jpg',
       },
     },

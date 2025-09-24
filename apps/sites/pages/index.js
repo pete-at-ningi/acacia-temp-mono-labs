@@ -202,8 +202,7 @@ const HomePage = () => {
       text: 'Meet the Team',
       link: '/the-team',
     },
-    videoUrl:
-      'https://player.vimeo.com/video/1005109818?h=f467e048b6&amp;badge=0&amp;autopause=0&amp;transparent=0&amp;player_id=0&amp;app_id=5847',
+    playbackId: 'wnbp1ZpE026aaGi4KqwMTWYJ1uHIwfc02RtBaMwh00rcKE',
   };
 
   const questionsConfig = {

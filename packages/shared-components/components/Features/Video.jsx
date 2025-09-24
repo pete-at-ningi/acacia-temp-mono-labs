@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import MuxPlayer from '@mux/mux-player-react';
 
 const OuterWrapper = styled.div`
   padding: ${(props) => props.theme.spacings.xlarge} 0;
@@ -127,15 +128,40 @@ const VideoWrapper = styled.div`
   }
   @media ${(props) => props.theme.breakpoints.mobile} {
     iframe {
-    height: 400px;
-    width: 300px;
+      height: 400px;
+      width: 300px;
     }
   }
+`;
 
-  
+const MuxVideoWrapper = styled.div`
+  padding: 0;
+  margin: 0;
+  @media ${(props) => props.theme.breakpoints.desktop} {
+    margin-top: -100px;
+  }
+
+  mux-player {
+    height: 500px;
+    width: 400px;
+    border-radius: ${(props) => props.theme.borders.radius};
+    --media-object-fit: cover;
+    --media-object-position: center;
+
+    @media ${(props) => props.theme.breakpoints.mobile} {
+      height: 400px;
+      width: 300px;
+    }
+  }
 `;
 
 const TeamSection = ({ config }) => {
+  // Check if it's a Mux playback ID (alphanumeric string without special characters)
+  const isMuxVideo =
+    config.playbackId ||
+    (config.videoUrl && /^[a-zA-Z0-9]+$/.test(config.videoUrl));
+  const playbackId = config.playbackId || config.videoUrl;
+
   return (
     <OuterWrapper>
       <Section>
@@ -157,13 +183,31 @@ const TeamSection = ({ config }) => {
           </BadgesWrapper>
           <CTAButton href={config.cta.link}>{config.cta.text}</CTAButton>
         </TextContent>
-        <VideoWrapper>
-          <iframe
-            src={config.videoUrl}
-            frameBorder='0'
-            allow='autoplay; fullscreen; picture-in-picture'
-          ></iframe>
-        </VideoWrapper>
+        {isMuxVideo ? (
+          <MuxVideoWrapper>
+            <MuxPlayer
+              playbackId={playbackId}
+              metadata={{
+                video_title: config.heading || 'Team Video',
+                viewer_user_id: 'home-visitor',
+              }}
+              streamType='on-demand'
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+            />
+          </MuxVideoWrapper>
+        ) : (
+          <VideoWrapper>
+            <iframe
+              src={config.videoUrl}
+              frameBorder='0'
+              allow='autoplay; fullscreen; picture-in-picture'
+            ></iframe>
+          </VideoWrapper>
+        )}
       </Section>
     </OuterWrapper>
   );

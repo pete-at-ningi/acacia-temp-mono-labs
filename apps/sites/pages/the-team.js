@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
-import MuxPlayer from '@mux/mux-player-react';
 
 const PageContainer = styled.div`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
@@ -111,21 +110,6 @@ const SocialLinks = styled.div`
   }
 `;
 
-const VideoContainer = styled.div`
-  width: 100%;
-  height: 400px;
-  border-radius: ${(props) => props.theme.borders.radius};
-  overflow: hidden;
-  margin-bottom: ${(props) => props.theme.spacings.medium};
-
-  mux-player {
-    width: 100%;
-    height: 100%;
-    --media-object-fit: cover;
-    --media-object-position: center;
-  }
-`;
-
 const teamMembers = [
   {
     name: 'Tyron Edmonds',
@@ -166,11 +150,12 @@ const teamMembers = [
     designation: 'MSc Finance Analytics',
   },
   {
-    type: 'video',
-    playbackId: 'wnbp1ZpE026aaGi4KqwMTWYJ1uHIwfc02RtBaMwh00rcKE',
-    title: 'Team Introduction',
-    name: 'Meet Our Team',
-    bio: 'Get to know the people behind Acacia Wealth and discover how we can help you achieve your financial goals.',
+    name: 'Catherine Rees',
+    title: 'Client Experience Executive',
+    bio: 'Catherine is a business development and client experience professional, with extensive experience in the Financial Services sector and start-up businesses. She is also a freelance Communication and Public Speaking Coach, specialising in empowering women.',
+    imageUrl: 'catherine_rees_min.png',
+    linkedin: 'https://www.linkedin.com/in/catherine-rees-9677a4127/',
+    email: 'catherine.rees@jacksonhodgewealth.co.uk',
   },
 ];
 
@@ -181,56 +166,33 @@ const TeamPage = () => {
       <TeamGrid>
         {teamMembers.map((member, index) => (
           <TeamMember key={index}>
-            {member.type === 'video' ? (
-              <>
-                <VideoContainer>
-                  <MuxPlayer
-                    playbackId={member.playbackId}
-                    metadata={{
-                      video_title: member.title,
-                      viewer_user_id: 'team-visitor',
-                    }}
-                    streamType='on-demand'
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  />
-                </VideoContainer>
-                <TeamName>{member.name}</TeamName>
-                <TeamBio>{member.bio}</TeamBio>
-              </>
-            ) : (
-              <>
-                <TeamImage src={member.imageUrl} alt={member.name} />
-                <TeamName>{member.name}</TeamName>
-                <TeamDesignation>{member.designation}</TeamDesignation>
-                <TeamTitle>{member.title}</TeamTitle>
-                <TeamBio>{member.bio}</TeamBio>
-                <SocialLinks>
-                  {member.email && (
-                    <a href={`mailto:${member.email}`} aria-label='Email'>
-                      <FaEnvelope />
-                    </a>
-                  )}
-                  {member.phone && (
-                    <a href={`tel:${member.phone}`} aria-label='Phone'>
-                      <FaPhone />
-                    </a>
-                  )}
-                  {member.linkedin && (
-                    <a
-                      href={member.linkedin}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      aria-label='LinkedIn'
-                    >
-                      <FaLinkedin />
-                    </a>
-                  )}
-                </SocialLinks>
-              </>
-            )}
+            <TeamImage src={member.imageUrl} alt={member.name} />
+            <TeamName>{member.name}</TeamName>
+            <TeamDesignation>{member.designation}</TeamDesignation>
+            <TeamTitle>{member.title}</TeamTitle>
+            <TeamBio>{member.bio}</TeamBio>
+            <SocialLinks>
+              {member.email && (
+                <a href={`mailto:${member.email}`} aria-label='Email'>
+                  <FaEnvelope />
+                </a>
+              )}
+              {member.phone && (
+                <a href={`tel:${member.phone}`} aria-label='Phone'>
+                  <FaPhone />
+                </a>
+              )}
+              {member.linkedin && (
+                <a
+                  href={member.linkedin}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='LinkedIn'
+                >
+                  <FaLinkedin />
+                </a>
+              )}
+            </SocialLinks>
           </TeamMember>
         ))}
       </TeamGrid>

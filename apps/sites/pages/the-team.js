@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
+import MuxPlayer from '@mux/mux-player-react';
 
 const PageContainer = styled.div`
   max-width: ${(props) => props.theme.breakpoints.maxWidth};
@@ -22,13 +23,34 @@ const TeamGrid = styled.div`
   gap: ${(props) => props.theme.spacings.large};
   margin-top: ${(props) => props.theme.spacings.large};
 
+  /* Center the 5th item when there are 5 members */
+  > *:nth-child(5) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
   @media ${(props) => props.theme.breakpoints.tablet},
     ${(props) => props.theme.breakpoints.mobile} {
     grid-template-columns: 1fr 1fr;
+
+    /* On tablet, still center the 5th item */
+    > *:nth-child(5) {
+      grid-column: 1 / -1;
+      max-width: 50%;
+      margin: 0 auto;
+    }
   }
 
   @media ${(props) => props.theme.breakpoints.mobile} {
     grid-template-columns: 1fr;
+
+    /* On mobile, all items are full width */
+    > *:nth-child(5) {
+      grid-column: 1;
+      max-width: 100%;
+      margin: 0;
+    }
   }
 `;
 
@@ -89,6 +111,21 @@ const SocialLinks = styled.div`
   }
 `;
 
+const VideoContainer = styled.div`
+  width: 100%;
+  height: 400px;
+  border-radius: ${(props) => props.theme.borders.radius};
+  overflow: hidden;
+  margin-bottom: ${(props) => props.theme.spacings.medium};
+
+  mux-player {
+    width: 100%;
+    height: 100%;
+    --media-object-fit: cover;
+    --media-object-position: center;
+  }
+`;
+
 const teamMembers = [
   {
     name: 'Tyron Edmonds',
@@ -110,6 +147,16 @@ const teamMembers = [
     designation: 'Dip PFS',
   },
   {
+    name: 'Jolanta Filipek',
+    title: 'Chartered Financial Planner',
+    bio: 'Jolanta is a Chartered Financial Planner who specialises in providing bespoke financial planning and investment advice to busy professionals. In her previous roles she has helped high-net worth individuals to protect and growth their wealth.',
+    imageUrl: 'jolanta.JPG',
+    linkedin:
+      'https://www.linkedin.com/in/yola-filipek-cfp%E2%84%A2-chartered-mcsi-29215a13/',
+    email: null,
+    designation: 'CFP™ Chartered MCSI',
+  },
+  {
     name: 'Priyanshu Thakkar',
     title: 'Data and Investment Analyst',
     bio: 'Priyanshu holds an MSc in Finance Analytics and specialises in data analysis and investment research. He has prior experience in wealth management as a research analyst in international financial markets',
@@ -119,12 +166,11 @@ const teamMembers = [
     designation: 'MSc Finance Analytics',
   },
   {
-    name: 'Catherine Rees',
-    title: 'Client Experience Executive',
-    bio: 'Catherine is a business development and client experience professional, with extensive experience in the Financial Services sector and start-up businesses. She is also a freelance Communication and Public Speaking Coach, specialising in empowering women.',
-    imageUrl: 'catherine_rees_min.png',
-    linkedin: 'https://www.linkedin.com/in/catherine-rees-9677a4127/',
-    email: 'catherine.rees@jacksonhodgewealth.co.uk',
+    type: 'video',
+    playbackId: 'wnbp1ZpE026aaGi4KqwMTWYJ1uHIwfc02RtBaMwh00rcKE',
+    title: 'Team Introduction',
+    name: 'Meet Our Team',
+    bio: 'Get to know the people behind Acacia Wealth and discover how we can help you achieve your financial goals.',
   },
 ];
 
@@ -135,33 +181,56 @@ const TeamPage = () => {
       <TeamGrid>
         {teamMembers.map((member, index) => (
           <TeamMember key={index}>
-            <TeamImage src={member.imageUrl} alt={member.name} />
-            <TeamName>{member.name}</TeamName>
-            <TeamDesignation>{member.designation}</TeamDesignation>
-            <TeamTitle>{member.title}</TeamTitle>
-            <TeamBio>{member.bio}</TeamBio>
-            <SocialLinks>
-              {member.email && (
-                <a href={`mailto:${member.email}`} aria-label='Email'>
-                  <FaEnvelope />
-                </a>
-              )}
-              {member.phone && (
-                <a href={`tel:${member.phone}`} aria-label='Phone'>
-                  <FaPhone />
-                </a>
-              )}
-              {member.linkedin && (
-                <a
-                  href={member.linkedin}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  aria-label='LinkedIn'
-                >
-                  <FaLinkedin />
-                </a>
-              )}
-            </SocialLinks>
+            {member.type === 'video' ? (
+              <>
+                <VideoContainer>
+                  <MuxPlayer
+                    playbackId={member.playbackId}
+                    metadata={{
+                      video_title: member.title,
+                      viewer_user_id: 'team-visitor',
+                    }}
+                    streamType='on-demand'
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                </VideoContainer>
+                <TeamName>{member.name}</TeamName>
+                <TeamBio>{member.bio}</TeamBio>
+              </>
+            ) : (
+              <>
+                <TeamImage src={member.imageUrl} alt={member.name} />
+                <TeamName>{member.name}</TeamName>
+                <TeamDesignation>{member.designation}</TeamDesignation>
+                <TeamTitle>{member.title}</TeamTitle>
+                <TeamBio>{member.bio}</TeamBio>
+                <SocialLinks>
+                  {member.email && (
+                    <a href={`mailto:${member.email}`} aria-label='Email'>
+                      <FaEnvelope />
+                    </a>
+                  )}
+                  {member.phone && (
+                    <a href={`tel:${member.phone}`} aria-label='Phone'>
+                      <FaPhone />
+                    </a>
+                  )}
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label='LinkedIn'
+                    >
+                      <FaLinkedin />
+                    </a>
+                  )}
+                </SocialLinks>
+              </>
+            )}
           </TeamMember>
         ))}
       </TeamGrid>
